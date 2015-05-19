@@ -37,7 +37,7 @@ Publish files with:
  $ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider"
 </pre> 
  
-Use force to overwrite Laravel Scaffolding packages. That's all! Open Your Laravel project in your browser or homestead machine and enjoy! 
+Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
 
 ##AdminLTE
 
