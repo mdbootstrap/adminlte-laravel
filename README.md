@@ -27,14 +27,14 @@ Add admint-lte Laravel package with:
 Register ServiceProvider editing **config/app.php** file and adding to providers array:
 
 <pre> 
- // Ace template provider
- 'Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider',
+ // AdminLTE template provider
+ 'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
 </pre>
 
 Publish files with:
 
 <pre>
- $ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider"
+ $ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider"
 </pre> 
  
 Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
