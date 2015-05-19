@@ -1,5 +1,9 @@
 @extends('auth.auth')
 
+@section('htmlheader_title')
+    Log in
+@endsection
+
 @section('content')
 <body class="login-page">
     <div class="login-box">

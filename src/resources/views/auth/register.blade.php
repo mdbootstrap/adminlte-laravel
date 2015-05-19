@@ -1,5 +1,9 @@
 @extends('auth.auth')
 
+@section('htmlheader_title')
+    Register
+@endsection
+
 @section('content')
 
     <body class="register-page">

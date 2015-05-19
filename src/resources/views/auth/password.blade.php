@@ -1,5 +1,9 @@
 @extends('auth.auth')
 
+@section('htmlheader_title')
+    Password recovery
+@endsection
+
 @section('content')
 
 <body class="login-page">
