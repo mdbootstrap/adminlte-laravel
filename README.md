@@ -11,7 +11,7 @@ A Laravel package that switch default Laravel scaffolding/boilerplate to AdminLT
 
 ##Installation
 
-First install Laravel ([http://laravel.com/docs/5.0/installation]). Create a new Laravel project:
+First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
 
 <pre>
  $ laravel new laravel-with-admin-lte
@@ -24,7 +24,7 @@ Add admint-lte Laravel package with:
  $ composer require "acacha/admin-lte-template-laravel:0.*"
 </pre> 
  
-Register ServiceProvider editing '''config/app.php''' file and adding to providers array:
+Register ServiceProvider editing **config/app.php** file and adding to providers array:
 
 <pre> 
  // Ace template provider
@@ -37,7 +37,7 @@ Publish files with:
  $ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider"
 </pre> 
  
-Use force to overwrite Laravel Scaffolding packages 
+Use force to overwrite Laravel Scaffolding packages. That's all! Open Your Laravel project in your browser or homestead machine and enjoy! 
 
 ##AdminLTE
 
