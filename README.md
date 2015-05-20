@@ -45,6 +45,11 @@ AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 
 
 https://github.com/almasaeed2010/AdminLTE
 
+# Roadmap
+
+- Implement Facebook, Google and maybe twitter and github Login with Socialite
+- Add email html templates
+
 ## Documentation TODO
 
 - Gulp file provided to compile Boostrap and AdminLTE less files
