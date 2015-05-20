@@ -8,7 +8,7 @@ A Laravel package that switch default Laravel scaffolding/boilerplate to AdminLT
 
 * [Composer](https://getcomposer.org/)
 * [Laravel](http://laravel.com/)
-* AdminLTE. You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
+* [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 
 ##Installation
 
