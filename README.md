@@ -56,6 +56,9 @@ https://github.com/almasaeed2010/AdminLTE
 - Gulp file provided to compile Boostrap and AdminLTE less files
 - Partial views (html header, content header, footer, etc.) to easily reuse code
 
+## Packagist
+
+https://packagist.org/packages/acacha/admin-lte-template-laravel
 
 ## More info
 
