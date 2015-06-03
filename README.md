@@ -40,6 +40,15 @@ Publish files with:
  
 Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
 
+##First steps, database creation, migrations and login
+
+Once package installed you have to follow the usual steps of any laravel project to Login to the admin interface:
+
+- Create a database. I recommend the use of laravel Homestead ()
+- Create .env file and configure database acces (database name, password, etc)
+- Run migrations with command $ php artisan migrate
+- Registera a first user and Login with it
+
 ##AdminLTE
 
 AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 3.x created by Abdullah Almsaeed. See:
