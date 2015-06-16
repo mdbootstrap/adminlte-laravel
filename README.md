@@ -64,6 +64,7 @@ https://github.com/almasaeed2010/AdminLTE
 
 - Gulp file provided to compile Boostrap and AdminLTE less files
 - Partial views (html header, content header, footer, etc.) to easily reuse code
+- Add breadcrumps with: https://github.com/davejamesmiller/laravel-breadcrumbs
 
 ## Packagist
 
