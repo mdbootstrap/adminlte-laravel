@@ -3,6 +3,7 @@
   "description": "AdminLTE template applied to Laravel Scaffolding",
   "license": "MIT",
   "type": "package",
+  "keywords": ["bootstrap", "theme", "admin", "template", "administrator","admin-lte","adminlte", "laravel"],
   "authors": [
     {
       "name": "Sergi Tur Badenas",
