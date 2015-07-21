@@ -9,6 +9,35 @@ A Laravel package that switch default Laravel scaffolding/boilerplate to AdminLT
 * [Composer](https://getcomposer.org/)
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
+* 
+
+## Laravel 5.1 notes
+
+By default this version of Laravel does not include default auth routes. See:
+
+http://laravel.com/docs/5.1/authentication
+
+You will have to add this lines at your routes.php file:
+
+<pre>
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+</pre>
 
 ##Installation
 
