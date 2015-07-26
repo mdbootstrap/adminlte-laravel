@@ -48,6 +48,8 @@ desired effect
 
     @include('partials.controlsidebar')
 
+    @include('partials.footer')
+
 </div><!-- ./wrapper -->
 
 @include('partials.scripts')
