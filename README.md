@@ -38,6 +38,10 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 </pre>
 
+Also be aware of using new style when adding AdminLTETemplateServiceProvider to **config/app.php** file:
+
+ 
+
 ##Installation
 
 First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
@@ -58,6 +62,13 @@ Register ServiceProvider editing **config/app.php** file and adding to providers
 <pre> 
  // AdminLTE template provider
  'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
+</pre>
+
+or in Laravel 5.1:
+
+<pre> 
+// AdminLTE template provider         
+Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 </pre>
 
 Publish files with:
