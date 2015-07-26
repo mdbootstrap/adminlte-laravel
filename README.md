@@ -38,6 +38,15 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 </pre>
 
+or:
+
+<pre>
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+</pre>
+
 and route to /home
 
 <pre>
