@@ -38,9 +38,12 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 </pre>
 
-Also be aware of using new style when adding AdminLTETemplateServiceProvider to **config/app.php** file:
+Also be aware of using new style (endig with ::class) when adding AdminLTETemplateServiceProvider to **config/app.php** file:
 
- 
+<pre> 
+ // AdminLTE template provider
+ 'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
+</pre>
 
 ##Installation
 
