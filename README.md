@@ -38,6 +38,16 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 </pre>
 
+and route to /home
+
+<pre>
+Route::get('/home', ['middleware' => 'auth', function () {
+    return view('home');
+}]);
+</pre>
+
+
+
 Also be aware of using new style (endig with ::class) when adding AdminLTETemplateServiceProvider to **config/app.php** file:
 
 <pre> 
