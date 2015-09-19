@@ -40,7 +40,7 @@ Register ServiceProvider editing **config/app.php** file and adding to providers
 Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 </pre>
 
-Note use the following for Laravel <5.1 versions:
+Note: use the following for Laravel <5.1 versions:
 
 <pre>
  // AdminLTE template provider
