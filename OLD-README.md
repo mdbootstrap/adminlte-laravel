@@ -1,7 +1,5 @@
-#AdminLTE template Laravel 5 package
+#AdminLTE template Laravel package
 A Laravel package that switch default Laravel scaffolding/boilerplate to AdminLTE template
-
-If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see (OLD-README.md)
 
 [![Total Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/downloads.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Latest Stable Version](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
@@ -14,9 +12,57 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see (OLD
 
 ## Laravel 5.1 notes
 
-By default this version of Laravel does not include default auth routes. Versions > 1.0 of this package add the necessary routes for you
+By default this version of Laravel does not include default auth routes. See:
 
-See  [old README file](OLD-README.md) file for notes of which routes are registered.
+http://laravel.com/docs/5.1/authentication
+
+You will have to add this lines at your routes.php file:
+
+<pre>
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+</pre>
+
+or:
+
+<pre>
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+</pre>
+
+and route to /home
+
+<pre>
+Route::get('/home', ['middleware' => 'auth', function () {
+    return view('home');
+}]);
+</pre>
+
+
+
+Also be aware of using new style (endig with ::class) when adding AdminLTETemplateServiceProvider to **config/app.php** file:
+
+<pre> 
+ // AdminLTE template provider
+ 'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
+</pre>
 
 ##Installation
 
@@ -30,23 +76,22 @@ First install Laravel (http://laravel.com/docs/5.0/installation) and then Create
 Add admint-lte Laravel package with:
 
 <pre>
- $ composer require "acacha/admin-lte-template-laravel:1.*"
+ $ composer require "acacha/admin-lte-template-laravel:0.*"
 </pre> 
  
 Register ServiceProvider editing **config/app.php** file and adding to providers array:
 
-<pre>
-// AdminLTE template provider         
-Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
-</pre>
-
-Note use the following for Laravel <5.1 versions:
-
-<pre>
+<pre> 
  // AdminLTE template provider
  'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
 </pre>
 
+or in Laravel 5.1:
+
+<pre> 
+// AdminLTE template provider         
+Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
+</pre>
 
 Publish files with:
 
