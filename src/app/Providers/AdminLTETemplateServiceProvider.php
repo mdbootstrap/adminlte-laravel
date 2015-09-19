@@ -11,6 +11,8 @@
 namespace Acacha\AdminLTETemplateLaravel\app\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Console\AppNamespaceDetectorTrait;
+use Route;
 
 /**
  * Class AdminLTETemplateServiceProvider
@@ -18,6 +20,21 @@ use Illuminate\Support\ServiceProvider;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
+    use AppNamespaceDetectorTrait;
+
+    private function registerRoutes()
+    {
+
+        Route::controllers([
+            'auth' => $this->getAppNamespace() . 'Http\Controllers\Auth\AuthController',
+            'password' => $this->getAppNamespace() . 'Http\Controllers\Auth\PasswordController',
+        ]);
+
+        Route::get('/home', ['middleware' => 'auth', function () {
+            return view('home');
+        }]);
+
+    }
 
     /**
      * Register the application services.
@@ -26,9 +43,9 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->registerRoutes();
     }
-    
+
     /**
      * Bootstrap the application services.
      *
