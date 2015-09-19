@@ -1,7 +1,7 @@
 #AdminLTE template Laravel 5 package
 A Laravel package that switch default Laravel scaffolding/boilerplate to AdminLTE template
 
-If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see (OLD-README.md)
+If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD-README.md](OLD-README.md)
 
 [![Total Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/downloads.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Latest Stable Version](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
