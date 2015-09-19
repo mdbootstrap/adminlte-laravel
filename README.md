@@ -14,7 +14,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 
 ## Laravel 5.1 notes
 
-By default this version of Laravel does not include default auth routes. Versions > 1.0 of this package add the necessary routes for you
+By default Laravel 5.1 does not include default auth routes. Versions > 1.0 of this package add the necessary routes for you
 
 See  [old README file](OLD-README.md) file for notes of which routes are registered.
 
