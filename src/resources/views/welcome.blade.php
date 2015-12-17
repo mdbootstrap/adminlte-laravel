@@ -32,7 +32,7 @@
 				margin-bottom: 40px;
 			}
 
-			.quote {
+			.links {
 				font-size: 24px;
 			}
 		</style>
@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5 with AdminLTE</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="links"><a href="{{ route('auth.register') }}">Register</a> | <a href="{{ route('auth.login') }}">Login</a></div>
 			</div>
 		</div>
 	</body>
