@@ -108,6 +108,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             dirname(__FILE__) . '/../../public/css' => public_path('css'),
             dirname(__FILE__) . '/../../public/js'  => public_path('js'),
             dirname(__FILE__) . '/../../public/plugins'  => public_path('plugins'),
+            dirname(__FILE__) . '/../../public/fonts'  => public_path('fonts'),
         ], 'assets');
     }
 }
