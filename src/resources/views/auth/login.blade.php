@@ -24,7 +24,7 @@
 
     <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-    <form action="{{ url('/auth/login') }}" method="post">
+    <form action="{{ url('/login') }}" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" name="email"/>
@@ -55,7 +55,7 @@
     </div><!-- /.social-auth-links -->
 
     <a href="{{ url('/password/email') }}">I forgot my password</a><br>
-    <a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>
+    <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
 
 </div><!-- /.login-box-body -->
 

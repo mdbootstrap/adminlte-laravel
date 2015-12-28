@@ -25,7 +25,7 @@
 
         <div class="register-box-body">
             <p class="login-box-msg">Register a new membership</p>
-            <form action="{{ url('/auth/register') }}" method="post">
+            <form action="{{ url('/register') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Full name" name="name" value="{{ old('name') }}"/>
@@ -63,7 +63,7 @@
                 <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
             </div>
 
-            <a href="{{ url('/auth/login') }}" class="text-center">I already have a membership</a>
+            <a href="{{ url('/login') }}" class="text-center">I already have a membership</a>
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 

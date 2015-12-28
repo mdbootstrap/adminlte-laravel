@@ -60,8 +60,8 @@
                 </div>
             </form>
 
-            <a href="{{ url('/auth/login') }}">Log in</a><br>
-            <a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>
+            <a href="{{ url('/login') }}">Log in</a><br>
+            <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
 
         </div><!-- /.login-box-body -->
 
