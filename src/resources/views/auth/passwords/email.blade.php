@@ -1,4 +1,4 @@
-@extends('auth.auth')
+@extends('layouts.auth')
 
 @section('htmlheader_title')
     Password recovery
@@ -56,7 +56,7 @@
 
     </div><!-- /.login-box -->
 
-    @include('auth.scripts')
+    @include('layouts.partials.scripts_auth')
 
     <script>
         $(function () {
