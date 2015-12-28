@@ -23,14 +23,14 @@ See  [old README file](OLD-README.md) file for notes of which routes are registe
 First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
 
 <pre>
- $ laravel new laravel-with-admin-lte
- $ cd laravel-with-admin-lte
+ laravel new laravel-with-admin-lte
+ cd laravel-with-admin-lte
 </pre>
 
 Add admint-lte Laravel package with:
 
 <pre>
- $ composer require "acacha/admin-lte-template-laravel:1.*"
+ composer require "acacha/admin-lte-template-laravel:1.*"
 </pre> 
  
 Register ServiceProvider editing **config/app.php** file and adding to providers array:
@@ -40,21 +40,20 @@ Register ServiceProvider editing **config/app.php** file and adding to providers
 Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 </pre>
 
+Publish files with:
+
+<pre>
+ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider"
+</pre> 
+ 
+Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+
 Note: use the following for Laravel <5.1 versions:
 
 <pre>
  // AdminLTE template provider
  'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
 </pre>
-
-
-Publish files with:
-
-<pre>
- $ php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider"
-</pre> 
- 
-Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
 
 ##First steps, database creation, migrations and login
 
