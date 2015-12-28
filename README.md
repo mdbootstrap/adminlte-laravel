@@ -27,7 +27,7 @@ First install Laravel (http://laravel.com/docs/5.0/installation) and then Create
  cd laravel-with-admin-lte
 </pre>
 
-Add admint-lte Laravel package with:
+Add admin-lte Laravel package with:
 
 <pre>
  composer require "acacha/admin-lte-template-laravel:1.*"
