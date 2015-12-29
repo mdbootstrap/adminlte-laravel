@@ -85,7 +85,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             dirname(__FILE__) . '/../../resources/views/layouts' => base_path('resources/views/layouts'),
             dirname(__FILE__) . '/../../resources/views/home.blade.php' => base_path('resources/views/home.blade.php'),
             dirname(__FILE__) . '/../../resources/views/welcome.blade.php' => base_path('resources/views/welcome.blade.php'),
-        ]);
+        ],'adminlte');
     }
 
     /**
@@ -99,7 +99,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             dirname(__FILE__) . '/../../resources/assets/less' => base_path('resources/assets/less'),
             dirname(__FILE__) . '/../../gulpfile.js' => base_path('gulpfile.js'),
 
-        ]);
+        ],'adminlte');
     }
 
     /**
@@ -115,6 +115,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             dirname(__FILE__) . '/../../public/js'  => public_path('js'),
             dirname(__FILE__) . '/../../public/plugins'  => public_path('plugins'),
             dirname(__FILE__) . '/../../public/fonts'  => public_path('fonts'),
-        ], 'assets');
+        ], 'adminlte');
     }
 }
