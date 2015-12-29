@@ -76,7 +76,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishViews()
     {
-        $this->loadViewsFrom( dirname(__FILE__) . '/../resources/views/', 'adminltetemplate');
+        $this->loadViewsFrom( dirname(__FILE__) . '/../resources/views/', 'adminlte');
 
         $this->publishes([
             dirname(__FILE__) . '/../../resources/views/auth' => base_path('resources/views/auth'),
