@@ -2,6 +2,7 @@
 
 namespace Acacha\AdminLTETemplateLaravel\app\Providers;
 
+use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -9,6 +10,9 @@ use Illuminate\Support\ServiceProvider;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
+
+    use AppNamespaceDetectorTrait;
+
     /**
      * Register the application services.
      */
@@ -40,7 +44,11 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     protected function defineRoutes()
     {
         if (!$this->app->routesAreCached()) {
-            require __DIR__.'/../Http/routes.php';
+            $router = app('router');
+
+            $router->group(['namespace' => $this->getAppNamespace()], function () {
+                require __DIR__ . '/../Http/routes.php';
+            });
         }
     }
 
