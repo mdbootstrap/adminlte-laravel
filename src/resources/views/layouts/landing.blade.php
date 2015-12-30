@@ -46,6 +46,10 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <li><a href="#showcase" class="smothScroll">Showcase</a></li>
                 <li><a href="#contact" class="smothScroll">Contact</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url('/login') }}">Login</a></li>
+                <li><a href="{{ url('/register') }}">Register</a></li>
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
