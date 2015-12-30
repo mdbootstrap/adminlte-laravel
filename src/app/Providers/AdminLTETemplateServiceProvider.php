@@ -10,7 +10,6 @@ use Illuminate\Support\ServiceProvider;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
-
     use AppNamespaceDetectorTrait;
 
     /**
@@ -33,6 +32,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         });
 
         $this->publishHomeController();
+        $this->changeAuthController();
         $this->publishPublicAssets();
         $this->publishViews();
         $this->publishResourceAssets();
@@ -47,7 +47,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $router = app('router');
 
             $router->group(['namespace' => $this->getAppNamespace().'Http\Controllers'], function () {
-                require __DIR__ . '/../Http/routes.php';
+                require __DIR__.'/../Http/routes.php';
             });
         }
     }
@@ -96,13 +96,22 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     }
 
     /**
-     * Publish Home Controller
+     * Publish Home Controller.
      */
     private function publishHomeController()
     {
         $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/app/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php')
+            ADMINLTETEMPLATE_PATH.'/app/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php'),
+        ], 'adminlte');
+    }
 
+    /**
+     * Change default Laravel AuthController.
+     */
+    private function changeAuthController()
+    {
+        $this->publishes([
+            ADMINLTETEMPLATE_PATH.'/app/stubs/AuthController.stub' => app_path('Http/Controllers/Auth/AuthController.php'),
         ], 'adminlte');
     }
 }
