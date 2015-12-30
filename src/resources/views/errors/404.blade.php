@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('htmlheader_title')
     Page not found
