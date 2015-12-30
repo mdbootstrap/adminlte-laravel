@@ -2,6 +2,7 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
+use Acacha\AdminLTETemplateLaravel\Console\AdminLTE;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +20,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         if (!defined('ADMINLTETEMPLATE_PATH')) {
             define('ADMINLTETEMPLATE_PATH', realpath(__DIR__.'/../../'));
+        }
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([AdminLTE::class]);
         }
     }
 
