@@ -28,6 +28,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->defineRoutes();
         });
 
+        $this->publishHomeController();
         $this->publishPublicAssets();
         $this->publishViews();
         $this->publishResourceAssets();
@@ -39,11 +40,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     protected function defineRoutes()
     {
         if (!$this->app->routesAreCached()) {
-            $router = app('router');
-
-            $router->group(['namespace' => 'Acacha\AdminLTETemplateLaravel\Http\Controllers'], function ($router) {
-                require __DIR__.'/../Http/routes.php';
-            });
+            require __DIR__.'/../Http/routes.php';
         }
     }
 
@@ -70,8 +67,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishResourceAssets()
     {
         $this->publishes([
-            dirname(__FILE__).'/../../resources/assets/less' => base_path('resources/assets/less'),
-            dirname(__FILE__).'/../../gulpfile.js' => base_path('gulpfile.js'),
+            ADMINLTETEMPLATE_PATH.'/resources/assets/less' => base_path('resources/assets/less'),
+            ADMINLTETEMPLATE_PATH.'/gulpfile.js' => base_path('gulpfile.js'),
 
         ], 'adminlte');
     }
@@ -82,11 +79,22 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishPublicAssets()
     {
         $this->publishes([
-            dirname(__FILE__).'/../../public/img' => public_path('img'),
-            dirname(__FILE__).'/../../public/css' => public_path('css'),
-            dirname(__FILE__).'/../../public/js' => public_path('js'),
-            dirname(__FILE__).'/../../public/plugins' => public_path('plugins'),
-            dirname(__FILE__).'/../../public/fonts' => public_path('fonts'),
+            ADMINLTETEMPLATE_PATH.'/public/img' => public_path('img'),
+            ADMINLTETEMPLATE_PATH.'/public/css' => public_path('css'),
+            ADMINLTETEMPLATE_PATH.'/public/js' => public_path('js'),
+            ADMINLTETEMPLATE_PATH.'/public/plugins' => public_path('plugins'),
+            ADMINLTETEMPLATE_PATH.'/public/fonts' => public_path('fonts'),
+        ], 'adminlte');
+    }
+
+    /**
+     * Publish Home Controller
+     */
+    private function publishHomeController()
+    {
+        $this->publishes([
+            ADMINLTETEMPLATE_PATH.'/app/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php')
+
         ], 'adminlte');
     }
 }
