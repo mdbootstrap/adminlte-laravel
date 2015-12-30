@@ -11,7 +11,7 @@
  * Time: 20:28
  */
 
- $loader = require __DIR__ . "/../vendor/autoload.php";
+ $loader = require __DIR__.'/../vendor/autoload.php';
  $loader->addPsr4('VendorName\\PackageName\\Tests', __DIR__.'/PackageName');
 
  date_default_timezone_set('UTC');
