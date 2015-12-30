@@ -54,7 +54,7 @@
         <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
     </div><!-- /.social-auth-links -->
 
-    <a href="{{ url('/password/email') }}">I forgot my password</a><br>
+    <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
     <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
 
 </div><!-- /.login-box-body -->
