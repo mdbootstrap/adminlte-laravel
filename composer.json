@@ -24,7 +24,8 @@
     "psr-4": {"Acacha\\AdminLTETemplateLaravel\\": "src"}
   },
   "scripts": {
-    "post-update-cmd": [
+    "post-install-cmd": [
+      "echo hello!",
       "php artisan acacha:adminlte install provider",
       "php artisan vendor:publish --tag=adminlte --force"
     ]
