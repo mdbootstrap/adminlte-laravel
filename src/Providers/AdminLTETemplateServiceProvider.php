@@ -106,7 +106,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishHomeController()
     {
         $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/app/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php'),
         ], 'adminlte');
     }
 
@@ -116,7 +116,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function changeAuthController()
     {
         $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/app/stubs/AuthController.stub' => app_path('Http/Controllers/Auth/AuthController.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/AuthController.stub' => app_path('Http/Controllers/Auth/AuthController.php'),
         ], 'adminlte');
     }
 }

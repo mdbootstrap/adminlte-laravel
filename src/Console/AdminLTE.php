@@ -9,9 +9,9 @@ class AdminLTE extends Command
     /**
      * The name and signature of the console command.
      *
-     * @var string
+    @var string
      */
-    protected $signature = 'acacha:adminlte install provider';
+    protected $signature = 'adminlte-laravel:install';
 
     /**
      * The console command description.
@@ -36,7 +36,7 @@ class AdminLTE extends Command
     protected function installAdminLTETemplateServiceProvider()
     {
         copy(
-            ADMINLTETEMPLATE_PATH.'/app/stubs/app.php.stub',
+            ADMINLTETEMPLATE_PATH.'/src/stubs/app.php.stub',
             config_path('app.php')
         );
 
