@@ -8,8 +8,6 @@ class AdminLTE extends Command
 {
     /**
      * The name and signature of the console command.
-     *
-    @var string
      */
     protected $signature = 'adminlte-laravel:install';
 

@@ -25,6 +25,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([AdminLTE::class]);
         }
+
+        $this->app->bind('acacha/AdminLTE', function () {
+            return new \Acacha\AdminLTETemplateLaravel\AdminLTE();
+        });
     }
 
     /**
@@ -58,56 +62,11 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     }
 
     /**
-     * Publish package views to Laravel project.
-     */
-    private function publishViews()
-    {
-        $this->loadViewsFrom(ADMINLTETEMPLATE_PATH.'/resources/views/', 'adminlte');
-
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth' => base_path('resources/views/auth'),
-            //ADMINLTETEMPLATE_PATH . '/resources/views/emails' => base_path('resources/views/emails'), TODO
-            ADMINLTETEMPLATE_PATH.'/resources/views/errors' => base_path('resources/views/errors'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/layouts' => base_path('resources/views/layouts'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php' => base_path('resources/views/home.blade.php'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => base_path('resources/views/welcome.blade.php'),
-        ], 'adminlte');
-    }
-
-    /**
-     * Publish package resource assets to Laravel project.
-     */
-    private function publishResourceAssets()
-    {
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/resources/assets/less' => base_path('resources/assets/less'),
-            ADMINLTETEMPLATE_PATH.'/gulpfile.js' => base_path('gulpfile.js'),
-
-        ], 'adminlte');
-    }
-
-    /**
-     * Publish public resource assets to Laravel project.
-     */
-    private function publishPublicAssets()
-    {
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/public/img' => public_path('img'),
-            ADMINLTETEMPLATE_PATH.'/public/css' => public_path('css'),
-            ADMINLTETEMPLATE_PATH.'/public/js' => public_path('js'),
-            ADMINLTETEMPLATE_PATH.'/public/plugins' => public_path('plugins'),
-            ADMINLTETEMPLATE_PATH.'/public/fonts' => public_path('fonts'),
-        ], 'adminlte');
-    }
-
-    /**
      * Publish Home Controller.
      */
     private function publishHomeController()
     {
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/src/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php'),
-        ], 'adminlte');
+        $this->publishes(acacha/AdminLTE::homeController(), 'adminlte');
     }
 
     /**
@@ -115,8 +74,32 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function changeAuthController()
     {
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/src/stubs/AuthController.stub' => app_path('Http/Controllers/Auth/AuthController.php'),
-        ], 'adminlte');
+        $this->publishes(acacha/AdminLTE::authController(), 'adminlte');
+    }
+
+    /**
+     * Publish public resource assets to Laravel project.
+     */
+    private function publishPublicAssets()
+    {
+        $this->publishes(acacha/AdminLTE::publicAssets(), 'adminlte');
+    }
+
+    /**
+     * Publish package views to Laravel project.
+     */
+    private function publishViews()
+    {
+        $this->loadViewsFrom(ADMINLTETEMPLATE_PATH.'/resources/views/', 'adminlte');
+
+        $this->publishes(acacha/AdminLTE::views(), 'adminlte');
+    }
+
+    /**
+     * Publish package resource assets to Laravel project.
+     */
+    private function publishResourceAssets()
+    {
+        $this->publishes(acacha/AdminLTE::resourceAssets(), 'adminlte');
     }
 }
