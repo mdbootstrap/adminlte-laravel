@@ -23,7 +23,7 @@ So easy to install! Install globally with composer:
 composer global require "acacha/adminlte-laravel-installer=~1.0"
 ```
 
-And convert any fresh installation with:
+And convert any Laravel fresh installation to AdminLTE/Pratt with:
 
 ```bash
  laravel new laravel-with-admin-lte
