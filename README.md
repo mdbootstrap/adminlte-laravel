@@ -1,5 +1,5 @@
 #AdminLTE template Laravel 5 package
-A Laravel package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0
+A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
 If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD-README.md](OLD-README.md)
 
@@ -11,10 +11,31 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 * [Composer](https://getcomposer.org/)
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
+* [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
+
+## Laravel 5.2
+
+New version 2.0 support Laravel 5.2 and nows become with a [installer](https://github.com/acacha/adminlte-laravel-installer) (Laravel/Spark way;-) ).
+
+So easy to install! Install globally with composer:
+
+```bash
+composer global require "acacha/adminlte-laravel-installer=~1.0"
+```
+
+And convert any fresh installation with:
+
+```bash
+ laravel new laravel-with-admin-lte
+ cd laravel-with-admin-lte
+ adminlte-laravel install
+```
+
+Enjoy!
 
 ## Laravel 5.1 notes
 
-By default Laravel 5.1 does not include default auth routes. Versions > 1.0 of this package add the necessary routes for you
+By default Laravel 5.1 does not include default auth routes. Versions > 1.0 < 2.0 of this package add the necessary routes for you
 
 See  [old README file](OLD-README.md) file for notes of which routes are registered.
 
