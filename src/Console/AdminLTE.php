@@ -64,7 +64,7 @@ class AdminLTE extends Command
      * Install views
      */
     private function installViews()
-    {cd ad
+    {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::views());
     }
 
