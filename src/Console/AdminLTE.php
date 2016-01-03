@@ -3,7 +3,6 @@
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
 use Illuminate\Console\Command;
-use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 
 /**
  * Class AdminLTE
@@ -42,7 +41,7 @@ class AdminLTE extends Command
      */
     private function installHomeController()
     {
-        $this->install(AdminLTE::homeController());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::homeController());
     }
 
     /**
@@ -50,7 +49,7 @@ class AdminLTE extends Command
      */
     private function installAuthController()
     {
-        $this->install(AdminLTE::authController());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::authController());
     }
 
     /**
@@ -58,15 +57,15 @@ class AdminLTE extends Command
      */
     private function installPublicAssets()
     {
-        $this->install(AdminLTE::publicAssets());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::publicAssets());
     }
 
     /**
      * Install views
      */
     private function installViews()
-    {
-        $this->install(AdminLTE::views());
+    {cd ad
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::views());
     }
 
     /**
@@ -74,7 +73,7 @@ class AdminLTE extends Command
      */
     private function installResourceAssets()
     {
-        $this->install(AdminLTE::resourceAssets());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::resourceAssets());
     }
 
 
