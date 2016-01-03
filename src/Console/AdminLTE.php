@@ -3,7 +3,12 @@
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
 use Illuminate\Console\Command;
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 
+/**
+ * Class AdminLTE
+ * @package Acacha\AdminLTETemplateLaravel\Console
+ */
 class AdminLTE extends Command
 {
     /**
@@ -16,7 +21,7 @@ class AdminLTE extends Command
      *
      * @var string
      */
-    protected $description = 'Install the AdminLTETemplateServiceProvider provider into config/app.php';
+    protected $description = 'Install Acacha AdminLTE Template into fresh laravel project';
 
     /**
      * Execute the console command.
@@ -25,19 +30,64 @@ class AdminLTE extends Command
      */
     public function handle()
     {
-        $this->installAdminLTETemplateServiceProvider();
+        $this->installHomeController();
+        $this->installAuthController();
+        $this->installPublicAssets();
+        $this->installViews();
+        $this->installResourceAssets();
     }
 
     /**
-     * Install the AdminLTETemplateServiceProvider provider into config/app.php.
+     * Install Home Controller
      */
-    protected function installAdminLTETemplateServiceProvider()
+    private function installHomeController()
     {
-        copy(
-            ADMINLTETEMPLATE_PATH.'/src/stubs/app.php.stub',
-            config_path('app.php')
-        );
-
-        $this->comment('AdminLTETemplateServiceProvider provider installed into config/app.php');
+        $this->install(AdminLTE::homeController());
     }
+
+    /**
+     * Install Auth controller
+     */
+    private function installAuthController()
+    {
+        $this->install(AdminLTE::authController());
+    }
+
+    /**
+     * Install public assets
+     */
+    private function installPublicAssets()
+    {
+        $this->install(AdminLTE::publicAssets());
+    }
+
+    /**
+     * Install views
+     */
+    private function installViews()
+    {
+        $this->install(AdminLTE::views());
+    }
+
+    /**
+     * Install resource assets
+     */
+    private function installResourceAssets()
+    {
+        $this->install(AdminLTE::resourceAssets());
+    }
+
+
+    /**
+     * Install files from array
+     * @param $files
+     */
+    private function install($files)
+    {
+        foreach ($files as $fileSrc => $fileDst) {
+            copy($fileSrc, $fileDst);
+        }
+    }
+
+
 }
