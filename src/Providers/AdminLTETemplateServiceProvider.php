@@ -2,9 +2,9 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
-use Acacha\AdminLTETemplateLaravel\Console\AdminLTE;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -23,7 +23,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         }
 
         if ($this->app->runningInConsole()) {
-            $this->commands([AdminLTE::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTE::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
