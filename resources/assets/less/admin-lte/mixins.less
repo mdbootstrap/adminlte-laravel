@@ -1,7 +1,6 @@
 //AdminLTE mixins
 //===============
 
-
 //Changes the color and the hovering properties of the navbar
 .navbar-variant(@color; @font-color: rgba(255, 255, 255, 0.8); @hover-color: #f6f6f6; @hover-bg: rgba(0, 0, 0, 0.1)) {
   background-color: @color;
@@ -11,11 +10,12 @@
   }
 
   .nav > li > a:hover,
-    .nav > li > a:active,
-    .nav > li > a:focus,
-    .nav .open > a,
-    .nav .open > a:hover,
-    .nav .open > a:focus {
+  .nav > li > a:active,
+  .nav > li > a:focus,
+  .nav .open > a,
+  .nav .open > a:hover,
+  .nav .open > a:focus,
+  .nav > .active > a {
     background: @hover-bg;
     color: @hover-color;
   }
@@ -31,7 +31,7 @@
 }
 
 //Logo color variation
-.logo-variant(@bg-color; @color: #fff; @border-bottom-color: transparent; @border-bottom-width: 0px) {
+.logo-variant(@bg-color; @color: #fff; @border-bottom-color: transparent; @border-bottom-width: 0) {
   background-color: @bg-color;
   color: @color;
   border-bottom: @border-bottom-width solid @border-bottom-color;
@@ -62,7 +62,7 @@
     border-color: @bg-color;
     color: @color;
     &:after,
-      &:before {
+    &:before {
       border-left-color: @bg-color;
     }
   }
@@ -72,30 +72,42 @@
 .border-radius(@radius) {
   border-radius: @radius;
 }
+
 //Different radius each side
-.border-radius(@top-left; @top-right; @bottom-left; @bottom-right) {
-  border-top-left-radius: @top-left;
-  border-top-right-radius: @top-right;
-  border-bottom-right-radius: @bottom-right;
-  border-bottom-left-radius: @bottom-left;
+.border-radius(@top-left;
+@top-right
+;
+@bottom-left
+;
+@bottom-right
+)
+{
+  border-top-left-radius: @top-left
+;
+  border-top-right-radius: @top-right
+;
+  border-bottom-right-radius: @bottom-right
+;
+  border-bottom-left-radius: @bottom-left
+;
 }
 
 //Gradient background
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
   background: -webkit-gradient(linear,
-    left bottom,
-    left top,
-    color-stop(0, @start),
-    color-stop(1, @stop));
+  left bottom,
+  left top,
+  color-stop(0, @start),
+  color-stop(1, @stop));
   background: -ms-linear-gradient(bottom,
-    @start,
-    @stop);
+  @start,
+  @stop);
   background: -moz-linear-gradient(center bottom,
-    @start 0%,
-    @stop 100%);
+  @start 0%,
+  @stop 100%);
   background: -o-linear-gradient(@stop,
-    @start);
+  @start);
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
 }
 
@@ -125,7 +137,7 @@
     }
     //links
     > a {
-      border-left: 3px solid transparent;      
+      border-left: 3px solid transparent;
     }
     //Hover and active states
     &:hover > a, &.active > a {
@@ -171,7 +183,7 @@
     }
     input[type="text"] {
       color: #666;
-      .border-radius(2px, 0, 2px, 0) !important;
+      .border-radius(2px, 0, 2px, 0);
       &:focus, &:focus + .input-group-btn .btn {
         background-color: #fff;
         color: #666;
@@ -182,7 +194,7 @@
     }
     .btn {
       color: #999;
-      .border-radius(0, 2px, 0, 2px) !important;
+      .border-radius(0, 2px, 0, 2px);
     }
   }
 }
@@ -216,27 +228,27 @@
     }
     //links
     > a {
-      border-left: 3px solid transparent;  
-      font-weight: 600; 
+      border-left: 3px solid transparent;
+      font-weight: 600;
     }
     //Hover and active states
     &:hover > a,
-      &.active > a {
+    &.active > a {
       color: @sidebar-light-hover-color;
-      background: @sidebar-light-hover-bg;      
+      background: @sidebar-light-hover-bg;
     }
     &:hover > a {
 
     }
-    &.active {      
+    &.active {
       border-left-color: @icon-active-color;
       > a {
-        font-weight: 600;      
+        font-weight: 600;
       }
     }
     //First Level Submenu
-    > .treeview-menu {      
-      background: @sidebar-light-submenu-bg;      
+    > .treeview-menu {
+      background: @sidebar-light-submenu-bg;
     }
   }
   //All links within the sidebar menu
@@ -264,21 +276,21 @@
   //The sidebar search form
   .sidebar-form {
     .border-radius(3px);
-    border: 1px solid @gray;//darken(@sidebar-light-bg, 5%);
+    border: 1px solid @gray; //darken(@sidebar-light-bg, 5%);
     margin: 10px 10px;
     input[type="text"],
     .btn {
       box-shadow: none;
-      background-color: #fff;//darken(@sidebar-light-bg, 3%);
+      background-color: #fff; //darken(@sidebar-light-bg, 3%);
       border: 1px solid transparent;
       height: 35px;
       .transition(all @transition-speed @transition-fn);
     }
     input[type="text"] {
       color: #666;
-      .border-radius(2px, 0, 2px, 0) !important;
+      .border-radius(2px, 0, 2px, 0);
       &:focus,
-        &:focus + .input-group-btn .btn {
+      &:focus + .input-group-btn .btn {
         background-color: #fff;
         color: #666;
       }
@@ -288,14 +300,14 @@
     }
     .btn {
       color: #999;
-      .border-radius(0, 2px, 0, 2px) !important;
+      .border-radius(0, 2px, 0, 2px);
     }
   }
-  @media(min-width: @screen-sm-min) {  
+  @media (min-width: @screen-sm-min) {
     &.sidebar-mini.sidebar-collapse {
       .sidebar-menu > li > .treeview-menu {
         border-left: 1px solid @gray;
-      }           
+      }
     }
   }
 }

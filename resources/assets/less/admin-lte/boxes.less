@@ -69,7 +69,7 @@
   //use this class to get a colored header and borders
 
   &.box-solid {
-    border-top: 0px;
+    border-top: 0;
     > .box-header {
       .btn.btn-default {
         background: transparent;
@@ -77,7 +77,7 @@
       .btn,
       a {
         &:hover {
-          background: rgba(0,0,0,0.1)!important;
+          background: rgba(0, 0, 0, 0.1);
         }
       }
     }
@@ -122,7 +122,6 @@
       margin-bottom: 5px;
     }
   }
-
 
   // jQuery Knob in a box
   .knob-label {
@@ -210,7 +209,7 @@
     [data-toggle="tooltip"] {
       position: relative;
     }
-    //float: none!important;
+
     &.pull-right {
       .dropdown-menu {
         right: 0;
@@ -225,14 +224,13 @@
   padding: 5px;
   font-size: 12px;
   background: transparent;
-  box-shadow: none!important;
   color: darken(@box-default-border-top-color, 20%);
   .open &,
   &:hover {
     color: darken(@box-default-border-top-color, 40%);
   }
-  &:active {
-    outline: none!important;
+  &.btn:active {
+    box-shadow: none;
   }
 }
 
@@ -275,6 +273,7 @@
   padding: @box-padding;
   background-color: @box-footer-bg;
 }
+
 .chart-legend {
   &:extend(.list-unstyled);
   margin: 10px 0;
@@ -286,6 +285,39 @@
   }
 }
 
+//Comment Box
+.box-comments {
+  background: #f7f7f7;
+  .box-comment {
+    .clearfix();
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    &:first-of-type {
+      padding-top: 0;
+    }
+    img {
+      &:extend(.img-sm);
+      float: left;
+    }
+  }
+  .comment-text {
+    margin-left: 40px;
+    color: #555;
+  }
+  .username {
+    color: #444;
+    display: block;
+    font-weight: 600;
+  }
+  .text-muted {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
 //Widgets
 //-----------
 
@@ -293,7 +325,7 @@
 
 .todo-list {
   margin: 0;
-  padding: 0px 0px;
+  padding: 0;
   list-style: none;
   overflow: auto;
   // Todo list element
@@ -307,24 +339,8 @@
     &:last-of-type {
       margin-bottom: 0;
     }
-    // Color varaity
-    &.danger {
-      border-left-color: @red;
-    }
-    &.warning {
-      border-left-color: @yellow;
-    }
-    &.info {
-      border-left-color: @aqua;
-    }
-    &.success {
-      border-left-color: @green;
-    }
-    &.primary {
-      border-left-color: @light-blue;
-    }
 
-    > input[type='checkbox']  {
+    > input[type='checkbox'] {
       margin: 0 10px 0 5px;
     }
 
@@ -364,9 +380,26 @@
       }
 
       .label {
-        background: @gray!important;
+        background: @gray !important;
       }
     }
+  }
+
+  // Color varaity
+  .danger {
+    border-left-color: @red;
+  }
+  .warning {
+    border-left-color: @yellow;
+  }
+  .info {
+    border-left-color: @aqua;
+  }
+  .success {
+    border-left-color: @green;
+  }
+  .primary {
+    border-left-color: @light-blue;
   }
 
   .handle {
@@ -376,6 +409,7 @@
   }
 
 }
+
 // END TODO WIDGET
 
 /* Chat widget (DEPRECATED - this will be removed in the next major release. Use Direct Chat instead)*/
@@ -387,17 +421,17 @@
     margin-bottom: 10px;
     // The image
     > img {
-      //display: inline-block;
       width: 40px;
       height: 40px;
       border: 2px solid transparent;
-      .border-radius(50%)!important;
-      &.online {
-        border: 2px solid @green;
-      }
-      &.offline {
-        border: 2px solid @red;
-      }
+      .border-radius(50%);
+    }
+
+    > .online {
+      border: 2px solid @green;
+    }
+    > .offline {
+      border: 2px solid @red;
     }
 
     // The message body
@@ -434,6 +468,7 @@
   }
 
 }
+
 //END CHAT WIDGET
 
 //Input in box
@@ -441,7 +476,7 @@
   max-width: 200px;
 }
 
-//A fix for panels body text color when placed within 
+//A fix for panels body text color when placed within
 // a modal
 .modal {
   .panel-body {
