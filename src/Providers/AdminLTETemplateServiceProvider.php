@@ -26,7 +26,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([AdminLTE::class]);
         }
 
-        $this->app->bind('acacha/AdminLTE', function () {
+        $this->app->bind('AdminLTE', function () {
             return new \Acacha\AdminLTETemplateLaravel\AdminLTE();
         });
     }
@@ -66,7 +66,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishHomeController()
     {
-        $this->publishes(acacha/AdminLTE::homeController(), 'adminlte');
+        $this->publishes(AdminLTE::homeController(), 'adminlte');
     }
 
     /**
@@ -74,7 +74,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function changeAuthController()
     {
-        $this->publishes(acacha/AdminLTE::authController(), 'adminlte');
+        $this->publishes(AdminLTE::authController(), 'adminlte');
     }
 
     /**
@@ -82,7 +82,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishPublicAssets()
     {
-        $this->publishes(acacha/AdminLTE::publicAssets(), 'adminlte');
+        $this->publishes(AdminLTE::publicAssets(), 'adminlte');
     }
 
     /**
@@ -92,7 +92,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(ADMINLTETEMPLATE_PATH.'/resources/views/', 'adminlte');
 
-        $this->publishes(acacha/AdminLTE::views(), 'adminlte');
+        $this->publishes(AdminLTE::views(), 'adminlte');
     }
 
     /**
@@ -100,6 +100,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishResourceAssets()
     {
-        $this->publishes(acacha/AdminLTE::resourceAssets(), 'adminlte');
+        $this->publishes(AdminLTE::resourceAssets(), 'adminlte');
     }
 }

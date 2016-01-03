@@ -1,5 +1,7 @@
 <?php
 
+namespace Acacha\AdminLTETemplateLaravel\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -12,6 +14,6 @@ class AdminLTE extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'acacha/AdminLTE';
+        return 'AdminLTE';
     }
 }
