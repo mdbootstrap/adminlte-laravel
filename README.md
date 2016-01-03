@@ -33,13 +33,54 @@ adminlte-laravel install
 
 Enjoy!
 
+### Laravel 5.2 manual installation
+
+Follow the typical Laravel package installation steps:
+
+<pre>
+ laravel new laravel-with-admin-lte
+ cd laravel-with-admin-lte
+</pre>
+
+Add admin-lte Laravel package with:
+
+<pre>
+ composer require "acacha/admin-lte-template-laravel:2.*"
+</pre> 
+ 
+Register ServiceProvider editing **config/app.php** file and adding to providers array:
+
+```php
+/*
+* Acacha AdminLTE template provider
+ */
+Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+```
+
+Register Alias editing **config/app.php** file and adding to alias array:
+
+```php
+/*
+* Acacha AdminLTE template alias
+*/
+'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+```
+
+Publish files with:
+
+```php
+php artisan vendor:publish --tag=adminlte --force
+``` 
+ 
+Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+
 ## Laravel 5.1 notes
 
 By default Laravel 5.1 does not include default auth routes. Versions > 1.0 < 2.0 of this package add the necessary routes for you
 
 See  [old README file](OLD-README.md) file for notes of which routes are registered.
 
-##Installation
+###Installation
 
 First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
 
@@ -81,7 +122,7 @@ Note: use the following for Laravel <5.1 versions:
 Once package installed you have to follow the usual steps of any laravel project to Login to the admin interface:
 
 - Create a database. I recommend the use of laravel Homestead ()
-- Create .env file and configure database acces (database name, password, etc)
+- Create/check .env file and configure database acces (database name, password, etc)
 - Run migrations with command $ php artisan migrate
 - Registera a first user and Login with it
 
