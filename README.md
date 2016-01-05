@@ -19,9 +19,11 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 
 ## Laravel 5.2
 
-New version 2.0 support Laravel 5.2 and nows become with a [installer](https://github.com/acacha/adminlte-laravel-installer) (Laravel/Spark way;-) ).
+New version 2.0 supports Laravel 5.2 and now comes with an [installer](https://github.com/acacha/adminlte-laravel-installer) (Laravel/Spark way;-) ).
 
-So easy to install! Install globally with composer:
+**So easy to install!**
+
+Install globally with composer:
 
 ```bash
 composer global require "acacha/adminlte-laravel-installer=~1.0"
@@ -52,7 +54,7 @@ Add admin-lte Laravel package with:
  composer require "acacha/admin-lte-template-laravel:2.*"
 </pre> 
  
-Register ServiceProvider editing **config/app.php** file and adding to providers array:
+To register the Service Provider edit **config/app.php** file and add to providers array:
 
 ```php
 /*
@@ -61,7 +63,7 @@ Register ServiceProvider editing **config/app.php** file and adding to providers
 Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 ```
 
-Register Alias editing **config/app.php** file and adding to alias array:
+To Register Alias edit **config/app.php** file and add to alias array:
 
 ```php
 /*
