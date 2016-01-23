@@ -5,7 +5,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 
-@include('layouts.partials.htmlheader')
+@section('htmlheader')
+    @include('layouts.partials.htmlheader')
+@show
 
 <!--
 BODY TAG OPTIONS:
@@ -52,7 +54,9 @@ desired effect
 
 </div><!-- ./wrapper -->
 
-@include('layouts.partials.scripts')
+@section('scripts')
+    @include('layouts.partials.scripts')
+@show
 
 </body>
 </html>
