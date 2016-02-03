@@ -47,8 +47,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <li><a href="#contact" class="smothScroll">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/login') }}">Login</a></li>
-                <li><a href="{{ url('/register') }}">Register</a></li>
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li><a href="/home">{ Auth::user()->name }}</a></li>
+                @endif
             </ul>
         </div><!--/.nav-collapse -->
     </div>
