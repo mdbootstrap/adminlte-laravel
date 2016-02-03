@@ -56,7 +56,7 @@ class AdminLTE
     {
         return [
             ADMINLTETEMPLATE_PATH.'/resources/views/auth' => base_path('resources/views/auth'),
-            //ADMINLTETEMPLATE_PATH . '/resources/views/emails' => base_path('resources/views/emails'), TODO
+            ADMINLTETEMPLATE_PATH.'/resources/views/emails' => base_path('resources/views/emails'), 
             ADMINLTETEMPLATE_PATH.'/resources/views/errors' => base_path('resources/views/errors'),
             ADMINLTETEMPLATE_PATH.'/resources/views/layouts' => base_path('resources/views/layouts'),
             ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php' => base_path('resources/views/home.blade.php'),
