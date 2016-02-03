@@ -159,6 +159,18 @@ https://packagist.org/packages/acacha/admin-lte-template-laravel
 
 http://acacha.org/mediawiki/AdminLTE#adminlte-laravel
 
+## Tests
+
+Execute:
+
+```
+phpunit
+```
+
+In new created laravel project to test package is installed correctly.
+
+ 
+
 ## See also
 
 https://github.com/acacha/adminlte-laravel-installer
