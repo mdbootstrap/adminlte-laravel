@@ -73,6 +73,7 @@ class AdminLTE
     {
         return [
             ADMINLTETEMPLATE_PATH.'/tests' => base_path('tests'),
+            ADMINLTETEMPLATE_PATH.'/phpunit.xml' => base_path('phpunit.xml'),
         ];
     }
 
