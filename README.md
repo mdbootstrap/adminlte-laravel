@@ -158,3 +158,7 @@ https://packagist.org/packages/acacha/admin-lte-template-laravel
 ## More info
 
 http://acacha.org/mediawiki/AdminLTE#adminlte-laravel
+
+## See also
+
+https://github.com/acacha/adminlte-laravel-installer
