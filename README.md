@@ -125,6 +125,18 @@ Note: use the following for Laravel <5.1 versions:
  'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
 </pre>
 
+##Laravel Routes
+
+This package add Laravel routes that you will not find them at routes.php file. The routes installed by package would be find at file:
+
+ https://github.com/acacha/adminlte-laravel/blob/master/src/Http/routes.php
+ 
+File included by AdminLTETemplateServiceProvider:
+
+ https://github.com/acacha/adminlte-laravel/blob/master/src/Providers/AdminLTETemplateServiceProvider.php
+ 
+See issue https://github.com/acacha/adminlte-laravel/issues/47 if you want to change default welcome/landing page route.
+
 ##First steps, database creation, migrations and login
 
 Once package installed you have to follow the usual steps of any laravel project to Login to the admin interface:
