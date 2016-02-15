@@ -15,7 +15,8 @@
   "require": {
     "php": ">=5.4.0",
     "illuminate/support": "~5.0",
-    "illuminate/console": "~5.0"
+    "illuminate/console": "~5.0",
+    "almasaeed2010/adminlte": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
