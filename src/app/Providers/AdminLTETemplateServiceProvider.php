@@ -90,7 +90,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishResourceAssets()
     {
         $this->publishes([
-            dirname(__FILE__) . '/../../resources/assets/less' => base_path('resources/assets/less'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/build/bootstrap-less' => base_path('resources/assets/less/bootstrap'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/build/less' => base_path('resources/assets/less/admin-lte'),
             dirname(__FILE__) . '/../../gulpfile.js' => base_path('gulpfile.js'),
 
         ]);
@@ -104,11 +105,13 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishPublicAssets()
     {
         $this->publishes([
-            dirname(__FILE__) . '/../../public/img' => public_path('img'),
-            dirname(__FILE__) . '/../../public/css' => public_path('css'),
-            dirname(__FILE__) . '/../../public/js'  => public_path('js'),
-            dirname(__FILE__) . '/../../public/plugins'  => public_path('plugins'),
-            dirname(__FILE__) . '/../../public/fonts'  => public_path('fonts'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/bootstrap/css' => public_path('css'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/bootstrap/fonts' => public_path('fonts'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/bootstrap/js' => public_path('js'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/dist/css' => public_path('css'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/dist/img' => public_path('img'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/dist/js' => public_path('js'),
+            dirname(__FILE__) . '/../../../../../almasaeed2010/adminlte/plugins' => public_path('plugins'),
         ], 'assets');
     }
 }
