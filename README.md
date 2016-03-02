@@ -179,9 +179,19 @@ Execute:
 phpunit
 ```
 
-In new created laravel project to test package is installed correctly.
+In new created laravel project with acacha-admintle.laravel installed to test package is installed correctly.
 
- 
+## Social Login
+
+FAQ:
+
+How can I remove social login links in register and login pages?
+
+Remove line @include('auth.partials.social_login') in files resources/views/auth/login.blade.php and register.blade.php
+
+Social login links in login/register pages returns 404 not found
+
+TODO: See package https://github.com/acacha/acacha-socialite
 
 ## See also
 
