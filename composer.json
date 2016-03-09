@@ -22,5 +22,8 @@
   },
   "autoload": {
     "psr-4": {"Acacha\\AdminLTETemplateLaravel\\": "src"}
+  },
+  "scripts": {
+    "fix": "php-cs-fixer fix"
   }
 }
