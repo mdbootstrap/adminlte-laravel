@@ -11,5 +11,5 @@ before_script:
 
 script: phpunit
 
-before_script:
+after_script:
   - ./sandbox_destroy.sh
