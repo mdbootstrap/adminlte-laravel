@@ -9,7 +9,7 @@ php:
 before_script:
   - ./sandbox_setup.sh
 
-script: phpunit
+script: cd sandbox;phpunit
 
 after_script:
   - ./sandbox_destroy.sh
