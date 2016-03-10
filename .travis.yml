@@ -7,6 +7,9 @@ php:
   - hhvm
 
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-  - touch database/database.sqlite
+  - ./sandbox_setup.sh
+
+script: phpunit
+
+before_script:
+  - ./sandbox_destroy.sh
