@@ -71,7 +71,7 @@ However acacha/llum use bash scripts and commands like sed thta maybe are no com
 Or you can use version 1.0 of installer with:
  
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~2.0"
+composer global require "acacha/adminlte-laravel-installer=~1.0"
 ```
 
 ## Laravel 5.2
