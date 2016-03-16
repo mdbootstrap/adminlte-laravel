@@ -12,26 +12,15 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
 
-#Requirements
+# Installation & use
 
-* [Composer](https://getcomposer.org/)
-* [Laravel](http://laravel.com/)
-* [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
-* [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
-
-## Laravel 5.2
-
-New version 2.0 supports Laravel 5.2 and now comes with an [installer](https://github.com/acacha/adminlte-laravel-installer) (Laravel/Spark way;-) ).
-
-**So easy to install!**
-
-Install globally with composer:
+**So easy to install!** Install globally with composer:
 
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~1.0"
+composer global require "acacha/adminlte-laravel-installer=~2.0"
 ```
 
-And convert any Laravel fresh installation to AdminLTE/Pratt with:
+And convert any Laravel ~~fresh~~ (no need of fresh installation now thanks to [Acacha/llum](https://github.com/acacha/llum)) installation to AdminLTE/Pratt with:
 
 ```bash
 laravel new laravel-with-admin-lte
@@ -40,6 +29,54 @@ adminlte-laravel install
 ```
 
 Enjoy!
+
+#Requirements
+
+This packages use (no need to install):
+
+* [Composer](https://getcomposer.org/)
+* [Laravel](http://laravel.com/)
+* [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
+* [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
+* [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
+
+This package assumes that you have in path your PATH the folder
+ 
+```
+/home/sergi/.composer/vendor/bin
+```
+
+For example adding this line:
+
+```bash
+export PATH=${PATH}:~/.composer/vendor/bin
+```
+
+to your ~/.bashrc file
+
+## Llum package
+
+This package now uses [Acacha/llum](https://github.com/acacha/llum) to install packages, providers, aliases, etc in a current existing Laravel project.
+
+Thanks to llum we can install adminlte-laravel package in any Laravel project no need of fresh installation.
+
+However acacha/llum use bash scripts and commands like sed thta maybe are no compatible or not available in all platforms. No problem! You can use a backwards compatible version with:
+
+ ```bash
+ laravel new laravel-with-admin-lte
+ cd laravel-with-admin-lte
+ adminlte-laravel --no-llum install
+ ```
+ 
+Or you can use version 1.0 of installer with:
+ 
+```bash
+composer global require "acacha/adminlte-laravel-installer=~2.0"
+```
+
+## Laravel 5.2
+
+Laravel 5.2 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
 
 ### Laravel 5.2 manual installation
 
