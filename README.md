@@ -28,7 +28,15 @@ cd laravel-with-admin-lte
 adminlte-laravel install
 ```
 
-Enjoy!
+Enjoy! If you want you can use llum
+
+```bash
+llum boot
+```bash
+
+To start using you Laravel with AdminLTE project. Llum will configure database (sqlite),execute migrations, install devtools and serve for you.
+
+More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
 
 #Requirements
 
