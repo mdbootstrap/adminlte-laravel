@@ -40,7 +40,7 @@ This packages use (no need to install):
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
 * [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 
-This package assumes that you have in path your composer bin the folder
+This package assumes that you have in path your composer bin folder:
  
 ```
 /YOUR_PATH_TO_HOME/.composer/vendor/bin
