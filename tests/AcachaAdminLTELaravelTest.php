@@ -79,6 +79,8 @@ class AcachaAdminLTELaravelTest extends TestCase
     public function testLoginRequiredFields()
     {
         $this->visit('/login')
+            ->type('', 'email')
+            ->type('', 'password')
             ->press('Sign In')
             ->see('The email field is required')
             ->see('The password field is required');
