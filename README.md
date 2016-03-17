@@ -28,7 +28,7 @@ cd laravel-with-admin-lte
 adminlte-laravel install
 ```
 
-Enjoy! If you want you can use llum
+Enjoy! If you wish you can use llum:
 
 ```bash
 llum boot
