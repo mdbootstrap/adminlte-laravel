@@ -265,7 +265,7 @@ Check you version of sed with:
 man sed
 ```
 
-sed GNU version path is
+sed GNU version path is:
 
 ```bash
 $ which sed
