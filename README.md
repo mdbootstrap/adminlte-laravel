@@ -38,7 +38,7 @@ To start using you Laravel with AdminLTE project. Llum will configure database (
 
 More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
 
-IMPORTANT NOTE: on MAC OS you will have to replace SED BSD with GNU sed for example using brew:
+IMPORTANT NOTE: on MAC OS you will have to replace BSD sed with GNU sed for example using brew:
 
 ```bash
 brew install gnu-sed --with-default-names
@@ -258,6 +258,27 @@ Replace BSD sed with GNU sed using:
 ```bash
 brew install gnu-sed --with-default-names
 ```
+
+Check you version of sed with:
+
+```bash
+man sed
+```
+
+sed GNU version path is
+
+```bash
+$ which sed
+/usr/local/bin/sed
+```
+
+Instead of default path of BSD sed (installed by default on MAC OS):
+
+```bash
+/usr/bin/sed
+```
+
+More info at https://github.com/acacha/adminlte-laravel/issues/58
 
 ## See also
 
