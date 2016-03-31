@@ -253,7 +253,7 @@ TODO: See package https://github.com/acacha/acacha-socialite
 
 ### GNU sed on MAC OS
 
-Replace BSD sed with GNU sed using:
+Acacha llum need GNU sed to work so replace BSD sed with GNU sed using:
 
 ```bash
 brew install gnu-sed --with-default-names
