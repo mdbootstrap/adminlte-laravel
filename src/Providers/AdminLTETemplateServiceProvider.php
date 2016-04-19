@@ -2,9 +2,9 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
-use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 
 /**
  * Class AdminLTETemplateServiceProvider.
