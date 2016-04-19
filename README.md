@@ -11,6 +11,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![Latest Stable Version](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
+[![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
 
 # Installation & use
 
