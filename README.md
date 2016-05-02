@@ -208,7 +208,7 @@ Your routes in routes.php file will override default adminlte-laravel routes.
 
 Also you can install manually the routes in routes.php file. Adminlte-laravel use same routes as Laravel make:auth command use, see:
  
-https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/routes.stub])
+https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/routes.stub
  
 so you can add this lines to routes.php file:
 
