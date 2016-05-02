@@ -219,7 +219,7 @@ Route::get('/home', 'HomeController@index');
 ```
 
 And disable AdminLTETemplateServiceProvider in config/app.php file ( take into account that Adminte-laravel Facades and 
-custom commands will not available).
+custom commands will not be available).
 
 See issue https://github.com/acacha/adminlte-laravel/issues/69 for more info
 
