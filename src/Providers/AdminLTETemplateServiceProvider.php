@@ -36,10 +36,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->booted(function () {
-            $this->defineRoutes();
-        });
-
+        $this->defineRoutes();
         $this->publishHomeController();
         $this->changeAuthController();
         $this->publishPublicAssets();
