@@ -9,25 +9,25 @@
     <div class="tab-content">
         <!-- Home tab content -->
         <div class="tab-pane active" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
+            <h3 class="control-sidebar-heading">{{ trans('adminlte_lang::message.recentactivity') }}</h3>
             <ul class='control-sidebar-menu'>
                 <li>
                     <a href='javascript::;'>
                         <i class="menu-icon fa fa-birthday-cake bg-red"></i>
                         <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                            <p>Will be 23 on April 24th</p>
+                            <h4 class="control-sidebar-subheading">{{ trans('adminlte_lang::message.birthday') }}</h4>
+                            <p>{{ trans('adminlte_lang::message.birthdaydate') }}</p>
                         </div>
                     </a>
                 </li>
             </ul><!-- /.control-sidebar-menu -->
 
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+            <h3 class="control-sidebar-heading">{{ trans('adminlte_lang::message.progress') }}</h3>
             <ul class='control-sidebar-menu'>
                 <li>
                     <a href='javascript::;'>
                         <h4 class="control-sidebar-subheading">
-                            Custom Template Design
+                            {{ trans('adminlte_lang::message.customtemplate') }}
                             <span class="label label-danger pull-right">70%</span>
                         </h4>
                         <div class="progress progress-xxs">
@@ -39,24 +39,24 @@
 
         </div><!-- /.tab-pane -->
         <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+        <div class="tab-pane" id="control-sidebar-stats-tab">{{ trans('adminlte_lang::message.statstab') }}</div><!-- /.tab-pane -->
         <!-- Settings tab content -->
         <div class="tab-pane" id="control-sidebar-settings-tab">
             <form method="post">
-                <h3 class="control-sidebar-heading">General Settings</h3>
+                <h3 class="control-sidebar-heading">{{ trans('adminlte_lang::message.generalset') }}</h3>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        Report panel usage
-                        <input type="checkbox" class="pull-right" checked />
+                        {{ trans('adminlte_lang::message.reportpanel') }}
+                        <input type="checkbox" class="pull-right" {{ trans('adminlte_lang::message.checked') }} />
                     </label>
                     <p>
-                        Some information about this general settings option
+                        {{ trans('adminlte_lang::message.informationsettings') }}
                     </p>
                 </div><!-- /.form-group -->
             </form>
         </div><!-- /.tab-pane -->
     </div>
-</aside><!-- /.control-sidebar -->
+</aside><!-- /.control-sidebar
 
 <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->

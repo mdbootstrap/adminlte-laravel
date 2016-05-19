@@ -6,12 +6,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adminlte-laravel - Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing page">
+    <meta name="description" content="Adminlte-laravel - {{ trans('adminlte_lang::message.landingdescription') }} ">
     <meta name="author" content="Sergi Tur Badenas - acacha.org">
 
     <meta property="og:title" content="Adminlte-laravel" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Adminlte-laravel - Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing page" />
+    <meta property="og:description" content="Adminlte-laravel - {{ trans('adminlte_lang::message.landingdescription') }}" />
     <meta property="og:url" content="http://demo.adminlte.acacha.org/" />
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE.png" />
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x600.png" />
@@ -23,7 +23,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <meta name="twitter:site" content="@acachawiki" />
     <meta name="twitter:creator" content="@acacha1" />
 
-    <title>Acacha AdminLTE Laravel package template Landing page - Using Pratt</title>
+    <title>{{ trans('adminlte_lang::message.landingdescriptionpratt') }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
@@ -55,15 +55,15 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
-                <li><a href="#desc" class="smoothScroll">Description</a></li>
-                <li><a href="#showcase" class="smoothScroll">Showcase</a></li>
-                <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                <li class="active"><a href="#home" class="smoothScroll">{{ trans('adminlte_lang::message.home') }}</a></li>
+                <li><a href="#desc" class="smoothScroll">{{ trans('adminlte_lang::message.description') }}</a></li>
+                <li><a href="#showcase" class="smoothScroll">{{ trans('adminlte_lang::message.showcase') }}</a></li>
+                <li><a href="#contact" class="smoothScroll">{{ trans('adminlte_lang::message.contact') }}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
+                    <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
                 @else
                     <li><a href="/home">{{ Auth::user()->name }}</a></li>
                 @endif
@@ -79,14 +79,14 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div class="row centered">
             <div class="col-lg-12">
                 <h1>Acacha <b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h1>
-                <h3>A <a href="https://laravel.com/">Laravel</a> 5 package that switchs default Laravel
-                    scaffolding/boilerplate to <a href="https://almsaeedstudio.com/preview">AdminLTE</a> template with
-                    <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 and <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
-                <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">Get Started!</a></h3>
+                <h3>A <a href="https://laravel.com/">Laravel</a> {{ trans('adminlte_lang::message.laravelpackage') }}
+                    scaffolding/boilerplate {{ trans('adminlte_lang::message.to') }} <a href="https://almsaeedstudio.com/preview">AdminLTE</a> {{ trans('adminlte_lang::message.templatewith') }}
+                    <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 {{ trans('adminlte_lang::message.and') }} <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
+                <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
             </div>
             <div class="col-lg-2">
-                <h5>Amazing admin template</h5>
-                <p>Based on adminlte bootstrap theme</p>
+                <h5>{{ trans('adminlte_lang::message.amazing') }}</h5>
+                <p>{{ trans('adminlte_lang::message.basedadminlte') }}</p>
                 <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow1.png') }}">
             </div>
             <div class="col-lg-8">
@@ -95,8 +95,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="col-lg-2">
                 <br>
                 <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow2.png') }}">
-                <h5>Awesome packaged...</h5>
-                <p>... by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a> at <a href="http://acacha.org">acacha.org</a> ready to use with Laravel!</p>
+                <h5>{{ trans('adminlte_lang::message.awesomepackaged') }}</h5>
+                <p>... {{ trans('adminlte_lang::message.by') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a> {{ trans('adminlte_lang::message.at') }} <a href="http://acacha.org">acacha.org</a> {{ trans('adminlte_lang::message.readytouse') }}</p>
             </div>
         </div>
     </div> <!--/ .container -->
@@ -108,22 +108,22 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="intro">
     <div class="container">
         <div class="row centered">
-            <h1>Designed To Excel</h1>
+            <h1>{{ trans('adminlte_lang::message.designed') }}</h1>
             <br>
             <br>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro01.png') }}" alt="">
-                <h3>Community</h3>
-                <p>See <a href="https://github.com/acacha/adminlte-laravel">Github project</a>, post <a href="https://github.com/acacha/adminlte-laravel/issues">issues</a> and <a href="https://github.com/acacha/adminlte-laravel/pulls">Pull requests</a></p>
+                <h3>{{ trans('adminlte_lang::message.community') }}</h3>
+                <p>{{ trans('adminlte_lang::message.see') }} <a href="https://github.com/acacha/adminlte-laravel">{{ trans('adminlte_lang::message.githubproject') }}</a>, {{ trans('adminlte_lang::message.post') }} <a href="https://github.com/acacha/adminlte-laravel/issues">{{ trans('adminlte_lang::message.issues') }}</a> {{ trans('adminlte_lang::message.and') }} <a href="https://github.com/acacha/adminlte-laravel/pulls">{{ trans('adminlte_lang::message.pullrequests') }}</a></p>
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro02.png') }}" alt="">
-                <h3>Schedule</h3>
+                <h3>{{ trans('adminlte_lang::message.schedule') }}</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>
             <div class="col-lg-4">
                 <img src="{{ asset('/img/intro03.png') }}" alt="">
-                <h3>Monitoring</h3>
+                <h3>{{ trans('adminlte_lang::message.monitoring') }}</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>
         </div>
@@ -136,7 +136,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="features">
     <div class="container">
         <div class="row">
-            <h1 class="centered">What's New?</h1>
+            <h1 class="centered">{{ trans('adminlte_lang::message.whatnew') }}</h1>
             <br>
             <br>
             <div class="col-lg-6 centered">
@@ -144,14 +144,14 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             </div>
 
             <div class="col-lg-6">
-                <h3>Some Features</h3>
+                <h3>{{ trans('adminlte_lang::message.features') }}</h3>
                 <br>
                 <!-- ACCORDION -->
                 <div class="accordion ac" id="accordion2">
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                First Class Design
+                                {{ trans('adminlte_lang::message.design') }}
                             </a>
                         </div><!-- /accordion-heading -->
                         <div id="collapseOne" class="accordion-body collapse in">
@@ -165,7 +165,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                Retina Ready Theme
+                                {{ trans('adminlte_lang::message.retina') }}
                             </a>
                         </div>
                         <div id="collapseTwo" class="accordion-body collapse">
@@ -179,7 +179,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                                Awesome Support
+                                {{ trans('adminlte_lang::message.support') }}
                             </a>
                         </div>
                         <div id="collapseThree" class="accordion-body collapse">
@@ -193,7 +193,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                                Responsive Design
+                                {{ trans('adminlte_lang::message.responsive') }}
                             </a>
                         </div>
                         <div id="collapseFour" class="accordion-body collapse">
@@ -214,7 +214,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="showcase">
     <div class="container">
         <div class="row">
-            <h1 class="centered">Some Screenshots</h1>
+            <h1 class="centered">{{ trans('adminlte_lang::message.screenshots') }}</h1>
             <br>
             <div class="col-lg-8 col-lg-offset-2">
                 <div id="carousel-example-generic" class="carousel slide">
@@ -247,7 +247,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="footerwrap">
     <div class="container">
         <div class="col-lg-5">
-            <h3>Address</h3>
+            <h3>{{ trans('adminlte_lang::message.address') }}</h3>
             <p>
                 Av. Greenville 987,<br/>
                 New York,<br/>
@@ -257,23 +257,23 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
 
         <div class="col-lg-7">
-            <h3>Drop Us A Line</h3>
+            <h3>{{ trans('adminlte_lang::message.dropus') }}</h3>
             <br>
             <form role="form" action="#" method="post" enctype="plain">
                 <div class="form-group">
-                    <label for="name1">Your Name</label>
-                    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+                    <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
+                    <input type="name" name="Name" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
                 </div>
                 <div class="form-group">
-                    <label for="email1">Email address</label>
-                    <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
+                    <label for="email1">{{ trans('adminlte_lang::message.emailaddress') }}</label>
+                    <input type="email" name="Mail" class="form-control" id="email1" placeholder="{{ trans('adminlte_lang::message.enteremail') }}">
                 </div>
                 <div class="form-group">
-                    <label>Your Text</label>
+                    <label>{{ trans('adminlte_lang::message.yourtext') }}</label>
                     <textarea class="form-control" name="Message" rows="3"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+                <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
             </form>
         </div>
     </div>
@@ -281,12 +281,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="c">
     <div class="container">
         <p>
-            <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template.<br/>
-            <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. See code at <a href="https://github.com/acacha/adminlte-laravel">Github</a>
+            <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. {{ trans('adminlte_lang::message.descriptionpackage') }}.<br/>
+            <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/acacha/adminlte-laravel">Github</a>
             <br/>
-            AdminLTE created by Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
+            AdminLTE {{ trans('adminlte_lang::message.createdby') }} Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
             <br/>
-             Pratt Landing Page Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a>
+             Pratt Landing Page {{ trans('adminlte_lang::message.createdby') }} <a href="http://www.blacktie.co">BLACKTIE.CO</a>
         </p>
 
     </div>
