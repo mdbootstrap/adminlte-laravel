@@ -106,7 +106,7 @@ return [
     'issues' => 'cuestiones',
     'pullrequests' => 'Tire de las solicitudes',
     'schedule' => 'Programación',
-    'monotoring' => 'Supervisión',
+    'monitoring' => 'Supervisión',
     'whatnew' => '¿Qué hay de nuevo?',
     'features' => 'Algunas caracteristicas',
     'retina' => 'Tema listo en Retina',

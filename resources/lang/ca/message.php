@@ -106,7 +106,7 @@ return [
     'issues' => 'qüestions',
     'pullrequests' => 'Tiri de les sol·licituds',
     'schedule' => 'Programació',
-    'monotoring' => 'Monitoratge',
+    'monitoring' => 'Monitoratge',
     'whatnew' => 'Que hi ha de nou?',
     'features' => 'Algunes Caracterísitques',
     'retina' => 'Tema llest en Redina',

@@ -107,7 +107,7 @@ return [
     'issues' => 'issues',
     'pullrequests' => 'Pull requests',
     'schedule' => 'Schedule',
-    'monotoring' => 'Monitoring',
+    'monitoring' => 'Monitoring',
     'whatnew' => 'What\'s New?',
     'features' => 'Some Features',
     'design' => 'First Class Design',
