@@ -111,11 +111,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     }
 
     /**
-     * Publish package language to Laravel project
+     * Publish package language to Laravel project.
      */
     private function publishLanguages()
     {
-
         $this->loadTranslationsFrom(ADMINLTETEMPLATE_PATH.'/resources/lang/', 'adminlte_lang');
 
         $this->publishes([
