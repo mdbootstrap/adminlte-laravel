@@ -18,7 +18,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (! defined('ADMINLTETEMPLATE_PATH')) {
+        if (!defined('ADMINLTETEMPLATE_PATH')) {
             define('ADMINLTETEMPLATE_PATH', realpath(__DIR__.'/../../'));
         }
 
@@ -51,7 +51,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     protected function defineRoutes()
     {
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             $router = app('router');
 
             $router->group(['namespace' => $this->getAppNamespace().'Http\Controllers'], function () {
