@@ -43,6 +43,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishViews();
         $this->publishResourceAssets();
         $this->publishTests();
+        $this->publishLanguages();
     }
 
     /**
@@ -107,5 +108,17 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishTests()
     {
         $this->publishes(AdminLTE::tests(), 'adminlte');
+    }
+
+    /**
+     * Publish package language to Laravel project.
+     */
+    private function publishLanguages()
+    {
+        $this->loadTranslationsFrom(ADMINLTETEMPLATE_PATH.'/resources/lang/', 'adminlte_lang');
+
+        $this->publishes([
+            ADMINLTETEMPLATE_PATH.'/resources/lang/' => resource_path('lang/vendor/adminlte_lang'),
+        ]);
     }
 }

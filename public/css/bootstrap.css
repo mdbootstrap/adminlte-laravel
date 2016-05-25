@@ -2399,6 +2399,12 @@ input[type="search"] {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.checkbox_register {
+  position: relative;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 .radio label,
 .checkbox label {
   min-height: 20px;
