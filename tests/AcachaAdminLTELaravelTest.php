@@ -166,7 +166,7 @@ class AcachaAdminLTELaravelTest extends TestCase
         $this->visit('/register')
             ->type('Sergi Tur Badenas', 'name')
             ->type('sergiturbadenas@gmail.com', 'email')
-//            ->check('terms') TODO
+            ->check('terms')
             ->type('passw0RD', 'password')
             ->type('passw0RD', 'password_confirmation')
             ->press('Register')
