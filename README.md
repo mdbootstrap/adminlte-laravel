@@ -279,6 +279,18 @@ Social login links in login/register pages returns 404 not found
 
 TODO: See package https://github.com/acacha/acacha-socialite
 
+## Localization
+
+All strings are localized using Laravel localization support: https://laravel.com/docs/master/localization
+
+In your config/app.php file you can change locale to change language. You can install only localized files using tag  adminlte_lang:
+
+```bash
+php artisan vendor:publish --tag=adminlte_lang --force
+```
+
+The following languages are supported by default on this package: English, Catalan and Spanish. Please feel free to submit a new pull request with another languages if you wish.
+
 ## Troubleshooting
 
 ### GNU sed on MAC OS
