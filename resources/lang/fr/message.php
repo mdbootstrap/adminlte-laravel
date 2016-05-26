@@ -20,7 +20,7 @@ return [
     'buttonsign'              => 'Se connecter',
     'forgotpassword'          => 'J\'ai oublié mon mot de passe',
     'registermember'          => 'Enregistrer un nouveau membre',
-    'terms'                   => 'J\'accepte les conditions d\'utilisation du service',
+    'terms'                   => 'J\'accepte les CGU',
     'conditions'              => 'Conditions d\'utilisation du service',
     'register'                => 'S\'inscrire',
     'login'                   => 'Se connecter',
