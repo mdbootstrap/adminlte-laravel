@@ -128,4 +128,3 @@ return [
     'retrypepassword'         => 'Resaisir le mot de passe',
     'fullname'                => 'Nom complet',
 ];
-?>
