@@ -290,7 +290,7 @@ In your config/app.php file you can change locale to change language. You can in
 php artisan vendor:publish --tag=adminlte_lang --force
 ```
 
-The following languages are supported by default on this package: English, Catalan and Spanish. Please feel free to submit a new pull request with another languages if you wish.
+The following languages are supported by default on this package: English, Catalan,Spanish and Brazilian Portuguese. Please feel free to submit a new pull request with another languages if you wish.
 
 ## Troubleshooting
 
