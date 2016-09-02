@@ -30,6 +30,15 @@ cd laravel-with-admin-lte
 adminlte-laravel install
 ```
 
+Or you can use:
+
+```
+laravel new --5.2 laravel-with-admin-lte
+```
+
+if you are using Laravel 5.3 installer and you want Laravel 5.2
+ 
+
 Enjoy! If you wish you can use llum:
 
 ```bash
