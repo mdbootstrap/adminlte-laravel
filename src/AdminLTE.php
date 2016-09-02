@@ -24,10 +24,10 @@ class AdminLTE
      *
      * @return array
      */
-    public function authController()
+    public function registerController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/AuthController.stub' => app_path('Http/Controllers/Auth/AuthController.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/RegisterController.stub' => app_path('Http/Controllers/Auth/RegisterController.php'),
         ];
     }
 

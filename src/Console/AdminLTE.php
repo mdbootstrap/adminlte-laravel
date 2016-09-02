@@ -29,7 +29,7 @@ class AdminLTE extends Command
     public function handle()
     {
         $this->installHomeController();
-        $this->installAuthController();
+        $this->installRegisterController();
         $this->installPublicAssets();
         $this->installViews();
         $this->installResourceAssets();
@@ -46,9 +46,9 @@ class AdminLTE extends Command
     /**
      * Install Auth controller.
      */
-    private function installAuthController()
+    private function installRegisterController()
     {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::authController());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::registerController());
     }
 
     /**

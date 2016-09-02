@@ -38,7 +38,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         $this->defineRoutes();
         $this->publishHomeController();
-        $this->changeAuthController();
+        $this->changeRegisterController();
         $this->publishPublicAssets();
         $this->publishViews();
         $this->publishResourceAssets();
@@ -69,11 +69,11 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     }
 
     /**
-     * Change default Laravel AuthController.
+     * Change default Laravel RegisterController.
      */
-    private function changeAuthController()
+    private function changeRegisterController()
     {
-        $this->publishes(AdminLTE::authController(), 'adminlte');
+        $this->publishes(AdminLTE::registerController(), 'adminlte');
     }
 
     /**
