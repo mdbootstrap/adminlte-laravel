@@ -19,7 +19,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 **So easy to install!** Install globally with composer:
 
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~2.0"
+composer global require "acacha/adminlte-laravel-installer=~3.0"
 ```
 
 And convert any Laravel ~~fresh~~ (no need of fresh installation now thanks to [Acacha/llum](https://github.com/acacha/llum)) installation to AdminLTE/Pratt with:
