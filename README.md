@@ -41,13 +41,6 @@ More info about llum commands in Github [Acacha/llum](https://github.com/acacha/
 
 IMPORTANT NOTE: on MAC OS you will have to replace BSD sed with GNU sed for example using brew:
 
-Also you can use for previous version of Laravel (5.2) :
-
-```
-composer global require "acacha/adminlte-laravel-installer=~2.0"
-laravel new --5.2 laravel-with-admin-lte
-```
-
 ```bash
 brew install gnu-sed --with-default-names
 ```
@@ -98,14 +91,14 @@ However acacha/llum use bash scripts and commands like sed thta maybe are no com
 Or you can use version 1.0 of installer with:
  
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~1.0"
+composer global require "acacha/adminlte-laravel-installer=~3.0"
 ```
 
-## Laravel 5.2
+## Laravel 5.3
 
-Laravel 5.2 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
+Laravel 5.3 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
 
-### Laravel 5.2 manual installation
+### Laravel 5.3 manual installation
 
 Follow the typical Laravel package installation steps:
 
@@ -145,6 +138,15 @@ php artisan vendor:publish --tag=adminlte --force
 ``` 
  
 Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+
+## Laravel 5.2
+
+Also you can use for previous version of Laravel (5.2) :
+
+```
+composer global require "acacha/adminlte-laravel-installer=~2.0"
+laravel new --5.2 laravel-with-admin-lte
+```
 
 ## Laravel 5.1 notes
 
