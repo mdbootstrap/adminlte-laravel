@@ -19,7 +19,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 **So easy to install!** Install globally with composer:
 
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~2.0"
+composer global require "acacha/adminlte-laravel-installer=~3.0"
 ```
 
 And convert any Laravel ~~fresh~~ (no need of fresh installation now thanks to [Acacha/llum](https://github.com/acacha/llum)) installation to AdminLTE/Pratt with:
@@ -29,16 +29,6 @@ laravel new laravel-with-admin-lte
 cd laravel-with-admin-lte
 adminlte-laravel install
 ```
-
-Or you can use:
-
-```
-laravel new --5.2 laravel-with-admin-lte
-```
-
-if you are using Laravel 5.3 installer and you want Laravel 5.2
- 
-
 Enjoy! If you wish you can use llum:
 
 ```bash
@@ -50,6 +40,13 @@ To start using you Laravel with AdminLTE project. Llum will configure database (
 More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
 
 IMPORTANT NOTE: on MAC OS you will have to replace BSD sed with GNU sed for example using brew:
+
+Also you can use for previous version of Laravel (5.2) :
+
+```
+composer global require "acacha/adminlte-laravel-installer=~2.0"
+laravel new --5.2 laravel-with-admin-lte
+```
 
 ```bash
 brew install gnu-sed --with-default-names
