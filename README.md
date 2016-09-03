@@ -30,9 +30,10 @@ cd laravel-with-admin-lte
 adminlte-laravel install
 ```
 
-Or you can use:
+Or you can use for previous version of Laravel (5.2) :
 
 ```
+composer global require "acacha/adminlte-laravel-installer=~2.0"
 laravel new --5.2 laravel-with-admin-lte
 ```
 
