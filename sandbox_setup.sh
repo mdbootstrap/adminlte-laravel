@@ -3,7 +3,7 @@ if ! type "laravel" > /dev/null; then
     composer global require "laravel/installer"
 fi
 if ! type "adminlte-laravel" > /dev/null; then
-    composer global require "acacha/adminlte-laravel-installer=~1.0"
+    composer global require "acacha/adminlte-laravel-installer=~2.0"
 fi
 rm -rf sandbox
 ~/.composer/vendor/bin/laravel new sandbox

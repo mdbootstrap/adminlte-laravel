@@ -139,8 +139,11 @@ class AcachaAdminLTELaravelTest extends TestCase
     {
         $user = factory(App\User::class)->create();
 
+        $form = $this->actingAs($user)->visit('/home')->getForm('logout');
+
         $this->actingAs($user)
-            ->visit('/logout')
+            ->visit('/home')
+            ->makeRequestUsingForm($form)
             ->seePageIs('/');
     }
 
