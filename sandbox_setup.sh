@@ -6,9 +6,23 @@ if ! type "adminlte-laravel" > /dev/null; then
     composer global require "acacha/adminlte-laravel-installer=~2.0"
 fi
 rm -rf sandbox
-~/.composer/vendor/bin/laravel new sandbox
+if [ -e ~/.composer/vendor/bin/laravel ]
+then
+    ~/.composer/vendor/bin/laravel new sandbox
+fi
+if [ -e ~/.config/composer/vendor/bin/laravel ]
+then
+  ~/.config/composer/vendor/bin/laravel new sandbox
+fi
 cd sandbox
-~/.composer/vendor/bin/adminlte-laravel install
+if [ -e ~/.composer/vendor/bin/adminlte-laravel ]
+then
+  ~/.composer/vendor/bin/adminlte-laravel install
+fi
+if [ -e ~/.config/composer/vendor/bin/adminlte-laravel ]
+then
+  ~/.config/composer/vendor/bin/adminlte-laravel install
+fi
 touch database/database.sqlite
 
 
