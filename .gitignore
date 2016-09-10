@@ -2,3 +2,4 @@
 /.idea
 composer.lock
 .php_cs.cache
+/sandbox/
