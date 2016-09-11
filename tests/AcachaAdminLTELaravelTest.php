@@ -11,6 +11,15 @@ class AcachaAdminLTELaravelTest extends TestCase
     use DatabaseMigrations;
 
     /**
+     * Set up tests
+     */
+    public function setUp()
+    {
+        parent::setUp();
+        App::setLocale('en');
+    }
+    
+    /**
      * Test Landing Page.
      *
      * @return void
