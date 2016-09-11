@@ -18,7 +18,7 @@ class AcachaAdminLTELaravelTest extends TestCase
         parent::setUp();
         App::setLocale('en');
     }
-    
+
     /**
      * Test Landing Page.
      *
