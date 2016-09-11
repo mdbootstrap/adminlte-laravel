@@ -5,6 +5,8 @@ namespace Acacha\AdminLTETemplateLaravel\Providers;
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
+use Creativeorange\Gravatar\GravatarServiceProvider;
+use Creativeorange\Gravatar\Facades\Gravatar;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -29,6 +31,9 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->app->bind('AdminLTE', function () {
             return new \Acacha\AdminLTETemplateLaravel\AdminLTE();
         });
+
+        $this->app->register(GravatarServiceProvider::class);
+        class_alias(Gravatar::class, 'Gravatar');
     }
 
     /**
@@ -44,6 +49,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishResourceAssets();
         $this->publishTests();
         $this->publishLanguages();
+        $this->publishGravatar();
     }
 
     /**
@@ -120,5 +126,13 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishes([
             ADMINLTETEMPLATE_PATH.'/resources/lang/' => resource_path('lang/vendor/adminlte_lang'),
         ]);
+    }
+
+    /**
+     * Publish config Gravatar file using group.
+     */
+    private function publishGravatar()
+    {
+        $this->publishes([ realpath(__DIR__.'/../config/gravatar.php') => config_path('gravatar.php') ], 'adminlte');
     }
 }
