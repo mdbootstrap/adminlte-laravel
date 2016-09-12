@@ -16,7 +16,7 @@
     "illuminate/support": "~5.0",
     "illuminate/console": "~5.0",
     "creativeorange/gravatar": "~1.0",
-    "acacha/user": "dev-master"
+    "acacha/user": "~0.1"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
