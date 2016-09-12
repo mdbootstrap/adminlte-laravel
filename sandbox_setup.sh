@@ -17,11 +17,11 @@ fi
 cd sandbox
 if [ -e ~/.composer/vendor/bin/adminlte-laravel ]
 then
-  ~/.composer/vendor/bin/adminlte-laravel install
+  ~/.composer/vendor/bin/adminlte-laravel --dev install
 fi
 if [ -e ~/.config/composer/vendor/bin/adminlte-laravel ]
 then
-  ~/.config/composer/vendor/bin/adminlte-laravel install
+  ~/.config/composer/vendor/bin/adminlte-laravel --dev install
 fi
 touch database/database.sqlite
 
