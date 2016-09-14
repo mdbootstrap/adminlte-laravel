@@ -1,14 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.errors')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.serviceunavailable') }}
-@endsection
-
-@section('contentheader_title')
-    {{ trans('adminlte_lang::message.503error') }}
-@endsection
-
-@section('$contentheader_description')
 @endsection
 
 @section('main-content')
