@@ -20,4 +20,6 @@ elixir(function(mix) {
     mix.less('adminlte-app.less');
     mix.less('admin-lte/AdminLTE.less');
     mix.less('bootstrap/bootstrap.less');
+    //App
+    mix.less('adminlte-app.less');
 });
