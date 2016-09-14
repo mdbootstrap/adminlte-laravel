@@ -4,10 +4,10 @@ namespace Acacha\AdminLTETemplateLaravel\Providers;
 
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Acacha\User\Providers\GuestUserProvider;
+use Creativeorange\Gravatar\Facades\Gravatar;
+use Creativeorange\Gravatar\GravatarServiceProvider;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
-use Creativeorange\Gravatar\GravatarServiceProvider;
-use Creativeorange\Gravatar\Facades\Gravatar;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -136,6 +136,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishGravatar()
     {
-        $this->publishes([ realpath(__DIR__.'/../config/gravatar.php') => config_path('gravatar.php') ], 'adminlte');
+        $this->publishes([realpath(__DIR__.'/../config/gravatar.php') => config_path('gravatar.php')], 'adminlte');
     }
 }
