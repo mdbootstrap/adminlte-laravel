@@ -34,7 +34,9 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         });
 
         $this->app->register(GravatarServiceProvider::class);
-        class_alias(Gravatar::class, 'Gravatar');
+        if (!class_exists('Gravatar')) {
+            class_alias(Gravatar::class, 'Gravatar');
+        }
 
         $this->app->register(GuestUserProvider::class);
     }
