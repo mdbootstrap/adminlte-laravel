@@ -142,8 +142,6 @@ class PublishAdminLTE extends Command
             } else {
                 $this->error("Can't locate path: <{$fileSrc}>");
             }
-            copy($fileSrc, $fileDst);
-            $this->info('Copied file ' . $fileSrc . ' to ' . $fileDst );
         }
     }
 
