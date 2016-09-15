@@ -5,6 +5,9 @@ fi
 if ! type "adminlte-laravel" > /dev/null; then
     composer global require "acacha/adminlte-laravel-installer=dev-master"
 fi
+if ! type "llum" > /dev/null; then
+    composer global require "acacha/llum=dev-master"
+fi
 rm -rf sandbox
 if [ -e ~/.composer/vendor/bin/laravel ]
 then

@@ -10,10 +10,7 @@ before_script:
   - composer install --prefer-source --no-interaction --dev
   - ./sandbox_setup.sh
   
-script:
-  - cd sandbox
-  - phpunit
+script: cd sandbox;phpunit
 
 after_script:
-  - cd ..
   - ./sandbox_destroy.sh
