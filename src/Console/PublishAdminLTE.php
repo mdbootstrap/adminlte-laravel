@@ -183,9 +183,6 @@ class PublishAdminLTE extends Command
      */
     protected function publishFile($from, $to)
     {
-        if ($this->files->exists($to) && ! $this->option('force')) {
-            return;
-        }
         $this->createParentDirectory(dirname($to));
         $this->files->copy($from, $to);
         $this->status($from, $to, 'File');
@@ -205,7 +202,7 @@ class PublishAdminLTE extends Command
             'to' => new Flysystem(new LocalAdapter($to)),
         ]);
         foreach ($manager->listContents('from://', true) as $file) {
-            if ($file['type'] === 'file' && (! $manager->has('to://'.$file['path']) || $this->option('force'))) {
+            if ($file['type'] === 'file' && (! $manager->has('to://'.$file['path']) )) {
                 $manager->put('to://'.$file['path'], $manager->read('from://'.$file['path']));
             }
         }
