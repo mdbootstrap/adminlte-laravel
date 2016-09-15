@@ -26,7 +26,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         }
 
         if ($this->app->runningInConsole()) {
-            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTE::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\PublishAdminLTE::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
