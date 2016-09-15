@@ -128,9 +128,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(ADMINLTETEMPLATE_PATH.'/resources/lang/', 'adminlte_lang');
 
-        $this->publishes([
-            ADMINLTETEMPLATE_PATH.'/resources/lang/' => resource_path('lang/vendor/adminlte_lang'),
-        ]);
+        $this->publishes(AdminLTE::languages(), 'adminlte');
     }
 
     /**
@@ -138,6 +136,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishGravatar()
     {
-        $this->publishes([realpath(__DIR__.'/../config/gravatar.php') => config_path('gravatar.php')], 'adminlte');
+        $this->publishes(AdminLTE::gravatar(), 'adminlte');
     }
 }

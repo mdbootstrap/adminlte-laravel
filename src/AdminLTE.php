@@ -55,12 +55,12 @@ class AdminLTE
     public function views()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth'              => base_path('resources/views/auth'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth/emails'       => base_path('resources/views/auth/emails'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => base_path('resources/views/errors'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           => base_path('resources/views/layouts'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php'    => base_path('resources/views/home.blade.php'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => base_path('resources/views/welcome.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/auth'              => resource_path('views/auth'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/auth/emails'       => resource_path('views/auth/emails'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/errors'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           => resource_path('views/layouts'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php'    => resource_path('views/home.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
         ];
     }
 
@@ -85,8 +85,32 @@ class AdminLTE
     public function resourceAssets()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/resources/assets/less' => base_path('resources/assets/less'),
+            ADMINLTETEMPLATE_PATH.'/resources/assets/less' => resource_path('assets/less'),
             ADMINLTETEMPLATE_PATH.'/gulpfile.js'           => base_path('gulpfile.js'),
+        ];
+    }
+
+    /**
+     * Languages assets copy path.
+     *
+     * @return array
+     */
+    public function languages()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/resources/lang' => resource_path('lang/vendor/adminlte_lang'),
+        ];
+    }
+
+    /**
+     * Gravatar path.
+     *
+     * @return array
+     */
+    public function gravatar()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/vendor/creativeorange/gravatar/config/gravatar.php' => config_path('gravatar.php')
         ];
     }
 }
