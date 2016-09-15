@@ -7,12 +7,12 @@ use Illuminate\Console\Command;
 /**
  * Class AdminLTE.
  */
-class AdminLTE extends Command
+class PublishAdminLTE extends Command
 {
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:install';
+    protected $signature = 'adminlte-laravel:publish';
 
     /**
      * The console command description.

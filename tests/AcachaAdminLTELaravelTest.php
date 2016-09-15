@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -9,6 +10,23 @@ use Illuminate\Support\Facades\Hash;
 class AcachaAdminLTELaravelTest extends TestCase
 {
     use DatabaseMigrations;
+    use WithoutMiddleware;
+
+    /*
+     * Overwrite createApplication to add Http Kernel
+     * see: https://github.com/laravel/laravel/pull/3943
+     *      https://github.com/laravel/framework/issues/15426
+     */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        return $app;
+    }
 
     /**
      * Set up tests.
