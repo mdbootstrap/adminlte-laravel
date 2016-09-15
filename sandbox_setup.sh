@@ -10,23 +10,15 @@ if ! type "llum" > /dev/null; then
 fi
 export PATH="~/.composer/vendor/bin:~/.config/composer/vendor:$PATH"
 rm -rf sandbox
-if [ -e ~/.composer/vendor/bin/laravel ]
-then
+if [ -e ~/.composer/vendor/bin/laravel ];then
     ~/.composer/vendor/bin/laravel new sandbox
-fi
-if [ -e ~/.config/composer/vendor/bin/laravel ]
-then
+elif [ -e ~/.config/composer/vendor/bin/laravel ];then
   ~/.config/composer/vendor/bin/laravel new sandbox
 fi
 cd sandbox
-if [ -e ~/.composer/vendor/bin/adminlte-laravel ]
-then
+if [ -e ~/.composer/vendor/bin/adminlte-laravel ];then
   ~/.composer/vendor/bin/adminlte-laravel --dev install
-fi
-if [ -e ~/.config/composer/vendor/bin/adminlte-laravel ]
-then
+elif [ -e ~/.config/composer/vendor/bin/adminlte-laravel ];then
   ~/.config/composer/vendor/bin/adminlte-laravel --dev install
 fi
 touch database/database.sqlite
-
-
