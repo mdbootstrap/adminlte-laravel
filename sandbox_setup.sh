@@ -8,6 +8,7 @@ fi
 if ! type "llum" > /dev/null; then
     composer global require "acacha/llum=~1.0"
 fi
+export PATH="~/.composer/vendor/bin:~/.config/composer/vendor:$PATH"
 rm -rf sandbox
 if [ -e ~/.composer/vendor/bin/laravel ]
 then
