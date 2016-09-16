@@ -110,7 +110,7 @@ class AdminLTE
     public function gravatar()
     {
         return [
-            base_path() .'/vendor/creativeorange/gravatar/config/gravatar.php' => config_path('gravatar.php')
+            base_path().'/vendor/creativeorange/gravatar/config/gravatar.php' => config_path('gravatar.php'),
         ];
     }
 }
