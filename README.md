@@ -53,6 +53,7 @@ This packages use (no need to install):
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
+* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users.
 * [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
@@ -247,16 +248,20 @@ AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 
 
 https://github.com/almasaeed2010/AdminLTE
 
+## Avatar/Gravatar
+
+Adminlte-laravel supports global recognized avatar (http://gravatar.com) using package creativeorange/gravatar (https://github.com/creativeorange/gravatar).
+
 # Roadmap
 
 - Implement Facebook, Google and maybe twitter and github Login with Socialite
 - Add email html templates
+- Add breadcrumps with: https://github.com/davejamesmiller/laravel-breadcrumbs
 
 ## Documentation TODO
 
 - Gulp file provided to compile Boostrap and AdminLTE less files
 - Partial views (html header, content header, footer, etc.) to easily reuse code
-- Add breadcrumps with: https://github.com/davejamesmiller/laravel-breadcrumbs
 
 ## Packagist
 
