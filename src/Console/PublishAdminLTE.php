@@ -23,7 +23,7 @@ class PublishAdminLTE extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:publish';
+    protected $signature = 'adminlte-laravel:publish {--f|force}';
 
     /**
      * The console command description.
@@ -31,6 +31,13 @@ class PublishAdminLTE extends Command
      * @var string
      */
     protected $description = 'Publish Acacha AdminLTE Template files into laravel project';
+
+    /**
+     * Force overwrite of files.
+     *
+     * @var boolean
+     */
+    protected $force = false;
 
     /**
      * Create a new command instance.
@@ -42,6 +49,7 @@ class PublishAdminLTE extends Command
     {
         parent::__construct();
         $this->files = $files;
+        $this->force = $this->option('force');
     }
 
     /**
@@ -132,7 +140,7 @@ class PublishAdminLTE extends Command
     private function install($files)
     {
         foreach ($files as $fileSrc => $fileDst) {
-            if (file_exists($fileDst) && !$this->confirmOverwrite(basename($fileDst))) {
+            if (file_exists($fileDst) && !$this->force && !$this->confirmOverwrite(basename($fileDst))) {
                 return;
             }
             if ($this->files->isFile($fileSrc)) {
