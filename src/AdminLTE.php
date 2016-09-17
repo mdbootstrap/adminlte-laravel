@@ -20,7 +20,7 @@ class AdminLTE
     }
 
     /**
-     * Auth controller copy path.
+     * Auth register controller copy path.
      *
      * @return array
      */
@@ -28,6 +28,42 @@ class AdminLTE
     {
         return [
             ADMINLTETEMPLATE_PATH.'/src/stubs/RegisterController.stub' => app_path('Http/Controllers/Auth/RegisterController.php'),
+        ];
+    }
+
+    /**
+     * Auth login controller copy path.
+     *
+     * @return array
+     */
+    public function loginController()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/LoginController.stub' => app_path('Http/Controllers/Auth/LoginController.php'),
+        ];
+    }
+
+    /**
+     * Auth forgot password controller copy path.
+     *
+     * @return array
+     */
+    public function forgotPasswordController()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/ForgotPasswordController.stub' => app_path('Http/Controllers/Auth/ForgotPasswordController.php'),
+        ];
+    }
+
+    /**
+     * Auth reset password controller copy path.
+     *
+     * @return array
+     */
+    public function resetPasswordController()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/ResetPasswordController.stub' => app_path('Http/Controllers/Auth/ResetPasswordController.php'),
         ];
     }
 
@@ -55,12 +91,12 @@ class AdminLTE
     public function views()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth'              => resource_path('views/auth'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth/emails'       => resource_path('views/auth/emails'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/errors'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           => resource_path('views/layouts'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php'    => resource_path('views/home.blade.php'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/auth'              => resource_path('views/vendor/adminlte/auth'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/auth/emails'       => resource_path('views/vendor/adminlte/auth/emails'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/vendor/adminlte/errors'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           => resource_path('views/vendor/adminlte/layouts'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php'    => resource_path('views/vendor/adminlte/home.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/vendor/adminlte/welcome.blade.php'),
         ];
     }
 

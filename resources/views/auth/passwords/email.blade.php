@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('adminlte::layouts.auth')
 
 @section('htmlheader_title')
     Password recovery
@@ -56,7 +56,7 @@
 
     </div><!-- /.login-box -->
 
-    @include('layouts.partials.scripts_auth')
+    @include('adminlte::layouts.partials.scripts_auth')
 
     <script>
         $(function () {

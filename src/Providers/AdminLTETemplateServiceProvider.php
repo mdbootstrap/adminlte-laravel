@@ -49,6 +49,9 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->defineRoutes();
         $this->publishHomeController();
         $this->changeRegisterController();
+        $this->changeLoginController();
+        $this->changeForgotPasswordController();
+        $this->changeResetPasswordController();
         $this->publishPublicAssets();
         $this->publishViews();
         $this->publishResourceAssets();
@@ -85,6 +88,30 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function changeRegisterController()
     {
         $this->publishes(AdminLTE::registerController(), 'adminlte');
+    }
+
+    /**
+     * Change default Laravel LoginController.
+     */
+    private function changeLoginController()
+    {
+        $this->publishes(AdminLTE::loginController(), 'adminlte');
+    }
+
+    /**
+     * Change default Laravel forgot password Controller.
+     */
+    private function changeForgotPasswordController()
+    {
+        $this->publishes(AdminLTE::forgotPasswordController(), 'adminlte');
+    }
+
+    /**
+     * Change default Laravel reset password Controller.
+     */
+    private function changeResetPasswordController()
+    {
+        $this->publishes(AdminLTE::resetPasswordController(), 'adminlte');
     }
 
     /**

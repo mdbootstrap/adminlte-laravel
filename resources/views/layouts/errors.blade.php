@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-@include('layouts.partials.htmlheader')
+@include('adminlte::layouts.partials.htmlheader')
 <!-- Main content -->
 <section class="content">
     <!-- Your Page Content Here -->

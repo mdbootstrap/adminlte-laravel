@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
 	Home
