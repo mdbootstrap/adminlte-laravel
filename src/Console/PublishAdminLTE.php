@@ -23,7 +23,7 @@ class PublishAdminLTE extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:publish {--f|force}';
+    protected $signature = 'adminlte-laravel:publish {--f|force : Force overwrite of files}';
 
     /**
      * The console command description.
@@ -48,9 +48,9 @@ class PublishAdminLTE extends Command
      */
     public function __construct(Filesystem $files)
     {
+
         parent::__construct();
         $this->files = $files;
-        $this->force = $this->option('force');
     }
 
     /**
@@ -58,6 +58,7 @@ class PublishAdminLTE extends Command
      */
     public function handle()
     {
+        $this->processOptions();
         $this->publishHomeController();
         $this->changeRegisterController();
         $this->publishPublicAssets();
@@ -233,5 +234,13 @@ class PublishAdminLTE extends Command
         $from = str_replace(base_path(), '', realpath($from));
         $to = str_replace(base_path(), '', realpath($to));
         $this->line('<info>Copied '.$type.'</info> <comment>['.$from.']</comment> <info>To</info> <comment>['.$to.']</comment>');
+    }
+
+    /**
+     * Process options before running command
+     */
+    private function processOptions()
+    {
+        $this->force = $this->option('force');
     }
 }
