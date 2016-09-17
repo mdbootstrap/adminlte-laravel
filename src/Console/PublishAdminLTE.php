@@ -35,7 +35,7 @@ class PublishAdminLTE extends Command
     /**
      * Force overwrite of files.
      *
-     * @var boolean
+     * @var bool
      */
     protected $force = false;
 
@@ -48,7 +48,6 @@ class PublishAdminLTE extends Command
      */
     public function __construct(Filesystem $files)
     {
-
         parent::__construct();
         $this->files = $files;
     }
@@ -237,7 +236,7 @@ class PublishAdminLTE extends Command
     }
 
     /**
-     * Process options before running command
+     * Process options before running command.
      */
     private function processOptions()
     {
