@@ -84,6 +84,19 @@ class AdminLTE
     }
 
     /**
+     * Only views to overwrite.
+     *
+     * @return array
+     */
+    public function viewsToOverwrite()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/resources/views/errors/503.blade.php' => resource_path('views/vendor/adminlte/errors/503.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/vendor/adminlte/welcome.blade.php'),
+        ];
+    }
+
+    /**
      * Views copy path.
      *
      * @return array

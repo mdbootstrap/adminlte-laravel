@@ -60,6 +60,9 @@ class PublishAdminLTE extends Command
         $this->processOptions();
         $this->publishHomeController();
         $this->changeRegisterController();
+        $this->changeLoginController();
+        $this->changeForgotPasswordController();
+        $this->changeResetPasswordController();
         $this->publishPublicAssets();
         $this->publishViews();
         $this->publishResourceAssets();
@@ -77,11 +80,35 @@ class PublishAdminLTE extends Command
     }
 
     /**
-     * Install Auth controller.
+     * Change Auth Register controller.
      */
     private function changeRegisterController()
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::registerController());
+    }
+
+    /**
+     * Change Auth Login controller.
+     */
+    private function changeLoginController()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::loginController());
+    }
+
+    /**
+     * Change Auth Forgot Password controller.
+     */
+    private function changeForgotPasswordController()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::forgotPasswordController());
+    }
+
+    /**
+     * Change Auth Reset Password controller.
+     */
+    private function changeResetPasswordController()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::resetPasswordController());
     }
 
     /**
@@ -97,7 +124,7 @@ class PublishAdminLTE extends Command
      */
     private function publishViews()
     {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::views());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::viewsToOverwrite());
     }
 
     /**
