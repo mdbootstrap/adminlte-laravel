@@ -147,7 +147,7 @@ class PublishAdminLTE extends Command
             if ($this->files->isFile($fileSrc)) {
                 $this->publishFile($fileSrc, $fileDst);
             } elseif ($this->files->isDirectory($fileSrc)) {
-                $this->publishDirectory($fileSrc, $fileSrc);
+                $this->publishDirectory($fileSrc, $fileDst);
             } else {
                 $this->error("Can't locate path: <{$fileSrc}>");
             }
