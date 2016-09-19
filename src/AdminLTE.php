@@ -92,6 +92,7 @@ class AdminLTE
     {
         return [
             ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/errors'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
         ];
     }
 
@@ -108,7 +109,7 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/vendor/adminlte/errors'),
             ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           => resource_path('views/vendor/adminlte/layouts'),
             ADMINLTETEMPLATE_PATH.'/resources/views/home.blade.php'    => resource_path('views/vendor/adminlte/home.blade.php'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/vendor/adminlte/welcome.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
         ];
     }
 
