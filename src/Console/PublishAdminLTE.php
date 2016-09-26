@@ -239,7 +239,7 @@ class PublishAdminLTE extends Command
             'to'   => new Flysystem(new LocalAdapter($to)),
         ]);
         foreach ($manager->listContents('from://', true) as $file) {
-            if ($file['type'] === 'file' && (!$manager->has('to://'.$file['path']))) {
+            if ($file['type'] === 'file' && (!$manager->has('to://'.$file['path']) || $this->force )) {
                 $manager->put('to://'.$file['path'], $manager->read('from://'.$file['path']));
             }
         }
