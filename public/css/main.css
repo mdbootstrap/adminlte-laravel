@@ -1,6 +1,6 @@
 
 body {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
     font-family: "Lato";
     font-weight: 300;
     font-size: 16px;
@@ -57,7 +57,7 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
- hr {
+hr {
     display: block;
     height: 1px;
     border: 0;
@@ -72,89 +72,89 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background-color: #34495e;
-	padding-top: 60px;
+    background-color: #34495e;
+    padding-top: 60px;
 }
 
 #headerwrap h1 {
-	margin-top: 30px;
-	color: white;
-	font-size: 70px;
-	
+    margin-top: 30px;
+    color: white;
+    font-size: 70px;
+
 }
 
 #headerwrap h3 {
-	color: white;
-	font-size: 30px;
+    color: white;
+    font-size: 30px;
 }
 
 #headerwrap h5 {
-	color: white;
-	font-weight: 700;
-	text-align: left;
+    color: white;
+    font-weight: 700;
+    text-align: left;
 }
 
 #headerwrap p {
-	text-align: left;
-	color: white
+    text-align: left;
+    color: white
 }
 
 /* intro Wrap */
 
 #intro {
-	padding-top: 50px;
-	border-top: #bdc3c7 solid 5px;
+    padding-top: 50px;
+    border-top: #bdc3c7 solid 5px;
 }
 
 #features {
-	padding-top: 50px;
-	padding-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #features .ac a{
-	font-size: 20px;
+    font-size: 20px;
 }
 
 /* Showcase Wrap */
 
 #showcase {
-	display: block;
-	background-color: #34495e;
-	padding-top: 50px;
-	padding-bottom: 50px;
+    display: block;
+    background-color: #34495e;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #showcase h1 {
-	color: white;
+    color: white;
 }
 
 #footerwrap {
-	background-color: #2f2f2f;
-	color: white;
-	padding-top: 40px;
-	padding-bottom: 60px;
-	text-align: left;
+    background-color: #2f2f2f;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: left;
 }
 
 #footerwrap h3 {
-	font-size: 28px;
-	color: white;
+    font-size: 28px;
+    color: white;
 }
 
 #footerwrap p {
-	color: white;
-	font-size: 18px;
+    color: white;
+    font-size: 18px;
 }
 
 /* Copyright Wrap */
 
 #c {
-	background: #222222;
-	padding-top: 15px;
-	text-align: center;
+    background: #222222;
+    padding-top: 15px;
+    text-align: center;
 }
 
 #c p {
-	color: white
+    color: white
 }
 

@@ -14,12 +14,26 @@ require('laravel-elixir-vue');
  */
 
 elixir(function(mix) {
+    //app.scss includes app css, Boostrap and Ionicons
     mix.sass('app.scss')
+    //app.less includes adminlte
+        .less('app.less', './public/css/app_less.css')
+        .less('adminlte-app.less')
+        .less('./node_modules/toastr/toastr.less')
+        .styles([
+            './public/css/app.css',
+            './node_modules/admin-lte/dist/css/skins/_all-skins.css',
+            './public/css/app_less.css',
+            './public/css/adminlte-app.css',
+            './node_modules/icheck/skins/square/blue.css',
+            './public/css/toastr.css',
+        ])
+        .copy('node_modules/font-awesome/fonts/*.*','public/fonts/')
+        .copy('node_modules/ionicons/dist/fonts/*.*','public/fonts/')
+        .copy('node_modules/admin-lte/bootstrap/fonts/*.*','public/fonts/bootstrap')
+        .copy('node_modules/admin-lte/dist/css/skins/*.*','public/css/skins')
+        .copy('node_modules/admin-lte/dist/img','public/img')
+        .copy('node_modules/admin-lte/plugins','public/plugins')
+        .copy('node_modules/icheck/skins/square/blue.png','public/css')
         .webpack('app.js');
-    //Adminlte
-    mix.less('adminlte-app.less');
-    mix.less('admin-lte/AdminLTE.less');
-    mix.less('bootstrap/bootstrap.less');
-    //App
-    mix.less('adminlte-app.less');
 });
