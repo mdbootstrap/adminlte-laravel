@@ -17,13 +17,13 @@ elixir(function(mix) {
     //app.scss includes app css, Boostrap and Ionicons
     mix.sass('app.scss')
     //app.less includes adminlte
-        .less('app.less', './public/css/app_less.css')
+        .less('./node_modules/admin-lte/build/less/AdminLTE.less', './public/css/adminlte_less.css')
         .less('adminlte-app.less')
         .less('./node_modules/toastr/toastr.less')
         .styles([
             './public/css/app.css',
             './node_modules/admin-lte/dist/css/skins/_all-skins.css',
-            './public/css/app_less.css',
+            './public/css/adminlte_less.css',
             './public/css/adminlte-app.css',
             './node_modules/icheck/skins/square/blue.css',
             './public/css/toastr.css',
