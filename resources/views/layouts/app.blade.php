@@ -30,7 +30,8 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="skin-blue sidebar-mini">
-<div class="wrapper">
+<div id="app">
+    <div class="wrapper">
 
     @include('adminlte::layouts.partials.mainheader')
 
@@ -53,7 +54,7 @@ desired effect
     @include('adminlte::layouts.partials.footer')
 
 </div><!-- ./wrapper -->
-
+</div>
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
