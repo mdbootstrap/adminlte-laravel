@@ -70,6 +70,7 @@
                 <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
             </div><!-- /.form-box -->
         </div><!-- /.register-box -->
+    </div>
 
     @include('adminlte::layouts.partials.scripts_auth')
 
@@ -84,7 +85,7 @@
             });
         });
     </script>
-    </div>
+
 </body>
 
 @endsection

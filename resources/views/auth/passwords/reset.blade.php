@@ -7,7 +7,9 @@
 @section('content')
 
     <body class="login-page">
-    <div class="login-box">
+
+    <div id="app">
+        <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
         </div><!-- /.login-logo -->
@@ -66,6 +68,7 @@
         </div><!-- /.login-box-body -->
 
     </div><!-- /.login-box -->
+    </div>
 
     @include('adminlte::layouts.partials.scripts_auth')
 
