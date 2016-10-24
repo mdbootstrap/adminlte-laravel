@@ -34,5 +34,6 @@ elixir(function(mix) {
         .copy('node_modules/admin-lte/dist/img','public/img')
         .copy('node_modules/admin-lte/plugins','public/plugins')
         .copy('node_modules/icheck/skins/square/blue.png','public/css')
+        .copy('node_modules/icheck/skins/square/bluex2.png','public/css')
         .webpack('app.js');
 });
