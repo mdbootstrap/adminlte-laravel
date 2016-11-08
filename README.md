@@ -111,7 +111,7 @@ Follow the typical Laravel package installation steps:
 Add admin-lte Laravel package with:
 
 <pre>
- composer require "acacha/admin-lte-template-laravel:2.*"
+ composer require "acacha/admin-lte-template-laravel:3.*"
 </pre> 
  
 To register the Service Provider edit **config/app.php** file and add to providers array:
