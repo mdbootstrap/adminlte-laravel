@@ -155,7 +155,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(ADMINLTETEMPLATE_PATH.'/resources/lang/', 'adminlte_lang');
 
-        $this->publishes(AdminLTE::languages(), 'adminlte');
+        $this->publishes(AdminLTE::languages(), 'adminlte_lang');
     }
 
     /**
