@@ -305,6 +305,20 @@ php artisan vendor:publish --tag=adminlte_lang --force
 
 The following languages are supported by default on this package: English, Catalan,Spanish and Brazilian Portuguese. Please feel free to submit a new pull request with another languages if you wish.
 
+## Artisan commands
+
+You can publish sidebar partial view to customize your projects sidebar
+
+```php
+$ php artisan adminlte:sidebar
+```
+
+Or you could overwrite/install or resources and apply changes to whole project with:
+
+```php
+$ php artisan adminlte:publish
+```
+
 ## Troubleshooting
 
 ### GNU sed on MAC OS
