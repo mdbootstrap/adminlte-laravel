@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class AdminLTE extends Facade
 {
+
     /**
      * @return string
      */
