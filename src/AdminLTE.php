@@ -99,8 +99,7 @@ class AdminLTE
     public function sidebarView()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/resources/views/layouts/partials/sidebar.blade.php' 
-                                            => resource_path('views/vendor/adminlte/layouts/partials/sidebar.blade.php')
+            ADMINLTETEMPLATE_PATH.'/resources/views/layouts/partials/sidebar.blade.php' => resource_path('views/vendor/adminlte/layouts/partials/sidebar.blade.php'),
         ];
     }
 
