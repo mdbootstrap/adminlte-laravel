@@ -10,7 +10,6 @@ use Illuminate\Filesystem\Filesystem;
  */
 class PublishAdminLTE extends Command
 {
-    
     use Installable;
     /**
      * The filesystem instance.
