@@ -9,7 +9,7 @@
       user experience. Slimscroll is required when using the
       fixed layout. -->
 <script>
-window.Laravel = <?php echo json_encode([
+    window.Laravel = {!! json_encode([
         'csrfToken' => csrf_token(),
-]); ?>
+    ]) !!};
 </script>
