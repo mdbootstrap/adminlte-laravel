@@ -13,6 +13,8 @@ use Illuminate\Console\Command;
  */
 class MakeAdminUserSeeder extends Command
 {
+    use HasUsername, HasEmail;
+
     /**
      * The name and signature of the console command.
      *
@@ -25,7 +27,7 @@ class MakeAdminUserSeeder extends Command
      *
      * @var string
      */
-    protected $description = 'Creates a seed to add admin user to database';
+    protected $description = 'Create a new seed to add admin user to database';
 
     /**
      * Filesystem.
@@ -84,31 +86,4 @@ class MakeAdminUserSeeder extends Command
         return __DIR__ . '/stubs/AdminUserSeeder.php.stub';
     }
 
-    /**
-     * Obtain admin username.
-     *
-     * @return bool|string
-     */
-    protected function username()
-    {
-        if (($username = env('ADMIN_USERNAME', null)) != null) return $username;
-
-        if (($username = git_user_name()) != null) return $username;
-
-        return "Admin";
-    }
-
-    /**
-     * Obtain admin username.
-     *
-     * @return bool|string
-     */
-    protected function email()
-    {
-        if (($email = env('ADMIN_EMAIL', null)) != null) return $email;
-
-        if (($email = git_user_email()) != null) return $email;
-
-        return "admin@example.com";
-    }
 }

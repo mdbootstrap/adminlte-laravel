@@ -31,6 +31,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\PublishAdminLTESidebar::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\PublishAdminLTESidebarAlt::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeAdminUserSeeder::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEAdmin::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEAdminAlt::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
