@@ -7,7 +7,8 @@ namespace Acacha\AdminLTETemplateLaravel\Compiler;
  *
  * @package Acacha\AdminLTETemplateLaravel\Compiler
  */
-class StubFileCompiler {
+class StubFileCompiler
+{
 
     /**
      * Compile the template using the given data.
@@ -18,8 +19,7 @@ class StubFileCompiler {
      */
     public function compile($template, $data)
     {
-        foreach($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
             $template = preg_replace("/\\$$key\\$/i", $value, $template);
         }
         return $template;

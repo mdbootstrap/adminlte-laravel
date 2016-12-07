@@ -17,9 +17,13 @@ trait HasEmail
      */
     protected function email()
     {
-        if (($email = env('ADMIN_EMAIL', null)) != null) return $email;
+        if (($email = env('ADMIN_EMAIL', null)) != null) {
+            return $email;
+        }
 
-        if (($email = git_user_email()) != null) return $email;
+        if (($email = git_user_email()) != null) {
+            return $email;
+        }
 
         return "admin@example.com";
     }

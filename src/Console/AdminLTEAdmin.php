@@ -29,8 +29,8 @@ class AdminLTEAdmin extends Command
     public function handle()
     {
         $this->call('make:adminUserSeeder');
-        $this->call('db:seed',[
-            '--class' => basename(config('AdminUserSeeder','AdminUserSeeder.php'), ".php")
+        $this->call('db:seed', [
+            '--class' => basename(config('AdminUserSeeder', 'AdminUserSeeder.php'), ".php")
         ]);
         $this->info('User ' . $this->username() . '(' . $this->email() . ') ' .
             $this->passwordInfo() . ' created succesfully!');
@@ -41,7 +41,9 @@ class AdminLTEAdmin extends Command
      */
     protected function passwordInfo()
     {
-        if (env('ADMIN_PWD', '123456') == '123456') return 'with password 123456';
+        if (env('ADMIN_PWD', '123456') == '123456') {
+            return 'with password 123456';
+        }
         return 'with the environemnt password (env var ADMIN_PWD)';
     }
 }

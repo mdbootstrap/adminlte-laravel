@@ -64,13 +64,15 @@ class MakeAdminUserSeeder extends Command
     {
         try {
             $this->filesystem->overwrite(
-                $path = database_path('seeds/' . config('AdminUserSeeder','AdminUserSeeder.php')),
+                $path = database_path('seeds/' . config('AdminUserSeeder', 'AdminUserSeeder.php')),
                 $this->compiler->compile(
                     $this->filesystem->get($this->getStubPath()),
                     [
                         "USER_NAME" => $this->username(),
                         "USER_EMAIL" => $this->email(),
-                    ]));
+                    ]
+                )
+            );
             $this->info('File ' . $path . ' created');
         } catch (\Exception $e) {
             print_r($e->getMessage());
@@ -82,8 +84,8 @@ class MakeAdminUserSeeder extends Command
      *
      * @return string
      */
-    protected function getStubPath() {
+    protected function getStubPath()
+    {
         return __DIR__ . '/stubs/AdminUserSeeder.php.stub';
     }
-
 }

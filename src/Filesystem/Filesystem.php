@@ -33,8 +33,7 @@ class Filesystem
      */
     public function make($file, $content)
     {
-        if ( $this->exists($file))
-        {
+        if ($this->exists($file)) {
             throw new FileAlreadyExists;
         }
         $this->put($file, $content);
@@ -43,7 +42,8 @@ class Filesystem
     /**
      * Get file contents
      */
-    public function get($file) {
+    public function get($file)
+    {
         return file_get_contents($file);
     }
 
@@ -54,7 +54,8 @@ class Filesystem
      * @param $content
      * @return int
      */
-    protected function put($file, $content) {
+    protected function put($file, $content)
+    {
         return file_put_contents($file, $content);
     }
 }

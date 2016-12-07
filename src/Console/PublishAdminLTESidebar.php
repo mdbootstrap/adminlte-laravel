@@ -29,7 +29,8 @@ class PublishAdminLTESidebar extends Command
      *
      * @var string
      */
-    protected $description = 'Publish Acacha adminlte sidebar view in your project allowing you to customize your project sidebar';
+    protected $description =
+        'Publish Acacha adminlte sidebar view in your project allowing you to customize your project sidebar';
 
     /**
      * Force overwrite of files.

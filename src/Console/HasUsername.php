@@ -15,10 +15,15 @@ trait HasUsername
      *
      * @return mixed|null|string
      */
-    public function username() {
-        if (($username = env('ADMIN_USERNAME', null)) != null) return $username;
+    public function username()
+    {
+        if (($username = env('ADMIN_USERNAME', null)) != null) {
+            return $username;
+        }
 
-        if (($username = git_user_name()) != null) return $username;
+        if (($username = git_user_name()) != null) {
+            return $username;
+        }
 
         return "Admin";
     }

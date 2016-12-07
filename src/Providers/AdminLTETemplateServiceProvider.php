@@ -39,16 +39,20 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             return new \Acacha\AdminLTETemplateLaravel\AdminLTE();
         });
 
-        if (config('adminlte.gravatar',true)) $this->registerGravatarServiceProvider();
+        if (config('adminlte.gravatar', true)) {
+            $this->registerGravatarServiceProvider();
+        }
 
-        if (config('adminlte.guestuser',true)) $this->registerGuestUserProvider();
-
+        if (config('adminlte.guestuser', true)) {
+            $this->registerGuestUserProvider();
+        }
     }
 
     /**
      * Register Guest User Provider.
      */
-    protected function registerGuestUserProvider() {
+    protected function registerGuestUserProvider()
+    {
         $this->app->register(GuestUserServiceProvider::class);
     }
 
