@@ -252,6 +252,46 @@ https://github.com/almasaeed2010/AdminLTE
 
 Adminlte-laravel supports global recognized avatar (http://gravatar.com) using package creativeorange/gravatar (https://github.com/creativeorange/gravatar).
 
+# Artisan Commands
+
+## adminlte:publish | adminlte-laravel:publish
+
+This command is already executed during installation using acacha/llum but you can execute manually with:
+
+```bash
+php artisan adminlte:publish
+```
+
+Publish all necessary files from package to Laravel project.
+
+## adminlte:sidebar | adminlte-laravel:sidebar
+
+Only publish package sidebar to Laravel project allowing to customize sidebar:
+
+```bash
+php artisan adminlte:sidebar
+```
+
+## adminlte-laravel:admin | adminlte:admin
+
+Executes make:adminUserSeeder artisan command (see next section) an executes seed. This command adds a default admin user to database.
+
+```bash
+php artisan adminlte:admin
+File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/AdminUserSeeder.php created
+User Sergi Tur Badenas(sergiturbadenas@gmail.com) with the environemnt password (env var ADMIN_PWD) created succesfully!
+```
+
+### make:adminUserSeeder
+
+Create a new seed to add admin user to database. Use:
+
+```bash
+php artisan make:adminUserSeeder
+File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/AdminUserSeeder.php created
+```
+
+
 # Roadmap
 
 - Implement Facebook, Google and maybe twitter and github Login with Socialite
