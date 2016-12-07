@@ -284,6 +284,9 @@ File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/Admin
 User Sergi Tur Badenas(sergiturbadenas@gmail.com) with the environemnt password (env var ADMIN_PWD) created succesfully!
 ```
 
+This command use (if exists) environment variables (.env file) ADMIN_USER, ADMIN_EMAIL and ADMIN_PWD. If this env variables does not exists then 
+user git config (~/.gitconfig) to obtain data and if this info does not exists use Admin (admin@example.com) and password 123456 as default.
+
 ### make:adminUserSeeder
 
 Create a new seed to add admin user to database. Use:

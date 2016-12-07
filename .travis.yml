@@ -21,7 +21,7 @@ matrix:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dis
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
   - composer config --list --global
   - ./sandbox_setup.sh
   
