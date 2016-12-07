@@ -62,13 +62,14 @@ class MakeAdminUserSeeder extends Command
     {
         try {
             $this->filesystem->overwrite(
-                database_path('seeds/' . config('AdminUserSeeder','AdminUserSeeder.php')),
+                $path = database_path('seeds/' . config('AdminUserSeeder','AdminUserSeeder.php')),
                 $this->compiler->compile(
                     $this->filesystem->get($this->getStubPath()),
                     [
-                        "USER_NAME$" => $this->username(),
-                        "USER_EMAIL$" => $this->email(),
+                        "USER_NAME" => $this->username(),
+                        "USER_EMAIL" => $this->email(),
                     ]));
+            $this->info('File ' . $path . ' created');
         } catch (\Exception $e) {
             print_r($e->getMessage());
         }
@@ -90,9 +91,9 @@ class MakeAdminUserSeeder extends Command
      */
     protected function username()
     {
-        if ($username = env('ADMIN_USERNAME', null) != null) return $username;
+        if (($username = env('ADMIN_USERNAME', null)) != null) return $username;
 
-        if ($username = git_user_name() != null) return $username;
+        if (($username = git_user_name()) != null) return $username;
 
         return "Admin";
     }
@@ -104,9 +105,9 @@ class MakeAdminUserSeeder extends Command
      */
     protected function email()
     {
-        if ($email = env('ADMIN_EMAIL', null) != null) return $email;
+        if (($email = env('ADMIN_EMAIL', null)) != null) return $email;
 
-        if ($email = git_user_email() != null) return $email;
+        if (($email = git_user_email()) != null) return $email;
 
         return "admin@example.com";
     }
