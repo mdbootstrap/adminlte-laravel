@@ -9,5 +9,4 @@ namespace Acacha\AdminLTETemplateLaravel\Filesystem;
  */
 class FileAlreadyExists extends \Exception
 {
-
 }
