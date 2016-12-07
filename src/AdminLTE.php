@@ -172,4 +172,16 @@ class AdminLTE
             base_path().'/vendor/creativeorange/gravatar/config/gravatar.php' => config_path('gravatar.php'),
         ];
     }
+
+    /**
+     * Config path.
+     *
+     * @return array
+     */
+    public function config()
+    {
+        return [
+            base_path().'/config/adminlte.php' => config_path('adminlte.php'),
+        ];
+    }
 }

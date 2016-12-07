@@ -36,9 +36,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             return new \Acacha\AdminLTETemplateLaravel\AdminLTE();
         });
 
-        $this->registerGravatarServiceProvider();
+        if (config('adminlte.gravatar',true)) $this->registerGravatarServiceProvider();
 
-        $this->registerGuestUserProvider();
+        if (config('adminlte.guestuser',true)) $this->registerGuestUserProvider();
+
     }
 
     /**
@@ -76,6 +77,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishTests();
         $this->publishLanguages();
         $this->publishGravatar();
+        $this->publishConfig();
     }
 
     /**
@@ -182,5 +184,13 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishGravatar()
     {
         $this->publishes(AdminLTE::gravatar(), 'adminlte');
+    }
+
+    /**
+     * Publish adminlte package config.
+     */
+    private function publishConfig()
+    {
+        $this->publishes(AdminLTE::config(), 'adminlte');
     }
 }

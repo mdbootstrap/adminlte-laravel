@@ -1,6 +1,7 @@
 {
     "version": 2,
     "paths": [
-        "/home/sergi/Code/acacha/user"
+        "../../../acacha/helpers",
+        "../../../acacha/user"
     ]
 }

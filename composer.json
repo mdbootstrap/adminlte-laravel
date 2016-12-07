@@ -17,6 +17,7 @@
     "illuminate/console": "~5.0",
     "creativeorange/gravatar": "~1.0",
     "acacha/user": "~0.2",
+    "acacha/helpers": "dev-master",
     "league/flysystem": "^1.0"
   },
   "require-dev": {
