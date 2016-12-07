@@ -61,10 +61,10 @@ class MakeAdminUserSeeder extends Command
     public function handle()
     {
         try {
-            $this->filesytem->overwrite(
+            $this->filesystem->overwrite(
                 database_path('seeds/' . config('AdminUserSeeder','AdminUserSeeder.php')),
                 $this->compiler->compile(
-                    $this->filesytem->get($this->getStubPath()),
+                    $this->filesystem->get($this->getStubPath()),
                     [
                         "USER_NAME$" => $this->username(),
                         "USER_EMAIL$" => $this->email(),
