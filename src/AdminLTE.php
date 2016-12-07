@@ -95,11 +95,20 @@ class AdminLTE
     public function viewsToOverwrite()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            => resource_path('views/errors'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' => resource_path('views/welcome.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/errors'            =>
+                resource_path('views/errors'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/welcome.blade.php' =>
+                resource_path('views/welcome.blade.php'),
+            ADMINLTETEMPLATE_PATH.'/resources/views/layouts/partials/sidebar.blade.php' =>
+                resource_path('views/vendor/adminlte/layouts/partials/sidebar.blade.php'),
         ];
     }
 
+    /**
+     * Path of sidebar.
+     *
+     * @return array
+     */
     public function sidebarView()
     {
         return [

@@ -67,6 +67,7 @@ class PublishAdminLTE extends Command
         $this->publishTests();
         $this->publishLanguages();
         $this->publishGravatar();
+        $this->publishConfig();
     }
 
     /**
@@ -155,6 +156,14 @@ class PublishAdminLTE extends Command
     private function publishGravatar()
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::gravatar());
+    }
+
+    /**
+     * Publish adminlte package config.
+     */
+    private function publishConfig()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::config());
     }
 
     /**
