@@ -21,12 +21,12 @@ matrix:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dis
   - composer config --list --global
   - ./sandbox_setup.sh
   
 script:
-  - cd sandbox;phpunit;
+  - cd sandbox;phpunit;cd ..;
   - vendor/bin/phpcs --standard=psr2 src/
 
 after_script:
