@@ -76,7 +76,8 @@ class MakeView extends Command
      * @param $name
      * @return string
      */
-    protected function constructViewBaldeName($name) {
+    protected function constructViewBaldeName($name)
+    {
         return $this->dottedPathToSlahesPath($name) . '.blade.php';
     }
 
@@ -85,8 +86,8 @@ class MakeView extends Command
      * @param $name
      * @return mixed
      */
-    protected function dottedPathToSlahesPath($name) {
-        return str_replace(".", "/",$name);
-
+    protected function dottedPathToSlahesPath($name)
+    {
+        return str_replace(".", "/", $name);
     }
 }
