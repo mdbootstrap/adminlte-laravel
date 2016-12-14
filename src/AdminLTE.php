@@ -201,7 +201,7 @@ class AdminLTE
     public function config()
     {
         return [
-            base_path().'/config/adminlte.php' => config_path('adminlte.php'),
+            ADMINLTETEMPLATE_PATH.'/config/adminlte.php' => config_path('adminlte.php'),
         ];
     }
 }
