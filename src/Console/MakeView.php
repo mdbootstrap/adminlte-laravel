@@ -2,6 +2,7 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
+use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 
 /**
@@ -11,6 +12,14 @@ use Illuminate\Console\Command;
  */
 class MakeView extends Command
 {
+
+    /**
+     * The filesystem instance.
+     *
+     * @var Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem
+     */
+    protected $filesystem;
+
     /**
      * The name and signature of the console command.
      *
@@ -30,26 +39,26 @@ class MakeView extends Command
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Filesystem $filesystem)
     {
         parent::__construct();
+        $this->filesystem = $filesystem;
     }
 
     /**
      * Execute the console command.
      *
-     *
      */
     public function handle()
     {
         try {
-            $this->filesystem->overwrite(
+            $this->filesystem->make(
                 $path = resource_path('views/' . $this->viewPath()),
                 $this->filesystem->get($this->getStubPath())
             );
             $this->info('File ' . $path . ' created');
         } catch (\Exception $e) {
-            print_r($e->getMessage());
+            $this->error($e->getMessage());
         }
     }
 
