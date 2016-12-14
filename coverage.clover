@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1481724046">
+  <project timestamp="1481724046">
+    <package name="App\Console">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Console/Kernel.php">
+        <class name="Kernel" namespace="App\Console">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="25" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="16"/>
+        <line num="29" type="stmt" count="16"/>
+        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="15"/>
+        <line num="38" type="stmt" count="15"/>
+        <line num="39" type="stmt" count="15"/>
+        <metrics loc="40" ncloc="18" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+    </package>
+    <package name="App\Exceptions">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Exceptions/Handler.php">
+        <class name="Handler" namespace="App\Exceptions">
+          <metrics complexity="4" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="9" coveredelements="7"/>
+        </class>
+        <line num="33" type="method" name="report" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="35" type="stmt" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <line num="45" type="method" name="render" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="47" type="stmt" count="4"/>
+        <line num="57" type="method" name="unauthenticated" visibility="protected" complexity="2" crap="2.15" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="1"/>
+        <metrics loc="65" ncloc="38" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="9" coveredelements="7"/>
+      </file>
+    </package>
+    <package name="App\Http\Controllers\Auth">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/Auth/ForgotPasswordController.php">
+        <class name="ForgotPasswordController" namespace="App\Http\Controllers\Auth">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="28" type="method" name="showLinkRequestForm" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="30" type="stmt" count="3"/>
+        <line num="38" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="40" type="stmt" count="3"/>
+        <line num="41" type="stmt" count="3"/>
+        <metrics loc="42" ncloc="22" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/Auth/LoginController.php">
+        <class name="LoginController" namespace="App\Http\Controllers\Auth">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="28" type="method" name="showLoginForm" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="30" type="stmt" count="4"/>
+        <line num="45" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="47" type="stmt" count="5"/>
+        <line num="48" type="stmt" count="5"/>
+        <metrics loc="49" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/Auth/RegisterController.php">
+        <class name="RegisterController" namespace="App\Http\Controllers\Auth">
+          <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="13" coveredelements="13"/>
+        </class>
+        <line num="34" type="method" name="showRegistrationForm" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="36" type="stmt" count="3"/>
+        <line num="51" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="53" type="stmt" count="3"/>
+        <line num="54" type="stmt" count="3"/>
+        <line num="62" type="method" name="validator" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="78" type="method" name="create" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="82" type="stmt" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <metrics loc="86" ncloc="45" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="13" coveredelements="13"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/Auth/ResetPasswordController.php">
+        <class name="ResetPasswordController" namespace="App\Http\Controllers\Auth">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="33" type="method" name="showResetForm" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="45" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <metrics loc="49" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\Http\Controllers">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/Controller.php">
+        <class name="Controller" namespace="App\Http\Controllers">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="13" ncloc="13" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Controllers/HomeController.php">
+        <class name="HomeController" namespace="App\Http\Controllers" fullPackage="App" package="App">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="26" type="stmt" count="5"/>
+        <line num="27" type="stmt" count="5"/>
+        <line num="34" type="method" name="index" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <metrics loc="37" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+    </package>
+    <package name="App\Http">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Kernel.php">
+        <class name="Kernel" namespace="App\Http">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="56" ncloc="37" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\Http\Middleware">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Middleware/EncryptCookies.php">
+        <class name="EncryptCookies" namespace="App\Http\Middleware">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="17" ncloc="10" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Middleware/RedirectIfAuthenticated.php">
+        <class name="RedirectIfAuthenticated" namespace="App\Http\Middleware">
+          <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
+        </class>
+        <line num="18" type="method" name="handle" visibility="public" complexity="2" crap="2.15" count="10"/>
+        <line num="20" type="stmt" count="10"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="10"/>
+        <metrics loc="26" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="4" coveredelements="2"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Http/Middleware/VerifyCsrfToken.php">
+        <class name="VerifyCsrfToken" namespace="App\Http\Middleware">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="17" ncloc="10" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="App\Providers">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/AppServiceProvider.php">
+        <class name="AppServiceProvider" namespace="App\Providers">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+        </class>
+        <line num="14" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="17" type="stmt" count="16"/>
+        <line num="24" type="method" name="register" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="27" type="stmt" count="16"/>
+        <metrics loc="28" ncloc="14" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/AuthServiceProvider.php">
+        <class name="AuthServiceProvider" namespace="App\Providers">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="26" type="stmt" count="16"/>
+        <line num="29" type="stmt" count="16"/>
+        <metrics loc="30" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/BroadcastServiceProvider.php">
+        <class name="BroadcastServiceProvider" namespace="App\Providers">
+          <metrics complexity="2" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="26" ncloc="18" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/EventServiceProvider.php">
+        <class name="EventServiceProvider" namespace="App\Providers">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="26" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="28" type="stmt" count="16"/>
+        <line num="31" type="stmt" count="16"/>
+        <metrics loc="32" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/RouteServiceProvider.php">
+        <class name="RouteServiceProvider" namespace="App\Providers">
+          <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="22" coveredelements="22"/>
+        </class>
+        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="28" type="stmt" count="16"/>
+        <line num="29" type="stmt" count="16"/>
+        <line num="36" type="method" name="map" visibility="public" complexity="1" crap="1" count="16"/>
+        <line num="38" type="stmt" count="16"/>
+        <line num="40" type="stmt" count="16"/>
+        <line num="43" type="stmt" count="16"/>
+        <line num="52" type="method" name="mapWebRoutes" visibility="protected" complexity="1" crap="1" count="16"/>
+        <line num="54" type="stmt" count="16"/>
+        <line num="55" type="stmt" count="16"/>
+        <line num="56" type="stmt" count="16"/>
+        <line num="58" type="stmt" count="16"/>
+        <line num="59" type="stmt" count="16"/>
+        <line num="60" type="stmt" count="16"/>
+        <line num="69" type="method" name="mapApiRoutes" visibility="protected" complexity="1" crap="1" count="16"/>
+        <line num="71" type="stmt" count="16"/>
+        <line num="72" type="stmt" count="16"/>
+        <line num="73" type="stmt" count="16"/>
+        <line num="74" type="stmt" count="16"/>
+        <line num="75" type="method" name="anonymous function" complexity="1" crap="1" count="16"/>
+        <line num="76" type="stmt" count="16"/>
+        <line num="77" type="stmt" count="16"/>
+        <line num="78" type="stmt" count="16"/>
+        <metrics loc="79" ncloc="44" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="23" coveredelements="23"/>
+      </file>
+    </package>
+    <package name="App">
+      <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/User.php">
+        <class name="User" namespace="App">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="29" ncloc="19" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="18" loc="721" ncloc="412" classes="18" methods="27" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="58" coveredstatements="52" elements="85" coveredelements="75"/>
+  </project>
+</coverage>
