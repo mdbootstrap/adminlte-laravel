@@ -1,7 +1,7 @@
 #!/bin/bash
 ./sandbox_setup.sh
 cd sandbox
-phpunit
+phpunit --coverage-text --coverage-clover=coverage.clover
 cd ..
 ./sandbox_destroy.sh
 
