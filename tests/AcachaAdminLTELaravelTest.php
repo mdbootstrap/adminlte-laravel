@@ -244,4 +244,41 @@ class AcachaAdminLTELaravelTest extends TestCase
             ->press('Send Password Reset Link')
             ->see('There were some problems with your input');
     }
+
+    /**
+     * Test make:view command
+     *
+     * @group failing
+     */
+    public function testMakeViewCommand()
+    {
+        $view = 'ehqwiqweiohqweihoqweiohqweiojhqwejioqwejjqwe';
+        $viewPath= 'views/' . $view . '.blade.php';
+        try {
+            unlink(resource_path($view));
+        } catch(\Exception $e) {
+
+        }
+        $this->callArtisanMakeView($view);
+        $resultAsText = Artisan::output();
+        $expectedOutput = 'File ' . resource_path($viewPath) . ' created';
+        $this->assertEquals($expectedOutput,trim($resultAsText));
+        $this->assertFileExists(resource_path($viewPath));
+        $this->callArtisanMakeView($view);
+        $resultAsText = Artisan::output();
+        $this->assertEquals('File already exists',trim($resultAsText));
+        unlink(resource_path($viewPath));
+    }
+
+    /**
+     * Create view using make:view command.
+     *
+     * @param $view
+     */
+    protected function callArtisanMakeView($view)
+    {
+        Artisan::call('make:view', [
+            'name' => $view,
+        ]);
+    }
 }
