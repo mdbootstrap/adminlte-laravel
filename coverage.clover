@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1481724046">
-  <project timestamp="1481724046">
+<coverage generated="1481877861">
+  <project timestamp="1481877861">
     <package name="App\Console">
       <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Console/Kernel.php">
         <class name="Kernel" namespace="App\Console">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
-        <line num="25" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="16"/>
-        <line num="29" type="stmt" count="16"/>
-        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="15"/>
-        <line num="38" type="stmt" count="15"/>
-        <line num="39" type="stmt" count="15"/>
+        <line num="25" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="18"/>
+        <line num="29" type="stmt" count="18"/>
+        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="17"/>
+        <line num="38" type="stmt" count="17"/>
+        <line num="39" type="stmt" count="17"/>
         <metrics loc="40" ncloc="18" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
     </package>
@@ -142,19 +142,19 @@
         <class name="AppServiceProvider" namespace="App\Providers">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="14" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="17" type="stmt" count="16"/>
-        <line num="24" type="method" name="register" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="27" type="stmt" count="16"/>
+        <line num="14" type="method" name="boot" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="17" type="stmt" count="18"/>
+        <line num="24" type="method" name="register" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="27" type="stmt" count="18"/>
         <metrics loc="28" ncloc="14" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/AuthServiceProvider.php">
         <class name="AuthServiceProvider" namespace="App\Providers">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="26" type="stmt" count="16"/>
-        <line num="29" type="stmt" count="16"/>
+        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="26" type="stmt" count="18"/>
+        <line num="29" type="stmt" count="18"/>
         <metrics loc="30" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/BroadcastServiceProvider.php">
@@ -167,38 +167,38 @@
         <class name="EventServiceProvider" namespace="App\Providers">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="26" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="28" type="stmt" count="16"/>
-        <line num="31" type="stmt" count="16"/>
+        <line num="26" type="method" name="boot" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="28" type="stmt" count="18"/>
+        <line num="31" type="stmt" count="18"/>
         <metrics loc="32" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Providers/RouteServiceProvider.php">
         <class name="RouteServiceProvider" namespace="App\Providers">
           <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="22" coveredelements="22"/>
         </class>
-        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="28" type="stmt" count="16"/>
-        <line num="29" type="stmt" count="16"/>
-        <line num="36" type="method" name="map" visibility="public" complexity="1" crap="1" count="16"/>
-        <line num="38" type="stmt" count="16"/>
-        <line num="40" type="stmt" count="16"/>
-        <line num="43" type="stmt" count="16"/>
-        <line num="52" type="method" name="mapWebRoutes" visibility="protected" complexity="1" crap="1" count="16"/>
-        <line num="54" type="stmt" count="16"/>
-        <line num="55" type="stmt" count="16"/>
-        <line num="56" type="stmt" count="16"/>
-        <line num="58" type="stmt" count="16"/>
-        <line num="59" type="stmt" count="16"/>
-        <line num="60" type="stmt" count="16"/>
-        <line num="69" type="method" name="mapApiRoutes" visibility="protected" complexity="1" crap="1" count="16"/>
-        <line num="71" type="stmt" count="16"/>
-        <line num="72" type="stmt" count="16"/>
-        <line num="73" type="stmt" count="16"/>
-        <line num="74" type="stmt" count="16"/>
-        <line num="75" type="method" name="anonymous function" complexity="1" crap="1" count="16"/>
-        <line num="76" type="stmt" count="16"/>
-        <line num="77" type="stmt" count="16"/>
-        <line num="78" type="stmt" count="16"/>
+        <line num="24" type="method" name="boot" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="28" type="stmt" count="18"/>
+        <line num="29" type="stmt" count="18"/>
+        <line num="36" type="method" name="map" visibility="public" complexity="1" crap="1" count="18"/>
+        <line num="38" type="stmt" count="18"/>
+        <line num="40" type="stmt" count="18"/>
+        <line num="43" type="stmt" count="18"/>
+        <line num="52" type="method" name="mapWebRoutes" visibility="protected" complexity="1" crap="1" count="18"/>
+        <line num="54" type="stmt" count="18"/>
+        <line num="55" type="stmt" count="18"/>
+        <line num="56" type="stmt" count="18"/>
+        <line num="58" type="stmt" count="18"/>
+        <line num="59" type="stmt" count="18"/>
+        <line num="60" type="stmt" count="18"/>
+        <line num="69" type="method" name="mapApiRoutes" visibility="protected" complexity="1" crap="1" count="18"/>
+        <line num="71" type="stmt" count="18"/>
+        <line num="72" type="stmt" count="18"/>
+        <line num="73" type="stmt" count="18"/>
+        <line num="74" type="stmt" count="18"/>
+        <line num="75" type="method" name="anonymous function" complexity="1" crap="1" count="18"/>
+        <line num="76" type="stmt" count="18"/>
+        <line num="77" type="stmt" count="18"/>
+        <line num="78" type="stmt" count="18"/>
         <metrics loc="79" ncloc="44" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="23" coveredelements="23"/>
       </file>
     </package>
