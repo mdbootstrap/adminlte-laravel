@@ -88,6 +88,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishLanguages();
         $this->publishGravatar();
         $this->publishConfig();
+        $this->publishWebRoutes();
         $this->enableSpatieMenu();
     }
 
@@ -203,6 +204,14 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishConfig()
     {
         $this->publishes(AdminLTE::config(), 'adminlte');
+    }
+
+    /**
+     * Publish routes/web.php file.
+     */
+    private function publishWebRoutes()
+    {
+        $this->publishes(AdminLTE::webroutes(), 'adminlte');
     }
 
     /**

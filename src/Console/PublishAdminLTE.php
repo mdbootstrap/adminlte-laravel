@@ -67,6 +67,7 @@ class PublishAdminLTE extends Command
         $this->publishLanguages();
         $this->publishGravatar();
         $this->publishConfig();
+        $this->publishWebRoutes();
     }
 
     /**
@@ -166,10 +167,19 @@ class PublishAdminLTE extends Command
     }
 
     /**
+     * Publish routes/web.php file.
+     */
+    private function publishWebRoutes()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::webroutes());
+    }
+
+    /**
      * Process options before running command.
      */
     private function processOptions()
     {
         $this->force = $this->option('force');
     }
+
 }

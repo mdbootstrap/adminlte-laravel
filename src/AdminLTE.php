@@ -230,4 +230,17 @@ class AdminLTE
                 config_path('menu.php')
         ];
     }
+
+    /**
+     * Web routes path.
+     *
+     * @return array
+     */
+    public function webroutes()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/routes/web.php' =>
+                base_path('routes/web.php')
+        ];
+    }
 }
