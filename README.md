@@ -287,6 +287,8 @@ php artisan adminlte:menu
 
 This command also installs spatie/laravel-menu package and creates a default menu located **config/menu.php**.
 
+***IMPORTANT***: Spatie Laravel Menu required PHP7.0 or superior to work
+
 ## adminlte-laravel:admin | adminlte:admin
 
 Executes make:adminUserSeeder artisan command (see next section) an executes seed. This command adds a default admin user to database.
