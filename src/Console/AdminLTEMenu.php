@@ -6,7 +6,6 @@ use Acacha\AdminLTETemplateLaravel\Exceptions\SpatieMenuAlreadyExists;
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Spatie\Menu\Laravel\MenuServiceProvider;
 
 /**
  * Class AdminLTEMenu.
@@ -72,7 +71,7 @@ class AdminLTEMenu extends Command
      */
     protected function checkIfSpatieMenuAlreadyInstalled()
     {
-        if ((app()->getProvider(MenuServiceProvider::class)) && ! $this->force) {
+        if ((app()->getProvider('Spatie\Menu\Laravel\MenuServiceProvider')) && ! $this->force) {
             throw new SpatieMenuAlreadyExists();
         }
         return;
