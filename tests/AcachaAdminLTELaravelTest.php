@@ -255,17 +255,16 @@ class AcachaAdminLTELaravelTest extends TestCase
         $viewPath= 'views/' . $view . '.blade.php';
         try {
             unlink(resource_path($view));
-        } catch(\Exception $e) {
-
+        } catch (\Exception $e) {
         }
         $this->callArtisanMakeView($view);
         $resultAsText = Artisan::output();
         $expectedOutput = 'File ' . resource_path($viewPath) . ' created';
-        $this->assertEquals($expectedOutput,trim($resultAsText));
+        $this->assertEquals($expectedOutput, trim($resultAsText));
         $this->assertFileExists(resource_path($viewPath));
         $this->callArtisanMakeView($view);
         $resultAsText = Artisan::output();
-        $this->assertEquals('File already exists',trim($resultAsText));
+        $this->assertEquals('File already exists', trim($resultAsText));
         unlink(resource_path($viewPath));
     }
 
@@ -289,8 +288,7 @@ class AcachaAdminLTELaravelTest extends TestCase
         $seed = database_path('seeds/AdminUserSeeder.php');
         try {
             unlink($seed);
-        } catch(\Exception $e) {
-
+        } catch (\Exception $e) {
         }
         $this->callAdminlteAdminCommand();
         $this->assertFileExists($seed);
@@ -304,5 +302,4 @@ class AcachaAdminLTELaravelTest extends TestCase
     {
         Artisan::call('adminlte:admin');
     }
-
 }
