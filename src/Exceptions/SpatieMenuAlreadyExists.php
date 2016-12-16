@@ -1,19 +1,19 @@
 <?php
 
-namespace Acacha\AdminLTETemplateLaravel\Filesystem;
+namespace Acacha\AdminLTETemplateLaravel\Exceptions;
 
 /**
- * Class FileAlreadyExists.
+ * Class SpatieMenuAlreadyExists.
  *
  * @package Acacha\Llum\Filesystem
  */
-class FileAlreadyExists extends \Exception
+class SpatieMenuAlreadyExists extends \Exception
 {
     /**
-     * FileAlreadyExists constructor.
+     * SpatieMenuAlreadyExists constructor.
      */
     public function __construct()
     {
-        parent::__construct('File already exists');
+        parent::__construct('Spatie menu already exists');
     }
 }

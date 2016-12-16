@@ -259,7 +259,7 @@ Adminlte-laravel supports global recognized avatar (http://gravatar.com) using p
 
 ## adminlte:publish | adminlte-laravel:publish
 
-This command is already executed during installation using acacha/llum but you can execute manually with:
+This command is already executed during installation using [acacha/llum](https://github.com/acacha/llum) but you can execute manually with:
 
 ```bash
 php artisan adminlte:publish
@@ -274,6 +274,18 @@ Only publish package sidebar to Laravel project allowing to customize sidebar:
 ```bash
 php artisan adminlte:sidebar
 ```
+
+Note: sidebar is already published when you use **adminlte-laravel install** command.
+
+## adminlte:menu | adminlte-laravel:menu
+
+Replaces sidebar view with a sidebar using [spatie/laravel-menu](https://github.com/spatie/laravel-menu):
+
+```bash
+php artisan adminlte:menu
+```
+
+This command also installs spatie/laravel-menu package and creates a default menu located **config/menu.php**.
 
 ## adminlte-laravel:admin | adminlte:admin
 

@@ -204,4 +204,30 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/config/adminlte.php' => config_path('adminlte.php'),
         ];
     }
+
+    /**
+     * Spatie menu path.
+     *
+     * @return array
+     */
+    public function spatieMenu()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/resources/views/layouts/partials/sidebar_with_spatie_menu.blade.php' =>
+                resource_path('views/vendor/adminlte/layouts/partials/sidebar.blade.php')
+        ];
+    }
+
+    /**
+     * Menu path.
+     *
+     * @return array
+     */
+    public function menu()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/config/menu.php' =>
+                config_path('menu.php')
+        ];
+    }
 }

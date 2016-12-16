@@ -34,6 +34,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEAdmin::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEAdminAlt::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeView::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenu::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenuAlt::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
@@ -86,6 +88,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishLanguages();
         $this->publishGravatar();
         $this->publishConfig();
+        $this->enableSpatieMenu();
     }
 
     /**
@@ -200,5 +203,15 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishConfig()
     {
         $this->publishes(AdminLTE::config(), 'adminlte');
+    }
+
+    /**
+     * Enable (if active) spatie menu.
+     */
+    protected function enableSpatieMenu()
+    {
+        if ($this->app->getProvider('Spatie\Menu\Laravel\MenuServiceProvider')) {
+            require config_path('menu.php');
+        }
     }
 }
