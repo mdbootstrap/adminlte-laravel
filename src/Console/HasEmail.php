@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
 /**
