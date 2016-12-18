@@ -3,17 +3,17 @@
 namespace Acacha\AdminLTETemplateLaravel\Exceptions;
 
 /**
- * Class SpatieMenuAlreadyExists.
+ * Class RouteTypeNotValid.
  *
  * @package Acacha\AdminLTETemplateLaravel\Exceptions
  */
-class SpatieMenuAlreadyExists extends \Exception
+class RouteTypeNotValid extends \Exception
 {
     /**
      * SpatieMenuAlreadyExists constructor.
      */
     public function __construct()
     {
-        parent::__construct('Spatie menu already exists');
+        parent::__construct('Route type not valid!');
     }
 }

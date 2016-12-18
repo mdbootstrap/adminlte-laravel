@@ -68,6 +68,7 @@ class PublishAdminLTE extends Command
         $this->publishGravatar();
         $this->publishConfig();
         $this->publishWebRoutes();
+        $this->publishApiRoutes();
     }
 
     /**
@@ -175,11 +176,18 @@ class PublishAdminLTE extends Command
     }
 
     /**
+     * Publish routes/api.php file.
+     */
+    private function publishApiRoutes()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::apiroutes());
+    }
+
+    /**
      * Process options before running command.
      */
     private function processOptions()
     {
         $this->force = $this->option('force');
     }
-
 }

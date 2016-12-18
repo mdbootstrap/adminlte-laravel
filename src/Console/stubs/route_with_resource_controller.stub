@@ -1,0 +1,2 @@
+    Route::resource('$ROUTE_LINK$', '$ROUTE_CONTROLLER$');
+

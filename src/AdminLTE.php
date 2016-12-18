@@ -243,4 +243,17 @@ class AdminLTE
                 base_path('routes/web.php')
         ];
     }
+
+    /**
+     * Api routes path.
+     *
+     * @return array
+     */
+    public function apiroutes()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/routes/api.php' =>
+                base_path('routes/api.php')
+        ];
+    }
 }

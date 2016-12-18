@@ -1,0 +1,5 @@
+    Route::$ROUTE_METHOD$('$ROUTE_LINK$', function ()    {
+        $data = [];
+        return view('$ROUTE_VIEW$',$data);
+    });
+

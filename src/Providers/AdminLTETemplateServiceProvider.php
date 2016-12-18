@@ -36,6 +36,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeView::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenu::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenuAlt::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTERoute::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTERouteAlt::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
@@ -89,6 +91,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishGravatar();
         $this->publishConfig();
         $this->publishWebRoutes();
+        $this->publishApiRoutes();
         $this->enableSpatieMenu();
     }
 
@@ -212,6 +215,14 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishWebRoutes()
     {
         $this->publishes(AdminLTE::webroutes(), 'adminlte');
+    }
+
+    /**
+     * Publish routes/api.php file.
+     */
+    private function publishApiRoutes()
+    {
+        $this->publishes(AdminLTE::apiroutes(), 'adminlte');
     }
 
     /**
