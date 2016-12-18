@@ -20,9 +20,9 @@ class ControllerRoute extends Route
      * @param StubFileCompiler $compiler
      * @param Filesystem $filesystem
      */
-    public function __construct(StubFileCompiler $compiler,Filesystem $filesystem)
+    public function __construct(StubFileCompiler $compiler, Filesystem $filesystem)
     {
-        parent::__construct($compiler,$filesystem);
+        parent::__construct($compiler, $filesystem);
     }
 
     /**
@@ -48,5 +48,4 @@ class ControllerRoute extends Route
             'ROUTE_METHOD' => $this->getReplacements()[2],
         ];
     }
-
 }
