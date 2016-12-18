@@ -63,7 +63,9 @@ class AdminLTERoute extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:route {link: The route link} {action? : View or controller to create} {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} {--api : Route is an api route} {--a|createaction : Create view or controller after route}';
+    protected $signature = 'adminlte-laravel:route {link: The route link} {action? : View or controller to create} 
+    {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
+    {--api : Route is an api route} {--a|createaction : Create view or controller after route}';
 
     /**
      * The console command description.
@@ -165,7 +167,8 @@ class AdminLTERoute extends Command
         $link = $this->removeTrailingSlashIfExists($link);
         $link = $this->removeDuplicatedTrailingSlashes($link);
         foreach (Route::getRoutes() as $value) {
-            if (in_array(strtoupper($this->option('method')), array_merge($value->getMethods(), ['ANY'])) && $value->getPath() === $link) {
+            if (in_array(strtoupper($this->option('method')), array_merge($value->getMethods(), ['ANY'])) &&
+                $value->getPath() === $link) {
                 return true;
             }
         }
