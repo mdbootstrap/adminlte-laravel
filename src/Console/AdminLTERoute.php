@@ -410,7 +410,7 @@ class AdminLTERoute extends Command
             $this->filesystem->get($this->getMethodStubPath()),
             [
                 'METHOD' => $controllerMethod,
-                'VIEW' => $this->action()
+                'VIEW' => $this->argument('link')
             ]
         );
     }
