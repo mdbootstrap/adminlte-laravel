@@ -346,7 +346,7 @@ class AdminLTERoute extends Command
         Artisan::call('make:view', [
             'name' => $name
         ]);
-        $this->info('View ' . $this->action() .'.blade.php created.');
+        $this->info('View ' . $name .'.blade.php created.');
     }
 
     /**
