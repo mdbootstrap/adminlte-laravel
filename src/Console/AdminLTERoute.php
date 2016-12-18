@@ -275,7 +275,7 @@ class AdminLTERoute extends Command
         if ($this->argument('action') != null) {
             return $this->argument('action');
         }
-        return $this->argument('link');
+        return $this->argument('link') . 'Controller';
     }
 
     /**

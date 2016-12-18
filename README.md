@@ -257,6 +257,94 @@ Adminlte-laravel supports global recognized avatar (http://gravatar.com) using p
 
 # Artisan Commands
 
+## adminlte:route | adminlte-laravel:route
+
+This commands adds a route to routes file using:
+
+```bash
+php artisan adminlte:route linkname
+```
+
+For example you can add a route  **routes/web.php** file with URI **/about** using:
+
+```bash
+php artisan adminlte:route about
+```
+
+This commands add this entry to routes/web.php
+
+You can create 3 types of routes with option **type**:
+
+* **regular**: routes using a clousure with a simple return view command. This is the default one
+* **controller**: routes using a controller.
+* **resource**: routes using a resource controller.
+
+Examples:
+
+```bash
+php artisan adminlte:route about --type=controller
+```
+
+this adds the following:
+
+```php
+    Route::get('about', 'AboutController@index');
+```
+
+to file **routes/web.php**. You can choose the controller name and method with:
+
+```bash
+php artisan adminlte:route about MyController@method --type=controller
+```
+
+If you want to create a resource controller:
+
+```bash
+php artisan adminlte:route about --type=resource
+```
+
+this adds the following:
+
+```php
+    Route::resource('about', 'About@index');
+```
+
+to file **routes/web.php**.
+
+You can also create routes with other HTTP methods using option **method**:
+
+```bash
+php artisan adminlte:route save --method=post
+```
+
+You can also add routes to api using option **api**:
+
+```bash
+php artisan adminlte:route save --api
+```
+
+Then the routes will be added to **routes/api.php**.
+
+Finally use option **-a** to add actions after route creation:
+
+```bash
+php artisan adminlte:route about -a
+```
+
+Last command also create a view with name **about.blade.php**. Using:
+
+```bash
+php artisan adminlte:route about -a --type=controller
+```
+
+Will create a Controller file with name **AboutController** and method index.
+
+You can consult all options with:
+
+```bash
+php artisan adminlte:route --help
+```
+
 ## adminlte:publish | adminlte-laravel:publish
 
 This command is already executed during installation using [acacha/llum](https://github.com/acacha/llum) but you can execute manually with:

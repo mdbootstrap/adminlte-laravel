@@ -20,10 +20,11 @@ trait Controller
         if (str_contains($controllername, '/')) {
             $controllername = str_replace('/', '\\', $controllername);
         }
+
         if (str_contains($controllername, '@')) {
-            return ucfirst(preg_quote($controllername));
+            return ucfirst($controllername);
         }
-        return ucfirst(preg_quote($controllername) . '@index');
+        return ucfirst($controllername . '@index');
     }
 
     /**
