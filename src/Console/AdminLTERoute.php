@@ -356,6 +356,7 @@ class AdminLTERoute extends Command
         ]);
         $this->addMethodToController($controller, $this->controllerMethod($this->action()));
         $this->info('Controller ' . $controller .' created.');
+        $this->createView();
     }
 
     /**
@@ -368,6 +369,7 @@ class AdminLTERoute extends Command
             '--resource' => true
         ]);
         $this->info('Resource Controller ' . $controller .' created.');
+        $this->createView();
     }
 
     /**
@@ -407,7 +409,8 @@ class AdminLTERoute extends Command
         return $this->compiler->compile(
             $this->filesystem->get($this->getMethodStubPath()),
             [
-                'METHOD' => $controllerMethod
+                'METHOD' => $controllerMethod,
+                'VIEW' => $this->action()
             ]
         );
     }
