@@ -17,9 +17,9 @@ use Route;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 /**
- * Class AdminLTERoute.
+ * Class MakeRoute.
  */
-class AdminLTERoute extends Command
+class MakeRoute extends Command
 {
     use HasUsername, HasEmail, Controller;
 
@@ -63,7 +63,7 @@ class AdminLTERoute extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:route {link: The route link} {action? : View or controller to create} 
+    protected $signature = 'make:route {link : The route link} {action? : View or controller to create} 
     {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
     {--api : Route is an api route} {--a|createaction : Create view or controller after route}';
 

@@ -257,7 +257,15 @@ Adminlte-laravel supports global recognized avatar (http://gravatar.com) using p
 
 # Artisan Commands
 
-## adminlte:route | adminlte-laravel:route
+## make:view
+
+This commands adds a view to **resources/views** folder using default adminlte layout:
+
+```bash
+php artisan make:view about
+```
+
+## make:route
 
 This commands adds a route to routes file using:
 
