@@ -86,5 +86,4 @@ abstract class Route implements GeneratesCode
      * @return mixed
      */
     abstract protected function obtainReplacements();
-
 }

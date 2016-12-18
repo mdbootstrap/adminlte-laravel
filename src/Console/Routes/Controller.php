@@ -20,7 +20,9 @@ trait Controller
         if (str_contains($controllername, '/')) {
             $controllername = str_replace('/', '\\', $controllername);
         }
-        if (str_contains($controllername, '@')) return ucfirst(preg_quote($controllername));
+        if (str_contains($controllername, '@')) {
+            return ucfirst(preg_quote($controllername));
+        }
         return ucfirst(preg_quote($controllername) . '@index');
     }
 
@@ -32,7 +34,9 @@ trait Controller
      */
     protected function controllerWithoutMethod($controllername)
     {
-        if (str_contains($controller = $controllername, '@')) return ucfirst(substr($controllername, 0, strpos($controllername,'@')));
+        if (str_contains($controller = $controllername, '@')) {
+            return ucfirst(substr($controllername, 0, strpos($controllername, '@')));
+        }
         return ucfirst($controllername);
     }
 
@@ -44,9 +48,9 @@ trait Controller
      */
     protected function controllerMethod($controllername)
     {
-        if (str_contains($controller = $controllername, '@')) return substr($controllername, strpos($controllername,'@')+1, strlen($controllername)  );
+        if (str_contains($controller = $controllername, '@')) {
+            return substr($controllername, strpos($controllername, '@')+1, strlen($controllername));
+        }
         return 'index';
     }
-
-
 }

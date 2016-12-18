@@ -94,7 +94,7 @@ class AdminLTERoute extends Command
         $this->warnIfRouteAlreadyExists($link = $this->argument('link'));
         $tmpfile = $this->createTmpFileWithRoute();
         $path = $this->getPath($tmpfile);
-        add_file_into_file($this->mountpoint(), $path, $dstFile = $this->destinationFile() );
+        add_file_into_file($this->mountpoint(), $path, $dstFile = $this->destinationFile());
         $this->info('Route ' . $link . ' added to ' .  $dstFile . '.');
         $this->postActions();
     }
@@ -106,7 +106,9 @@ class AdminLTERoute extends Command
      */
     protected function mountpoint()
     {
-        if ($this->option('api')) return '#adminlte_api_routes';
+        if ($this->option('api')) {
+            return '#adminlte_api_routes';
+        }
         return '#adminlte_routes';
     }
 
@@ -115,8 +117,11 @@ class AdminLTERoute extends Command
      *
      * @return string
      */
-    protected function destinationFile() {
-        if ($this->option('api')) return base_path($this->api_routes_path);
+    protected function destinationFile()
+    {
+        if ($this->option('api')) {
+            return base_path($this->api_routes_path);
+        }
         return base_path($this->web_routes_path);
     }
 
@@ -143,7 +148,9 @@ class AdminLTERoute extends Command
      */
     protected function routeExists($link)
     {
-        if ($this->option('api')) return $this->apiRouteExists($link);
+        if ($this->option('api')) {
+            return $this->apiRouteExists($link);
+        }
         return $this->webRouteExists($link);
     }
 
@@ -171,8 +178,11 @@ class AdminLTERoute extends Command
      * @param $link
      * @return string
      */
-    protected function removeTrailingSlashIfExists($link){
-        if (starts_with($link,'/')) return substr($link, 1);
+    protected function removeTrailingSlashIfExists($link)
+    {
+        if (starts_with($link, '/')) {
+            return substr($link, 1);
+        }
         return $link;
     }
 
@@ -184,7 +194,7 @@ class AdminLTERoute extends Command
      */
     protected function removeDuplicatedTrailingSlashes($link)
     {
-        return preg_replace('/(\/+)/','/',$link);
+        return preg_replace('/(\/+)/', '/', $link);
     }
 
     /**
@@ -233,7 +243,7 @@ class AdminLTERoute extends Command
             ? static::$lookup[$type]
             : RegularRoute::class;
         /** @var GeneratesCode $route */
-        $route = new $class($this->compiler,$this->filesystem);
+        $route = new $class($this->compiler, $this->filesystem);
         $route->setReplacements([
             $this->argument('link'),
             $this->action(),
@@ -249,7 +259,9 @@ class AdminLTERoute extends Command
      */
     protected function method()
     {
-        if ( strtolower($this->option('method')) == 'head' ) return 'get';
+        if (strtolower($this->option('method')) == 'head') {
+            return 'get';
+        }
         return strtolower($this->option('method'));
     }
 
@@ -290,7 +302,7 @@ class AdminLTERoute extends Command
      */
     protected function validateType()
     {
-        if (! in_array( strtolower($this->option('type')),['regular','controller','resource'])) {
+        if (! in_array(strtolower($this->option('type')), ['regular','controller','resource'])) {
             throw new RouteTypeNotValid();
         }
     }
@@ -300,8 +312,9 @@ class AdminLTERoute extends Command
      */
     protected function postActions()
     {
-        if ($this->option('createaction') != null) $this->createAction();
-
+        if ($this->option('createaction') != null) {
+            $this->createAction();
+        }
     }
 
     /**
@@ -309,8 +322,12 @@ class AdminLTERoute extends Command
      */
     protected function createAction()
     {
-        if (strtolower($this->option('type')) == 'regular' || $this->option('type') == null) return $this->createView();
-        if (strtolower($this->option('type')) == 'controller') return $this->createController();
+        if (strtolower($this->option('type')) == 'regular' || $this->option('type') == null) {
+            return $this->createView();
+        }
+        if (strtolower($this->option('type')) == 'controller') {
+            return $this->createController();
+        }
         return $this->createResourceController();
     }
 
@@ -333,7 +350,7 @@ class AdminLTERoute extends Command
         Artisan::call('make:controller', [
             'name' => $controller = $this->controllerWithoutMethod($this->action())
         ]);
-        $this->addMethodToController($controller,$this->controllerMethod($this->action()));
+        $this->addMethodToController($controller, $this->controllerMethod($this->action()));
         $this->info('Controller ' . $controller .' created.');
     }
 
@@ -359,7 +376,7 @@ class AdminLTERoute extends Command
     {
         $tmpfile = $this->createTmpFileWithMethod($controllerMethod);
         $path = $this->getPath($tmpfile);
-        add_file_into_file('\/\/',$path,app_path('Http/Controllers/' . $controller . '.php'));
+        add_file_into_file('\/\/', $path, app_path('Http/Controllers/' . $controller . '.php'));
     }
 
     /**
@@ -400,5 +417,4 @@ class AdminLTERoute extends Command
     {
         return __DIR__ . '/stubs/method.stub';
     }
-
 }
