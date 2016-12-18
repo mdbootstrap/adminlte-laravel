@@ -337,11 +337,14 @@ class AdminLTERoute extends Command
 
     /**
      * Create View.
+     *
+     * @param null $name
      */
-    protected function createView()
+    protected function createView($name = null)
     {
+        if ($name == null) $name = $this->action();
         Artisan::call('make:view', [
-            'name' => $this->action()
+            'name' => $name
         ]);
         $this->info('View ' . $this->action() .'.blade.php created.');
     }
@@ -356,7 +359,7 @@ class AdminLTERoute extends Command
         ]);
         $this->addMethodToController($controller, $this->controllerMethod($this->action()));
         $this->info('Controller ' . $controller .' created.');
-        $this->createView();
+        $this->createView($this->argument('link'));
     }
 
     /**
@@ -369,7 +372,7 @@ class AdminLTERoute extends Command
             '--resource' => true
         ]);
         $this->info('Resource Controller ' . $controller .' created.');
-        $this->createView();
+        $this->createView($this->argument('link'));
     }
 
     /**
