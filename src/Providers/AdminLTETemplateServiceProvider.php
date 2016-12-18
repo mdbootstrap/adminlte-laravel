@@ -37,6 +37,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenu::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\AdminLTEMenuAlt::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeRoute::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeMenu::class]);
         }
 
         $this->app->bind('AdminLTE', function () {

@@ -27,6 +27,8 @@ Menu::macro('sidebar', function () {
         ->action('HomeController@index', 'Home')
         ->link('http://www.acacha.org', 'Another link')
 //        ->url('http://www.google.com', 'Google')
+        ->add(Menu::adminlteSeparator('Acacha Adminlte'))
+        #adminlte_menu
         ->add(Menu::adminlteSeparator('SECONDARY MENU'))
         ->add(Menu::new()->prepend('<a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
             ->addParentClass('treeview')

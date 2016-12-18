@@ -1,0 +1,1 @@
+        ->add(Link::toUrl('$MENU_LINK$', '$MENU_NAME$'))

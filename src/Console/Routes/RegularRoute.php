@@ -8,7 +8,7 @@ use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 /**
  * Class RegularRoute.
  *
- * @package Acacha\AdminLTETemplateLaravel\Console
+ * @package Acacha\AdminLTETemplateLaravel\Console\Routes
  */
 class RegularRoute extends Route
 {

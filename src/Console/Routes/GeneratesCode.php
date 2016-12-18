@@ -5,7 +5,7 @@ namespace Acacha\AdminLTETemplateLaravel\Console\Routes;
 /**
  * Interface GeneratesCode.
  *
- * @package Acacha\AdminLTETemplateLaravel\Console
+ * @package Acacha\AdminLTETemplateLaravel\Console\Routes
  */
 interface GeneratesCode
 {

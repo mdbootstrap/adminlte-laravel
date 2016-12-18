@@ -9,6 +9,7 @@ use Acacha\AdminLTETemplateLaravel\Console\Routes\ControllerRoute;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\GeneratesCode;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\RegularRoute;
 use Acacha\AdminLTETemplateLaravel\Exceptions\RouteTypeNotValid;
+use Acacha\AdminLTETemplateLaravel\Exceptions\SpatieMenuDoesNotExists;
 use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Router;
@@ -21,7 +22,7 @@ use Symfony\Component\Routing\Exception\MethodNotAllowedException;
  */
 class MakeRoute extends Command
 {
-    use HasUsername, HasEmail, Controller;
+     use Controller;
 
     /**
      * Path to web routes file.
@@ -65,7 +66,8 @@ class MakeRoute extends Command
      */
     protected $signature = 'make:route {link : The route link} {action? : View or controller to create} 
     {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
-    {--api : Route is an api route} {--a|createaction : Create view or controller after route}';
+    {--api : Route is an api route} {--a|createaction : Create view or controller after route}
+    {--menu : Create also menu entry using make:menu command}';
 
     /**
      * The console command description.
@@ -319,6 +321,35 @@ class MakeRoute extends Command
         if ($this->option('createaction') != null) {
             $this->createAction();
         }
+        if ($this->option('menu') != null) {
+            $this->createMenu();
+        }
+    }
+
+    /**
+     * Create menu.
+     */
+    protected function createMenu()
+    {
+        try {
+            $this->warnIfSpatieMenuIsNotInstalled();
+        } catch (\Exception $e) {
+            //Skip installation of menu
+            $this->error($e->getMessage());
+            return;
+        }
+        Artisan::call('make:menu', [
+            'link' => $link = $this->argument('link'),
+            'name' => ucfirst($link),
+        ]);
+        $this->info('Menu entry ' . $link .' added to config/menu.php file.');
+    }
+
+    protected function warnIfSpatieMenuIsNotInstalled()
+    {
+        if (!(app()->getProvider('Spatie\Menu\Laravel\MenuServiceProvider'))) {
+            throw new SpatieMenuDoesNotExists();
+        }
     }
 
     /**
@@ -427,4 +458,5 @@ class MakeRoute extends Command
     {
         return __DIR__ . '/stubs/method.stub';
     }
+
 }

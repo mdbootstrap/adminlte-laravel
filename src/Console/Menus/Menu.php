@@ -1,16 +1,17 @@
 <?php
 
-namespace Acacha\AdminLTETemplateLaravel\Console\Routes;
+namespace Acacha\AdminLTETemplateLaravel\Console\Menus;
 
 use Acacha\AdminLTETemplateLaravel\Compiler\StubFileCompiler;
+use Acacha\AdminLTETemplateLaravel\Console\Routes\GeneratesCode;
 use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 
 /**
- * Class Route.
+ * Class Menu.
  *
- * @package Acacha\AdminLTETemplateLaravel\Console\Routes
+ * @package Acacha\AdminLTETemplateLaravel\Console\Menus
  */
-abstract class Route implements GeneratesCode
+abstract class Menu implements GeneratesCode
 {
 
     /**

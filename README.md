@@ -265,6 +265,20 @@ This commands adds a view to **resources/views** folder using default adminlte l
 php artisan make:view about
 ```
 
+## make:menu
+
+This commands adds a menu entry to file **config/menu.php**:
+
+```bash
+php artisan make:menu link menuname
+```
+
+Example:
+
+```bash
+php artisan make:menu /contact
+```
+
 ## make:route
 
 This commands adds a route to routes file using:
