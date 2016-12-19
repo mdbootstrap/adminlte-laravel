@@ -36,6 +36,14 @@ class AcachaAdminLTELaravelTest extends TestCase
     }
 
     /**
+     * Set up before class.
+     */
+    public static function setUpBeforeClass()
+    {
+        passthru('composer dumpautoload');
+    }
+
+    /**
      * Test Landing Page.
      *
      * @return void

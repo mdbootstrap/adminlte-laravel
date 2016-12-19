@@ -37,7 +37,7 @@ class MakeView extends Command
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param Filesystem $filesystem
      */
     public function __construct(Filesystem $filesystem)
     {
@@ -54,7 +54,8 @@ class MakeView extends Command
         try {
             $this->filesystem->make(
                 $path = resource_path('views/' . $this->viewPath()),
-                $this->filesystem->get($this->getStubPath())
+                $this->filesystem->get($this->getStubPath()),
+                true
             );
             $this->info('File ' . $path . ' created');
         } catch (\Exception $e) {
@@ -77,25 +78,27 @@ class MakeView extends Command
      */
     protected function viewPath()
     {
-        return $this->constructViewBaldeName($this->argument('name'));
+        return $this->constructViewBladeName($this->argument('name'));
     }
 
     /**
      * Create full relative path to blade template from view name.
+     *
      * @param $name
      * @return string
      */
-    protected function constructViewBaldeName($name)
+    protected function constructViewBladeName($name)
     {
-        return $this->dottedPathToSlahesPath($name) . '.blade.php';
+        return $this->dottedPathToSlashesPath($name) . '.blade.php';
     }
 
     /**
      * Converts dotted notation to path slashes.
+     *
      * @param $name
      * @return mixed
      */
-    protected function dottedPathToSlahesPath($name)
+    protected function dottedPathToSlashesPath($name)
     {
         return str_replace(".", "/", $name);
     }
