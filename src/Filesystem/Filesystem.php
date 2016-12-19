@@ -50,7 +50,7 @@ class Filesystem
         if ($this->exists($this->getPath($file))) {
             throw new FileAlreadyExists;
         }
-        $this->put($file, $content,0,$recursive);
+        $this->put($file, $content, 0, $recursive);
     }
 
     /**
@@ -81,7 +81,9 @@ class Filesystem
      */
     public function put($file, $content, $flag = null, $recursive = false)
     {
-        if ($recursive) $this->createParentFolder($file);
+        if ($recursive) {
+            $this->createParentFolder($file);
+        }
         return file_put_contents($this->getPath($file), $content, $flag);
     }
 
@@ -91,8 +93,11 @@ class Filesystem
      * @param $file
      * @return bool
      */
-    public function createParentFolder($file) {
-        if ( ! file_exists($folder = dirname($file))) return mkdir(dirname($file), 0775, true);
+    public function createParentFolder($file)
+    {
+        if (! file_exists($folder = dirname($file))) {
+            return mkdir(dirname($file), 0775, true);
+        }
     }
 
     /**
