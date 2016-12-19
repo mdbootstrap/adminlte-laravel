@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Exception\MethodNotAllowedException;
  */
 class MakeRoute extends Command
 {
-    use Controller;
+    use Controller, CreatesModels;
 
     /**
      * Path to web routes file.
@@ -67,7 +67,7 @@ class MakeRoute extends Command
     protected $signature = 'make:route {link : The route link} {action? : View or controller to create} 
     {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
     {--api : Route is an api route} {--a|createaction : Create view or controller after route}
-    {--menu : Create also menu entry using make:menu command}';
+    {--menu : Create also menu entry using make:menu command} {--model : Create also a model using command make:model}';
 
     /**
      * The console command description.
@@ -326,6 +326,9 @@ class MakeRoute extends Command
         if ($this->option('menu') != null) {
             $this->createMenu();
         }
+        if ($this->option('model') != null) {
+            $this->createModel($this->argument('link'));
+        }
     }
 
     /**
@@ -347,6 +350,11 @@ class MakeRoute extends Command
         $this->info('Menu entry ' . $link .' added to config/menu.php file.');
     }
 
+    /**
+     * Warn if spatie menu ins not installed.
+     *
+     * @throws SpatieMenuDoesNotExists
+     */
     protected function warnIfSpatieMenuIsNotInstalled()
     {
         if (!(app()->getProvider('Spatie\Menu\Laravel\MenuServiceProvider'))) {
