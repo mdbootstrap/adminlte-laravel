@@ -56,7 +56,10 @@ This packages use (no need to install):
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
-* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users.
+* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users. This could be optional through configuration.
+* [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
+* [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
+* [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
 * [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
@@ -77,6 +80,10 @@ export PATH=${PATH}:~/.composer/vendor/bin
 ```
 
 to your ~/.bashrc file
+
+## Optional requirements
+* [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
+
 
 ## Llum package
 
