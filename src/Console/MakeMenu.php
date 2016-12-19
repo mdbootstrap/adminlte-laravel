@@ -176,7 +176,7 @@ class MakeMenu extends Command
      */
     protected function processInput()
     {
-//        $this->validateMethod();
+        //        $this->validateMethod();
     }
 
     /**
