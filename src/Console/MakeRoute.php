@@ -99,7 +99,7 @@ class MakeRoute extends Command
         $tmpfile = $this->createTmpFileWithRoute();
         $path = $this->getPath($tmpfile);
         add_file_into_file($this->mountpoint(), $path, $dstFile = $this->destinationFile());
-        $this->info('Route ' . $link . ' added to ' .  $dstFile . '.');
+        $this->info('Route ' . undot_path($link) . ' added to ' .  $dstFile . '.');
         $this->postActions();
     }
 
@@ -250,7 +250,7 @@ class MakeRoute extends Command
         /** @var GeneratesCode $route */
         $route = new $class($this->compiler, $this->filesystem);
         $route->setReplacements([
-            $this->argument('link'),
+            undot_path($this->argument('link')),
             $this->action(),
             $this->method()
         ]);
@@ -341,7 +341,7 @@ class MakeRoute extends Command
             return;
         }
         Artisan::call('make:menu', [
-            'link' => $link = $this->argument('link'),
+            'link' => $link = undot_path($this->argument('link')),
             'name' => ucfirst($link),
         ]);
         $this->info('Menu entry ' . $link .' added to config/menu.php file.');
@@ -381,7 +381,7 @@ class MakeRoute extends Command
         Artisan::call('make:view', [
             'name' => $name
         ]);
-        $this->info('View ' . $name .'.blade.php created.');
+        $this->info('View ' . undot_path($name) .'.blade.php created.');
     }
 
     /**
