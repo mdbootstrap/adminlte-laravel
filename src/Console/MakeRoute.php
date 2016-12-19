@@ -280,7 +280,9 @@ class MakeRoute extends Command
         if ($this->argument('action') != null) {
             return $this->argument('action');
         }
-        if (strtolower($this->option('type')) != 'regular' ) return $this->argument('link') . 'Controller';
+        if (strtolower($this->option('type')) != 'regular') {
+            return $this->argument('link') . 'Controller';
+        }
         return $this->argument('link');
     }
 
@@ -373,7 +375,9 @@ class MakeRoute extends Command
      */
     protected function createView($name = null)
     {
-        if ($name == null) $name = $this->action();
+        if ($name == null) {
+            $name = $this->action();
+        }
         Artisan::call('make:view', [
             'name' => $name
         ]);
@@ -458,5 +462,4 @@ class MakeRoute extends Command
     {
         return __DIR__ . '/stubs/method.stub';
     }
-
 }

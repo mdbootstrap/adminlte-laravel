@@ -186,5 +186,4 @@ class MakeMenu extends Command
     {
         //
     }
-
 }
