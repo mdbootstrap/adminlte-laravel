@@ -46,7 +46,8 @@ class MakeVC extends Command
      *
      * @return string
      */
-    protected function command() {
+    protected function command()
+    {
         $api = $this->option('api') ? ' --api '  : '';
         $action = $this->argument('action') ? ' ' . $this->argument('action') . ' ' : '';
         return 'php artisan make:route ' . $this->argument('link') . $action . ' --type=' . $this->option('type') .

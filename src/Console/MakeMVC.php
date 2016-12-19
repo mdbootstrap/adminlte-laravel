@@ -41,5 +41,4 @@ class MakeMVC extends MakeVC
         $this->createModel($this->argument('link'));
         parent::handle();
     }
-
 }

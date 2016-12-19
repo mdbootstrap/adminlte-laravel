@@ -12,7 +12,8 @@ trait CreatesModels
     /**
      * Create a model and migration using make:model command
      */
-    public function createModel($name) {
+    public function createModel($name)
+    {
         passthru('php artisan make:model -m ' . snake_case($name));
     }
 }
