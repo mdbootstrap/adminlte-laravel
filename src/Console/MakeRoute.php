@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Exception\MethodNotAllowedException;
  */
 class MakeRoute extends Command
 {
-     use Controller;
+    use Controller;
 
     /**
      * Path to web routes file.
