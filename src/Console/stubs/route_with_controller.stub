@@ -1,2 +1,2 @@
-    Route::$ROUTE_METHOD$('$ROUTE_LINK$', '$ROUTE_CONTROLLER$');
+    Route::$ROUTE_METHOD$('$ROUTE_LINK$', '$ROUTE_CONTROLLER$')->name('$ROUTE_NAME$');
 

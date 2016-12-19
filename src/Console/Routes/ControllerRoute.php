@@ -43,9 +43,10 @@ class ControllerRoute extends Route
     protected function obtainReplacements()
     {
         return [
-            'ROUTE_LINK' => $this->getReplacements()[0],
+            'ROUTE_LINK' => $link = $this->getReplacements()[0],
             'ROUTE_CONTROLLER' => $this->controller($this->getReplacements()[1]),
             'ROUTE_METHOD' => $this->getReplacements()[2],
+            'ROUTE_NAME' => dot_path($link),
         ];
     }
 }
