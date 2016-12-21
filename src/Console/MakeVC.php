@@ -22,7 +22,8 @@ class MakeVC extends Command
      *
      * @var string
      */
-    protected $description = 'Create a view with his corresponding controller and route (vc: view controller) and menu entry';
+    protected $description = 'Create a view with his corresponding controller and route 
+    (vc: view controller) and menu entry';
 
     /**
      * MakeMVC constructor.
