@@ -18,6 +18,7 @@
     "acacha/user": "~0.2",
     "creativeorange/gravatar": "~1.0",
     "laravel/framework": "^5.4",
+    "laravel/browser-kit-testing": "^1.0",
     "league/flysystem": "^1.0"
   },
   "require-dev": {

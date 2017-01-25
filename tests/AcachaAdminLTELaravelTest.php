@@ -1,30 +1,20 @@
 <?php
 
+namespace Tests;
+
+use App;
+use Artisan;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\Hash;
 
 /**
  * Class AcachaAdminLTELaravelTest.
  */
-class AcachaAdminLTELaravelTest extends TestCase
+class AcachaAdminLTELaravelTest extends BrowserKitTest
 {
     use DatabaseMigrations;
-
-    /**
-     * Overwrite createApplication to add Http Kernel
-     * see: https://github.com/laravel/laravel/pull/3943
-     *      https://github.com/laravel/framework/issues/15426
-     */
-    public function createApplication()
-    {
-        $app = require __DIR__.'/../bootstrap/app.php';
-
-        $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-
-        return $app;
-    }
 
     /**
      * Set up tests.
@@ -88,12 +78,16 @@ class AcachaAdminLTELaravelTest extends TestCase
      * Test Login.
      *
      * @return void
+     *
      */
     public function testLogin()
     {
         $user = factory(App\User::class)->create(['password' => Hash::make('passw0RD')]);
 
-        $this->visit('/login')
+        view()->share('user', $user);
+
+        $this->withSession(['user' => $user])
+            ->visit('/login')
             ->type($user->email, 'email')
             ->type('passw0RD', 'password')
             ->press('Sign In')
@@ -145,6 +139,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testHomePageForUnauthenticatedUsers()
     {
+        $user = factory(App\User::class)->create();
+        view()->share('user', $user);
         $this->visit('/home')
             ->seePageIs('/login');
     }
@@ -157,7 +153,7 @@ class AcachaAdminLTELaravelTest extends TestCase
     public function testHomePageForAuthenticatedUsers()
     {
         $user = factory(App\User::class)->create();
-
+        view()->share('user', $user);
         $this->actingAs($user)
             ->visit('/home')
             ->see($user->name);
@@ -171,7 +167,7 @@ class AcachaAdminLTELaravelTest extends TestCase
     public function testLogout()
     {
         $user = factory(App\User::class)->create();
-
+        view()->share('user', $user);
         $form = $this->actingAs($user)->visit('/home')->getForm('logout');
 
         $this->actingAs($user)
@@ -199,6 +195,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testNewUserRegistration()
     {
+        $user = factory(App\User::class)->create();
+        view()->share('user', $user);
         $this->visit('/register')
             ->type('Sergi Tur Badenas', 'name')
             ->type('sergiturbadenas@gmail.com', 'email')
