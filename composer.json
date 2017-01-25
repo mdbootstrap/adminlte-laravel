@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "~5.6|~7.0",
-    "acacha/helpers": "dev-master",
+    "acacha/helpers": "^0.1.3",
     "acacha/user": "~0.2",
     "creativeorange/gravatar": "~1.0",
     "laravel/framework": "^5.4",
