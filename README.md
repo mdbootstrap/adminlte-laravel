@@ -107,11 +107,11 @@ Or you can use version 1.0 of installer with:
 composer global require "acacha/adminlte-laravel-installer=~3.0"
 ```
 
-## Laravel 5.3
+## Laravel 5.4
 
-Laravel 5.3 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
+Laravel 5.4 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
 
-### Laravel 5.3 manual installation
+### Laravel 5.4 manual installation
 
 Follow the typical Laravel package installation steps:
 
@@ -123,7 +123,7 @@ Follow the typical Laravel package installation steps:
 Add admin-lte Laravel package with:
 
 <pre>
- composer require "acacha/admin-lte-template-laravel:3.*"
+ composer require "acacha/admin-lte-template-laravel:4.*"
 </pre> 
  
 To register the Service Provider edit **config/app.php** file and add to providers array:
@@ -151,6 +151,11 @@ php artisan vendor:publish --tag=adminlte --force
 ``` 
  
 Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+
+
+## Laravel 5.3
+
+Use branch 3.x for Laravel 5.3 version.
 
 ## Laravel 5.2
 
