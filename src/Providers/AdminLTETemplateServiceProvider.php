@@ -6,7 +6,7 @@ use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Acacha\User\Providers\GuestUserServiceProvider;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Creativeorange\Gravatar\GravatarServiceProvider;
-use Illuminate\Console\AppNamespaceDetectorTrait;
+use Illuminate\Console\DetectsApplicationNamespace;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -14,7 +14,7 @@ use Illuminate\Support\ServiceProvider;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
-    use AppNamespaceDetectorTrait;
+    use DetectsApplicationNamespace;
 
     /**
      * Register the application services.
