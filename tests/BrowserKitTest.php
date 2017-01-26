@@ -6,7 +6,6 @@ use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 
 abstract class BrowserKitTest extends BaseTestCase
 {
-
     use CreatesApplication;
 
     /**
@@ -15,5 +14,4 @@ abstract class BrowserKitTest extends BaseTestCase
      * @var string
      */
     protected $baseUrl = 'http://localhost';
-
 }
