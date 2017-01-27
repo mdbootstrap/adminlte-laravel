@@ -26,7 +26,7 @@ class MakeVC extends Command
     (vc: view controller) and menu entry';
 
     /**
-     * MakeMVC constructor.
+     * MakeVC constructor.
      */
     public function __construct()
     {

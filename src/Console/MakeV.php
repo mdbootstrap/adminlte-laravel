@@ -5,16 +5,16 @@ namespace Acacha\AdminLTETemplateLaravel\Console;
 use Illuminate\Console\Command;
 
 /**
- * Class MakeVC.
+ * Class MakeV.
  */
-class MakeVC extends Command
+class MakeV extends Command
 {
 
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'make:vc {link : The route link} {action? : View or controller to create} 
-    {--t|type=controller : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
+    protected $signature = 'make:v {link : The route link} {action? : View to create} 
+    {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
     {--api : Route is an api route}';
 
     /**
@@ -22,11 +22,10 @@ class MakeVC extends Command
      *
      * @var string
      */
-    protected $description = 'Create a view with his corresponding controller and route 
-    (vc: view controller) and menu entry';
+    protected $description = 'Create a view with his corresponding route and menu entry';
 
     /**
-     * MakeMVC constructor.
+     * MakeV constructor.
      */
     public function __construct()
     {
