@@ -169,8 +169,8 @@ class MakeRoute extends Command
         $link = $this->removeTrailingSlashIfExists($link);
         $link = $this->removeDuplicatedTrailingSlashes($link);
         foreach (Route::getRoutes() as $value) {
-            if (in_array(strtoupper($this->option('method')), array_merge($value->getMethods(), ['ANY'])) &&
-                $value->getPath() === $link) {
+            if (in_array(strtoupper($this->option('method')), array_merge($value->methods(), ['ANY'])) &&
+                $value->uri() === $link) {
                 return true;
             }
         }
