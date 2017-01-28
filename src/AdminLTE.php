@@ -161,6 +161,7 @@ class AdminLTE
     public function resourceAssets()
     {
         return [
+            ADMINLTETEMPLATE_PATH.'/resources/assets/css' => resource_path('assets/css'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/less' => resource_path('assets/less'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/sass' => resource_path('assets/sass'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/js'   => resource_path('assets/js'),
