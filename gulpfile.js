@@ -14,7 +14,6 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(function(mix) {
-    //app.scss includes app css, Boostrap and Ionicons
     mix.sass('app.scss')
         //Landing page
         .less('./node_modules/bootstrap-less/bootstrap/bootstrap.less', './public/css/bootstrap.css')
