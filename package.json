@@ -14,7 +14,7 @@
     "bootstrap-less": "^3.3.8",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.6.3",
-    "gulp": "^3.9z<.1",
+    "gulp": "^3.9.1",
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
     "jquery": "^3.1.0",
