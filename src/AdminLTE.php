@@ -165,7 +165,7 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/resources/assets/less' => resource_path('assets/less'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/sass' => resource_path('assets/sass'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/js'   => resource_path('assets/js'),
-            ADMINLTETEMPLATE_PATH.'/gulpfile.js'           => base_path('gulpfile.js'),
+            ADMINLTETEMPLATE_PATH.'/webpack.mix.js'        => base_path('webpack.mix.js'),
             ADMINLTETEMPLATE_PATH.'/package.json'          => base_path('package.json'),
         ];
     }

@@ -18,10 +18,7 @@
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
     "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-9",
-    "laravel-elixir-vue-2": "^0.2.0",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "laravel-mix": "^0.5.0",
+    "laravel-mix": "^0.6.0",
     "lodash": "^4.16.2",
     "toastr": "^2.1.2",
     "vue": "^2.0.1"
