@@ -16,8 +16,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .less('node_modules/bootstrap-less/bootstrap/bootstrap.less', 'public/css/bootstrap.css')
    .less('node_modules/admin-lte/build/less/AdminLTE.less', 'public/css/adminlte-less.css')
-   .less('adminlte-app.less')
-   .less('node_modules/toastr/toastr.less')
+   .less('resources/assets/less/adminlte-app.less','public/css/adminlte-app.css')
+   .less('node_modules/toastr/toastr.less','public/css/toastr.css')
    .combine([
        'public/css/app.css',
        'node_modules/admin-lte/dist/css/skins/_all-skins.css',
