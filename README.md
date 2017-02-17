@@ -530,14 +530,19 @@ php artisan adminlte:username
 
 And then you can use username instead of email for login.
 
-'''NOTE''': when we are using login by username if login by usernames fails then 
+NOTE: when we are using login by username if login by usernames fails then 
 system try to use the introduced username as an email for login. So users
 can also login using email. 
 
-To come back to email login use:
+To come back to email login remove **field** option from **config/auth.php** file:
 
 ```bash
-php artisan adminlte:email
+'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+            'field' => 'username' // Adminlte laravel. Valid values: 'email' or 'username'
+        ],
 ```
 
 NOTE: Migration required to add username field to users table requires:
@@ -558,7 +563,7 @@ Optionally you can define a default domain name for username login. Add domain o
     ],
 ```
 
-to file '''config/auth.php'''. Then if an user tries to login with no domain the default domain will be appended whe logging. 
+to file **config/auth.php**. Then if an user tries to login with no domain the default domain will be appended whe logging. 
 
 So with previous example you can type at login:
 
@@ -597,7 +602,7 @@ This script is located in partial blade file (vendor/acacha/admin-lte-template-l
 
 So global variable window.trans contains all Laravel translations at can be used in any Javascript file.
 
-Also in file '''resources/assets/js/bootstrap.js''' code section:
+Also in file **resources/assets/js/bootstrap.js** code section:
 
 ```
 Vue.prototype.trans = (key) => {
@@ -617,7 +622,7 @@ Also you can use inside Vue components code:
 this.trans('auth.failed')
 ```
 
-Laravel Adminlte messages ara available using prefix '''adminlte_lang_message.''':
+Laravel Adminlte messages ara available using prefix **adminlte_lang_message**:
 
 ```
 {{ trans('adminlte_lang_message.username') }}
