@@ -10,7 +10,6 @@ use Illuminate\Filesystem\Filesystem;
  */
 class Username extends Command
 {
-
     use Installable;
 
     /**
@@ -73,14 +72,16 @@ class Username extends Command
     /**
      * Publish User class.
      */
-    private function publishUserClass() {
+    private function publishUserClass()
+    {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::userClass());
     }
 
     /**
      * Run migration.
      */
-    private function runMigration() {
+    private function runMigration()
+    {
         $this->info('Installing doctrine/dbal');
         passthru('composer require doctrine/dbal');
         $this->info('Running php artisan migrate');

@@ -56,7 +56,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->registerGuestUserProvider();
         }
         if (config('auth.providers.users.field', 'email') === 'username') {
-            $this->loadMigrationsFrom( ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
+            $this->loadMigrationsFrom(ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
         }
     }
 
