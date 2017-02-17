@@ -283,5 +283,4 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/src/stubs/User.php.stub' => app_path('User.php'),
         ];
     }
-
 }
