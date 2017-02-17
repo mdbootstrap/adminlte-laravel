@@ -41,6 +41,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeV::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeVC::class]);
             $this->commands([\Acacha\AdminLTETemplateLaravel\Console\MakeMVC::class]);
+            $this->commands([\Acacha\AdminLTETemplateLaravel\Console\Username::class]);
         }
 
         $this->app->bind('AdminLTE', function () {
@@ -53,6 +54,9 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
 
         if (config('adminlte.guestuser', true)) {
             $this->registerGuestUserProvider();
+        }
+        if (config('auth.providers.users.field', 'email') === 'username') {
+            $this->loadMigrationsFrom( ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
         }
     }
 

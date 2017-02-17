@@ -6,11 +6,13 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
 /**
- * Class PublishAdminLTE.
+ * Class Username.
  */
-class PublishAdminLTE extends Command
+class Username extends Command
 {
+
     use Installable;
+
     /**
      * The filesystem instance.
      *
@@ -21,14 +23,14 @@ class PublishAdminLTE extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:publish {--f|force : Force overwrite of files}';
+    protected $signature = 'adminlte:username {--f|force : Force overwrite of files}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Publish Acacha AdminLTE Template files into laravel project';
+    protected $description = 'Changes to login and register with username';
 
     /**
      * Force overwrite of files.
@@ -55,132 +57,34 @@ class PublishAdminLTE extends Command
     public function handle()
     {
         $this->processOptions();
-        $this->publishHomeController();
-        $this->changeRegisterController();
-        $this->changeLoginController();
-        $this->changeForgotPasswordController();
-        $this->changeResetPasswordController();
-        $this->publishPublicAssets();
-        $this->publishViews();
-        $this->publishResourceAssets();
-        $this->publishTests();
-        $this->publishLanguages();
-        $this->publishGravatar();
-        $this->publishConfig();
-        $this->publishWebRoutes();
-        $this->publishApiRoutes();
+        $this->publishAuthConfigFile();
+        $this->publishUserClass();
+        $this->runMigration();
     }
 
     /**
-     * Install Home Controller.
+     * Install auth config file.
      */
-    private function publishHomeController()
+    private function publishAuthConfigFile()
     {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::homeController());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::authConfig());
     }
 
     /**
-     * Change Auth Register controller.
+     * Publish User class.
      */
-    private function changeRegisterController()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::registerController());
+    private function publishUserClass() {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::userClass());
     }
 
     /**
-     * Change Auth Login controller.
+     * Run migration.
      */
-    private function changeLoginController()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::loginController());
-    }
-
-    /**
-     * Change Auth Forgot Password controller.
-     */
-    private function changeForgotPasswordController()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::forgotPasswordController());
-    }
-
-    /**
-     * Change Auth Reset Password controller.
-     */
-    private function changeResetPasswordController()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::resetPasswordController());
-    }
-
-    /**
-     * Install public assets.
-     */
-    private function publishPublicAssets()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::publicAssets());
-    }
-
-    /**
-     * Install views.
-     */
-    private function publishViews()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::viewsToOverwrite());
-    }
-
-    /**
-     * Install resource assets.
-     */
-    private function publishResourceAssets()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::resourceAssets());
-    }
-
-    /**
-     * Install resource assets.
-     */
-    private function publishTests()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::tests());
-    }
-
-    /**
-     * Install language assets.
-     */
-    private function publishLanguages()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::languages());
-    }
-
-    /**
-     * Install gravatar config file.
-     */
-    private function publishGravatar()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::gravatar());
-    }
-
-    /**
-     * Publish adminlte package config.
-     */
-    private function publishConfig()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::config());
-    }
-
-    /**
-     * Publish routes/web.php file.
-     */
-    private function publishWebRoutes()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::webroutes());
-    }
-
-    /**
-     * Publish routes/api.php file.
-     */
-    private function publishApiRoutes()
-    {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::apiroutes());
+    private function runMigration() {
+        $this->info('Installing doctrine/dbal');
+        passthru('composer require doctrine/dbal');
+        $this->info('Running php artisan migrate');
+        passthru('php artisan migrate');
     }
 
     /**

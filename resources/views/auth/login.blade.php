@@ -27,10 +27,14 @@
         <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
         <form action="{{ url('/login') }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email"/>
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
+            <login-input-field
+                    name="{{ config('auth.providers.users.field','email') }}"
+                    domain="{{ config('auth.defaults.domain','') }}"
+                    ></login-input-field>
+            {{--<div class="form-group has-feedback">--}}
+                {{--<input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email"/>--}}
+                {{--<span class="glyphicon glyphicon-envelope form-control-feedback"></span>--}}
+            {{--</div>--}}
             <div class="form-group has-feedback">
                 <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
@@ -39,7 +43,7 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox" name="remember"> {{ trans('adminlte_lang::message.remember') }}
+                            <input style="display:none;" type="checkbox" name="remember"> {{ trans('adminlte_lang::message.remember') }}
                         </label>
                     </div>
                 </div><!-- /.col -->

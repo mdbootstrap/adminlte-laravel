@@ -259,4 +259,29 @@ class AdminLTE
                 base_path('routes/api.php')
         ];
     }
+
+    /**
+     * Auth config file copy path.
+     *
+     * @return array
+     */
+    public function authConfig()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/auth.php.stub' => config_path('auth.php'),
+        ];
+    }
+
+    /**
+     * User class copy path.
+     *
+     * @return array
+     */
+    public function userClass()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/User.php.stub' => app_path('User.php'),
+        ];
+    }
+
 }

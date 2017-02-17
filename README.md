@@ -520,6 +520,112 @@ Instead of default path of BSD sed (installed by default on MAC OS):
 
 More info at https://github.com/acacha/adminlte-laravel/issues/58
 
+## How to use username at login instead of email
+
+Execute command: 
+
+```
+php artisan adminlte:username
+```
+
+And then you can use username instead of email for login.
+
+'''NOTE''': when we are using login by username if login by usernames fails then 
+system try to use the introduced username as an email for login. So users
+can also login using email. 
+
+To come back to email login use:
+
+```bash
+php artisan adminlte:email
+```
+
+NOTE: Migration required to add username field to users table requires:
+ 
+```bash
+composer require doctrine/dbal
+```
+
+### Default domain for username registration
+
+Optionally you can define a default domain name for username login. Add domain option:
+
+```php
+'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'users',
+        'domain' => 'defaultdomain.com',
+    ],
+```
+
+to file '''config/auth.php'''. Then if an user tries to login with no domain the default domain will be appended whe logging. 
+
+So with previous example you can type at login:
+
+```
+sergiturbadenas
+```
+
+and system/javascript will replace that with:
+
+```
+sergiturbadenas@defaultdomain.com
+```
+
+# Vue
+
+Laravel adminlte package by default publish Laravel translations into Javascript/Vue.js adding to HTML header the following script:
+ 
+```javascript
+<script>
+    //See https://laracasts.com/discuss/channels/vue/use-trans-in-vuejs
+    window.trans = @php
+        // copy all translations from /resources/lang/CURRENT_LOCALE/* to global JS variable
+        $lang_files = File::files(resource_path() . '/lang/' . App::getLocale());
+        $trans = [];
+        foreach ($lang_files as $f) {
+            $filename = pathinfo($f)['filename'];
+            $trans[$filename] = trans($filename);
+        }
+        $trans['adminlte_lang_message'] = trans('adminlte_lang::message');
+        echo json_encode($trans);
+    @endphp
+</script>
+```
+
+This script is located in partial blade file (vendor/acacha/admin-lte-template-laravel/resources/views/layouts/partials/htmlheader.blade.php)
+
+So global variable window.trans contains all Laravel translations at can be used in any Javascript file.
+
+Also in file '''resources/assets/js/bootstrap.js''' code section:
+
+```
+Vue.prototype.trans = (key) => {
+    return _.get(window.trans, key, key);
+};
+```
+
+Allows using directly the trans function in vue templates:
+
+```
+{{ trans('auth.failed') }}
+```
+
+Also you can use inside Vue components code:
+
+```
+this.trans('auth.failed')
+```
+
+Laravel Adminlte messages ara available using prefix '''adminlte_lang_message.''':
+
+```
+{{ trans('adminlte_lang_message.username') }}
+```
+
+
+Feel free to remove/adapt this file to your needs.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.

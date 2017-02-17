@@ -36,9 +36,13 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
+// Use trans function in Vue (equivalent to trans() Laravel Translations helper). See htmlheader.balde.php partial.
 Vue.prototype.trans = (key) => {
     return _.get(window.trans, key, key);
 };
+
+//Laravel AdminLTE login input field component
+Vue.component('login-input-field', require('./components/LoginInputField.vue'));
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
