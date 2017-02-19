@@ -5,7 +5,6 @@ namespace Acacha\AdminLTETemplateLaravel\Console\Routes;
 use Acacha\Filesystem\Compiler\StubFileCompiler;
 use Acacha\Filesystem\Filesystem;
 
-
 /**
  * Class ControllerResourceRoute.
  *
