@@ -2,7 +2,7 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
-use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
+use Acacha\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 
 /**
@@ -16,7 +16,7 @@ class MakeView extends Command
     /**
      * The filesystem instance.
      *
-     * @var Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem
+     * @var \Acacha\Filesystem\Filesystem
      */
     protected $filesystem;
 

@@ -2,8 +2,8 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
-use Acacha\AdminLTETemplateLaravel\Compiler\StubFileCompiler;
-use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
+use Acacha\Filesystem\Compiler\StubFileCompiler;
+use Acacha\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 
 /**

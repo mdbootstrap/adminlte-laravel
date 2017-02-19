@@ -2,9 +2,9 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Console\Menus;
 
-use Acacha\AdminLTETemplateLaravel\Compiler\StubFileCompiler;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\GeneratesCode;
-use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
+use Acacha\Filesystem\Compiler\StubFileCompiler;
+use Acacha\Filesystem\Filesystem;
 
 /**
  * Class Menu.

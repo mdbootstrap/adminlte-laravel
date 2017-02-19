@@ -2,10 +2,10 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
-use Acacha\AdminLTETemplateLaravel\Compiler\StubFileCompiler;
 use Acacha\AdminLTETemplateLaravel\Console\Menus\RegularMenu;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\GeneratesCode;
-use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
+use Acacha\Filesystem\Compiler\StubFileCompiler;
+use Acacha\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 
 /**
