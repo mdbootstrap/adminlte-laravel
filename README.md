@@ -434,11 +434,20 @@ Create a new seed to add admin user to database. Use:
 php artisan make:adminUserSeeder
 File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/AdminUserSeeder.php created
 ```
+# Social Login/Register with acacha/laravel-social
 
+It's a cinch to add (optional) Social Login/Register support to Laravel adminlte using [acacha/laravel-social](https://github.com/acacha/laravel-social) package. Execute in your project root folder:
+
+```bash
+adminlte-laravel social
+```
+
+Follow the wixard to configure your social providers Oauth data and enjoy!
+
+More info at https://github.com/acacha/laravel-social.
 
 # Roadmap
 
-- Implement Facebook, Google and maybe twitter and github Login with Socialite
 - Add email html templates
 - Add breadcrumps with: https://github.com/davejamesmiller/laravel-breadcrumbs
 
