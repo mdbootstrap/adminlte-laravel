@@ -436,7 +436,7 @@ File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/Admin
 ```
 # Social Login/Register with acacha/laravel-social
 
-It's a cinch to add (optional) Social Login/Register support to Laravel adminlte using [acacha/laravel-social](https://github.com/acacha/laravel-social) package. Execute in your project root folder:
+It's a cinch to add (optional) Social Login/Register support to Laravel Adminlte using [acacha/laravel-social](https://github.com/acacha/laravel-social) package. Execute in your project root folder:
 
 ```bash
 adminlte-laravel social
@@ -445,6 +445,16 @@ adminlte-laravel social
 Follow the wixard to configure your social providers Oauth data and enjoy!
 
 More info at https://github.com/acacha/laravel-social.
+
+## How to remove social Login?
+
+Remove line
+
+```php
+@include('auth.partials.social_login')
+```
+
+in files `resources/views/auth/login.blade.php` and `register.blade.php`
 
 # Roadmap
 
@@ -473,18 +483,6 @@ phpunit
 ```
 
 In new created laravel project with acacha-admintle.laravel installed to test package is installed correctly.
-
-## Social Login
-
-FAQ:
-
-How can I remove social login links in register and login pages?
-
-Remove line @include('auth.partials.social_login') in files resources/views/auth/login.blade.php and register.blade.php
-
-Social login links in login/register pages returns 404 not found
-
-TODO: See package https://github.com/acacha/acacha-socialite
 
 ## Localization
 
