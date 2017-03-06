@@ -266,7 +266,7 @@ AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 
 https://github.com/almasaeed2010/AdminLTE
 
 ## Avatar/Gravatar
-
+make:route
 Adminlte-laravel supports global recognized avatar (http://gravatar.com) using package creativeorange/gravatar (https://github.com/creativeorange/gravatar).
 
 # Artisan Commands
@@ -298,13 +298,14 @@ php artisan make:menu /contact
 This commands adds a route to routes file using:
 
 ```bash
-php artisan adminlte:route linkname
+php artisan 
+linkname
 ```
 
 For example you can add a route  **routes/web.php** file with URI **/about** using:
 
 ```bash
-php artisan adminlte:route about
+php artisan make:route about
 ```
 
 This commands add this entry to routes/web.php
@@ -318,7 +319,7 @@ You can create 3 types of routes with option **type**:
 Examples:
 
 ```bash
-php artisan adminlte:route about --type=controller
+php artisan make:route about --type=controller
 ```
 
 this adds the following:
@@ -330,13 +331,13 @@ this adds the following:
 to file **routes/web.php**. You can choose the controller name and method with:
 
 ```bash
-php artisan adminlte:route about MyController@method --type=controller
+php artisan make:route about MyController@method --type=controller
 ```
 
 If you want to create a resource controller:
 
 ```bash
-php artisan adminlte:route about --type=resource
+php artisan make:route about --type=resource
 ```
 
 this adds the following:
@@ -350,13 +351,13 @@ to file **routes/web.php**.
 You can also create routes with other HTTP methods using option **method**:
 
 ```bash
-php artisan adminlte:route save --method=post
+php artisan make:route save --method=post
 ```
 
 You can also add routes to api using option **api**:
 
 ```bash
-php artisan adminlte:route save --api
+php artisan make:route save --api
 ```
 
 Then the routes will be added to **routes/api.php**.
@@ -364,13 +365,13 @@ Then the routes will be added to **routes/api.php**.
 Finally use option **-a** to add actions after route creation:
 
 ```bash
-php artisan adminlte:route about -a
+php artisan make:route about -a
 ```
 
 Last command also create a view with name **about.blade.php**. Using:
 
 ```bash
-php artisan adminlte:route about -a --type=controller
+php artisan make:route about -a --type=controller
 ```
 
 Will create a Controller file with name **AboutController** and method index.
@@ -378,7 +379,7 @@ Will create a Controller file with name **AboutController** and method index.
 You can consult all options with:
 
 ```bash
-php artisan adminlte:route --help
+php artisan make:route --help
 ```
 
 ## adminlte:publish | adminlte-laravel:publish
