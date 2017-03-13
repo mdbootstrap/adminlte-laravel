@@ -266,7 +266,7 @@ AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 
 https://github.com/almasaeed2010/AdminLTE
 
 ## Avatar/Gravatar
-make:route
+
 Adminlte-laravel supports global recognized avatar (http://gravatar.com) using package creativeorange/gravatar (https://github.com/creativeorange/gravatar).
 
 # Artisan Commands
@@ -298,8 +298,7 @@ php artisan make:menu /contact
 This commands adds a route to routes file using:
 
 ```bash
-php artisan 
-linkname
+php artisan make:route linkname
 ```
 
 For example you can add a route  **routes/web.php** file with URI **/about** using:
