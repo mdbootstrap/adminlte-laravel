@@ -42108,7 +42108,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "email",
       "placeholder": _vm.placeholder,
-      "name": _vm.name
+      "name": _vm.name,
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.credential)
@@ -42131,7 +42132,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "placeholder": _vm.placeholder,
-      "name": _vm.name
+      "name": _vm.name,
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.credential)
