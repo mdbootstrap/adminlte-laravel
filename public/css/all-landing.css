@@ -252,8 +252,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1);
-  src: url(../fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1?#iefix) format('embedded-opentype'), url(../fonts/glyphicons-halflings-regular.woff2?448c34a56d699c29117adc64c43affeb) format('woff2'), url(../fonts/glyphicons-halflings-regular.woff?fa2772327f55d8198301fdb8bcfc8158) format('woff'), url(../fonts/glyphicons-halflings-regular.ttf?e18bbf611f2a2e43afc071aa2f4e1512) format('truetype'), url(../fonts/glyphicons-halflings-regular.svg?89889688147bd7575d6327160d64e760#glyphicons_halflingsregular) format('svg');
+  src: url(/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1);
+  src: url(/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1?#iefix) format('embedded-opentype'), url(/fonts/glyphicons-halflings-regular.woff2?448c34a56d699c29117adc64c43affeb) format('woff2'), url(/fonts/glyphicons-halflings-regular.woff?fa2772327f55d8198301fdb8bcfc8158) format('woff'), url(/fonts/glyphicons-halflings-regular.ttf?e18bbf611f2a2e43afc071aa2f4e1512) format('truetype'), url(/fonts/glyphicons-halflings-regular.svg?89889688147bd7575d6327160d64e760#glyphicons_halflingsregular) format('svg');
 }
 .glyphicon {
   position: relative;
@@ -267,14 +267,14 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 .glyphicon-asterisk:before {
-  content: "*";
+  content: "\2a";
 }
 .glyphicon-plus:before {
-  content: "+";
+  content: "\2b";
 }
 .glyphicon-euro:before,
 .glyphicon-eur:before {
-  content: "\20AC";
+  content: "\20ac";
 }
 .glyphicon-minus:before {
   content: "\2212";
@@ -286,760 +286,760 @@ th {
   content: "\2709";
 }
 .glyphicon-pencil:before {
-  content: "\270F";
+  content: "\270f";
 }
 .glyphicon-glass:before {
-  content: "\E001";
+  content: "\e001";
 }
 .glyphicon-music:before {
-  content: "\E002";
+  content: "\e002";
 }
 .glyphicon-search:before {
-  content: "\E003";
+  content: "\e003";
 }
 .glyphicon-heart:before {
-  content: "\E005";
+  content: "\e005";
 }
 .glyphicon-star:before {
-  content: "\E006";
+  content: "\e006";
 }
 .glyphicon-star-empty:before {
-  content: "\E007";
+  content: "\e007";
 }
 .glyphicon-user:before {
-  content: "\E008";
+  content: "\e008";
 }
 .glyphicon-film:before {
-  content: "\E009";
+  content: "\e009";
 }
 .glyphicon-th-large:before {
-  content: "\E010";
+  content: "\e010";
 }
 .glyphicon-th:before {
-  content: "\E011";
+  content: "\e011";
 }
 .glyphicon-th-list:before {
-  content: "\E012";
+  content: "\e012";
 }
 .glyphicon-ok:before {
-  content: "\E013";
+  content: "\e013";
 }
 .glyphicon-remove:before {
-  content: "\E014";
+  content: "\e014";
 }
 .glyphicon-zoom-in:before {
-  content: "\E015";
+  content: "\e015";
 }
 .glyphicon-zoom-out:before {
-  content: "\E016";
+  content: "\e016";
 }
 .glyphicon-off:before {
-  content: "\E017";
+  content: "\e017";
 }
 .glyphicon-signal:before {
-  content: "\E018";
+  content: "\e018";
 }
 .glyphicon-cog:before {
-  content: "\E019";
+  content: "\e019";
 }
 .glyphicon-trash:before {
-  content: "\E020";
+  content: "\e020";
 }
 .glyphicon-home:before {
-  content: "\E021";
+  content: "\e021";
 }
 .glyphicon-file:before {
-  content: "\E022";
+  content: "\e022";
 }
 .glyphicon-time:before {
-  content: "\E023";
+  content: "\e023";
 }
 .glyphicon-road:before {
-  content: "\E024";
+  content: "\e024";
 }
 .glyphicon-download-alt:before {
-  content: "\E025";
+  content: "\e025";
 }
 .glyphicon-download:before {
-  content: "\E026";
+  content: "\e026";
 }
 .glyphicon-upload:before {
-  content: "\E027";
+  content: "\e027";
 }
 .glyphicon-inbox:before {
-  content: "\E028";
+  content: "\e028";
 }
 .glyphicon-play-circle:before {
-  content: "\E029";
+  content: "\e029";
 }
 .glyphicon-repeat:before {
-  content: "\E030";
+  content: "\e030";
 }
 .glyphicon-refresh:before {
-  content: "\E031";
+  content: "\e031";
 }
 .glyphicon-list-alt:before {
-  content: "\E032";
+  content: "\e032";
 }
 .glyphicon-lock:before {
-  content: "\E033";
+  content: "\e033";
 }
 .glyphicon-flag:before {
-  content: "\E034";
+  content: "\e034";
 }
 .glyphicon-headphones:before {
-  content: "\E035";
+  content: "\e035";
 }
 .glyphicon-volume-off:before {
-  content: "\E036";
+  content: "\e036";
 }
 .glyphicon-volume-down:before {
-  content: "\E037";
+  content: "\e037";
 }
 .glyphicon-volume-up:before {
-  content: "\E038";
+  content: "\e038";
 }
 .glyphicon-qrcode:before {
-  content: "\E039";
+  content: "\e039";
 }
 .glyphicon-barcode:before {
-  content: "\E040";
+  content: "\e040";
 }
 .glyphicon-tag:before {
-  content: "\E041";
+  content: "\e041";
 }
 .glyphicon-tags:before {
-  content: "\E042";
+  content: "\e042";
 }
 .glyphicon-book:before {
-  content: "\E043";
+  content: "\e043";
 }
 .glyphicon-bookmark:before {
-  content: "\E044";
+  content: "\e044";
 }
 .glyphicon-print:before {
-  content: "\E045";
+  content: "\e045";
 }
 .glyphicon-camera:before {
-  content: "\E046";
+  content: "\e046";
 }
 .glyphicon-font:before {
-  content: "\E047";
+  content: "\e047";
 }
 .glyphicon-bold:before {
-  content: "\E048";
+  content: "\e048";
 }
 .glyphicon-italic:before {
-  content: "\E049";
+  content: "\e049";
 }
 .glyphicon-text-height:before {
-  content: "\E050";
+  content: "\e050";
 }
 .glyphicon-text-width:before {
-  content: "\E051";
+  content: "\e051";
 }
 .glyphicon-align-left:before {
-  content: "\E052";
+  content: "\e052";
 }
 .glyphicon-align-center:before {
-  content: "\E053";
+  content: "\e053";
 }
 .glyphicon-align-right:before {
-  content: "\E054";
+  content: "\e054";
 }
 .glyphicon-align-justify:before {
-  content: "\E055";
+  content: "\e055";
 }
 .glyphicon-list:before {
-  content: "\E056";
+  content: "\e056";
 }
 .glyphicon-indent-left:before {
-  content: "\E057";
+  content: "\e057";
 }
 .glyphicon-indent-right:before {
-  content: "\E058";
+  content: "\e058";
 }
 .glyphicon-facetime-video:before {
-  content: "\E059";
+  content: "\e059";
 }
 .glyphicon-picture:before {
-  content: "\E060";
+  content: "\e060";
 }
 .glyphicon-map-marker:before {
-  content: "\E062";
+  content: "\e062";
 }
 .glyphicon-adjust:before {
-  content: "\E063";
+  content: "\e063";
 }
 .glyphicon-tint:before {
-  content: "\E064";
+  content: "\e064";
 }
 .glyphicon-edit:before {
-  content: "\E065";
+  content: "\e065";
 }
 .glyphicon-share:before {
-  content: "\E066";
+  content: "\e066";
 }
 .glyphicon-check:before {
-  content: "\E067";
+  content: "\e067";
 }
 .glyphicon-move:before {
-  content: "\E068";
+  content: "\e068";
 }
 .glyphicon-step-backward:before {
-  content: "\E069";
+  content: "\e069";
 }
 .glyphicon-fast-backward:before {
-  content: "\E070";
+  content: "\e070";
 }
 .glyphicon-backward:before {
-  content: "\E071";
+  content: "\e071";
 }
 .glyphicon-play:before {
-  content: "\E072";
+  content: "\e072";
 }
 .glyphicon-pause:before {
-  content: "\E073";
+  content: "\e073";
 }
 .glyphicon-stop:before {
-  content: "\E074";
+  content: "\e074";
 }
 .glyphicon-forward:before {
-  content: "\E075";
+  content: "\e075";
 }
 .glyphicon-fast-forward:before {
-  content: "\E076";
+  content: "\e076";
 }
 .glyphicon-step-forward:before {
-  content: "\E077";
+  content: "\e077";
 }
 .glyphicon-eject:before {
-  content: "\E078";
+  content: "\e078";
 }
 .glyphicon-chevron-left:before {
-  content: "\E079";
+  content: "\e079";
 }
 .glyphicon-chevron-right:before {
-  content: "\E080";
+  content: "\e080";
 }
 .glyphicon-plus-sign:before {
-  content: "\E081";
+  content: "\e081";
 }
 .glyphicon-minus-sign:before {
-  content: "\E082";
+  content: "\e082";
 }
 .glyphicon-remove-sign:before {
-  content: "\E083";
+  content: "\e083";
 }
 .glyphicon-ok-sign:before {
-  content: "\E084";
+  content: "\e084";
 }
 .glyphicon-question-sign:before {
-  content: "\E085";
+  content: "\e085";
 }
 .glyphicon-info-sign:before {
-  content: "\E086";
+  content: "\e086";
 }
 .glyphicon-screenshot:before {
-  content: "\E087";
+  content: "\e087";
 }
 .glyphicon-remove-circle:before {
-  content: "\E088";
+  content: "\e088";
 }
 .glyphicon-ok-circle:before {
-  content: "\E089";
+  content: "\e089";
 }
 .glyphicon-ban-circle:before {
-  content: "\E090";
+  content: "\e090";
 }
 .glyphicon-arrow-left:before {
-  content: "\E091";
+  content: "\e091";
 }
 .glyphicon-arrow-right:before {
-  content: "\E092";
+  content: "\e092";
 }
 .glyphicon-arrow-up:before {
-  content: "\E093";
+  content: "\e093";
 }
 .glyphicon-arrow-down:before {
-  content: "\E094";
+  content: "\e094";
 }
 .glyphicon-share-alt:before {
-  content: "\E095";
+  content: "\e095";
 }
 .glyphicon-resize-full:before {
-  content: "\E096";
+  content: "\e096";
 }
 .glyphicon-resize-small:before {
-  content: "\E097";
+  content: "\e097";
 }
 .glyphicon-exclamation-sign:before {
-  content: "\E101";
+  content: "\e101";
 }
 .glyphicon-gift:before {
-  content: "\E102";
+  content: "\e102";
 }
 .glyphicon-leaf:before {
-  content: "\E103";
+  content: "\e103";
 }
 .glyphicon-fire:before {
-  content: "\E104";
+  content: "\e104";
 }
 .glyphicon-eye-open:before {
-  content: "\E105";
+  content: "\e105";
 }
 .glyphicon-eye-close:before {
-  content: "\E106";
+  content: "\e106";
 }
 .glyphicon-warning-sign:before {
-  content: "\E107";
+  content: "\e107";
 }
 .glyphicon-plane:before {
-  content: "\E108";
+  content: "\e108";
 }
 .glyphicon-calendar:before {
-  content: "\E109";
+  content: "\e109";
 }
 .glyphicon-random:before {
-  content: "\E110";
+  content: "\e110";
 }
 .glyphicon-comment:before {
-  content: "\E111";
+  content: "\e111";
 }
 .glyphicon-magnet:before {
-  content: "\E112";
+  content: "\e112";
 }
 .glyphicon-chevron-up:before {
-  content: "\E113";
+  content: "\e113";
 }
 .glyphicon-chevron-down:before {
-  content: "\E114";
+  content: "\e114";
 }
 .glyphicon-retweet:before {
-  content: "\E115";
+  content: "\e115";
 }
 .glyphicon-shopping-cart:before {
-  content: "\E116";
+  content: "\e116";
 }
 .glyphicon-folder-close:before {
-  content: "\E117";
+  content: "\e117";
 }
 .glyphicon-folder-open:before {
-  content: "\E118";
+  content: "\e118";
 }
 .glyphicon-resize-vertical:before {
-  content: "\E119";
+  content: "\e119";
 }
 .glyphicon-resize-horizontal:before {
-  content: "\E120";
+  content: "\e120";
 }
 .glyphicon-hdd:before {
-  content: "\E121";
+  content: "\e121";
 }
 .glyphicon-bullhorn:before {
-  content: "\E122";
+  content: "\e122";
 }
 .glyphicon-bell:before {
-  content: "\E123";
+  content: "\e123";
 }
 .glyphicon-certificate:before {
-  content: "\E124";
+  content: "\e124";
 }
 .glyphicon-thumbs-up:before {
-  content: "\E125";
+  content: "\e125";
 }
 .glyphicon-thumbs-down:before {
-  content: "\E126";
+  content: "\e126";
 }
 .glyphicon-hand-right:before {
-  content: "\E127";
+  content: "\e127";
 }
 .glyphicon-hand-left:before {
-  content: "\E128";
+  content: "\e128";
 }
 .glyphicon-hand-up:before {
-  content: "\E129";
+  content: "\e129";
 }
 .glyphicon-hand-down:before {
-  content: "\E130";
+  content: "\e130";
 }
 .glyphicon-circle-arrow-right:before {
-  content: "\E131";
+  content: "\e131";
 }
 .glyphicon-circle-arrow-left:before {
-  content: "\E132";
+  content: "\e132";
 }
 .glyphicon-circle-arrow-up:before {
-  content: "\E133";
+  content: "\e133";
 }
 .glyphicon-circle-arrow-down:before {
-  content: "\E134";
+  content: "\e134";
 }
 .glyphicon-globe:before {
-  content: "\E135";
+  content: "\e135";
 }
 .glyphicon-wrench:before {
-  content: "\E136";
+  content: "\e136";
 }
 .glyphicon-tasks:before {
-  content: "\E137";
+  content: "\e137";
 }
 .glyphicon-filter:before {
-  content: "\E138";
+  content: "\e138";
 }
 .glyphicon-briefcase:before {
-  content: "\E139";
+  content: "\e139";
 }
 .glyphicon-fullscreen:before {
-  content: "\E140";
+  content: "\e140";
 }
 .glyphicon-dashboard:before {
-  content: "\E141";
+  content: "\e141";
 }
 .glyphicon-paperclip:before {
-  content: "\E142";
+  content: "\e142";
 }
 .glyphicon-heart-empty:before {
-  content: "\E143";
+  content: "\e143";
 }
 .glyphicon-link:before {
-  content: "\E144";
+  content: "\e144";
 }
 .glyphicon-phone:before {
-  content: "\E145";
+  content: "\e145";
 }
 .glyphicon-pushpin:before {
-  content: "\E146";
+  content: "\e146";
 }
 .glyphicon-usd:before {
-  content: "\E148";
+  content: "\e148";
 }
 .glyphicon-gbp:before {
-  content: "\E149";
+  content: "\e149";
 }
 .glyphicon-sort:before {
-  content: "\E150";
+  content: "\e150";
 }
 .glyphicon-sort-by-alphabet:before {
-  content: "\E151";
+  content: "\e151";
 }
 .glyphicon-sort-by-alphabet-alt:before {
-  content: "\E152";
+  content: "\e152";
 }
 .glyphicon-sort-by-order:before {
-  content: "\E153";
+  content: "\e153";
 }
 .glyphicon-sort-by-order-alt:before {
-  content: "\E154";
+  content: "\e154";
 }
 .glyphicon-sort-by-attributes:before {
-  content: "\E155";
+  content: "\e155";
 }
 .glyphicon-sort-by-attributes-alt:before {
-  content: "\E156";
+  content: "\e156";
 }
 .glyphicon-unchecked:before {
-  content: "\E157";
+  content: "\e157";
 }
 .glyphicon-expand:before {
-  content: "\E158";
+  content: "\e158";
 }
 .glyphicon-collapse-down:before {
-  content: "\E159";
+  content: "\e159";
 }
 .glyphicon-collapse-up:before {
-  content: "\E160";
+  content: "\e160";
 }
 .glyphicon-log-in:before {
-  content: "\E161";
+  content: "\e161";
 }
 .glyphicon-flash:before {
-  content: "\E162";
+  content: "\e162";
 }
 .glyphicon-log-out:before {
-  content: "\E163";
+  content: "\e163";
 }
 .glyphicon-new-window:before {
-  content: "\E164";
+  content: "\e164";
 }
 .glyphicon-record:before {
-  content: "\E165";
+  content: "\e165";
 }
 .glyphicon-save:before {
-  content: "\E166";
+  content: "\e166";
 }
 .glyphicon-open:before {
-  content: "\E167";
+  content: "\e167";
 }
 .glyphicon-saved:before {
-  content: "\E168";
+  content: "\e168";
 }
 .glyphicon-import:before {
-  content: "\E169";
+  content: "\e169";
 }
 .glyphicon-export:before {
-  content: "\E170";
+  content: "\e170";
 }
 .glyphicon-send:before {
-  content: "\E171";
+  content: "\e171";
 }
 .glyphicon-floppy-disk:before {
-  content: "\E172";
+  content: "\e172";
 }
 .glyphicon-floppy-saved:before {
-  content: "\E173";
+  content: "\e173";
 }
 .glyphicon-floppy-remove:before {
-  content: "\E174";
+  content: "\e174";
 }
 .glyphicon-floppy-save:before {
-  content: "\E175";
+  content: "\e175";
 }
 .glyphicon-floppy-open:before {
-  content: "\E176";
+  content: "\e176";
 }
 .glyphicon-credit-card:before {
-  content: "\E177";
+  content: "\e177";
 }
 .glyphicon-transfer:before {
-  content: "\E178";
+  content: "\e178";
 }
 .glyphicon-cutlery:before {
-  content: "\E179";
+  content: "\e179";
 }
 .glyphicon-header:before {
-  content: "\E180";
+  content: "\e180";
 }
 .glyphicon-compressed:before {
-  content: "\E181";
+  content: "\e181";
 }
 .glyphicon-earphone:before {
-  content: "\E182";
+  content: "\e182";
 }
 .glyphicon-phone-alt:before {
-  content: "\E183";
+  content: "\e183";
 }
 .glyphicon-tower:before {
-  content: "\E184";
+  content: "\e184";
 }
 .glyphicon-stats:before {
-  content: "\E185";
+  content: "\e185";
 }
 .glyphicon-sd-video:before {
-  content: "\E186";
+  content: "\e186";
 }
 .glyphicon-hd-video:before {
-  content: "\E187";
+  content: "\e187";
 }
 .glyphicon-subtitles:before {
-  content: "\E188";
+  content: "\e188";
 }
 .glyphicon-sound-stereo:before {
-  content: "\E189";
+  content: "\e189";
 }
 .glyphicon-sound-dolby:before {
-  content: "\E190";
+  content: "\e190";
 }
 .glyphicon-sound-5-1:before {
-  content: "\E191";
+  content: "\e191";
 }
 .glyphicon-sound-6-1:before {
-  content: "\E192";
+  content: "\e192";
 }
 .glyphicon-sound-7-1:before {
-  content: "\E193";
+  content: "\e193";
 }
 .glyphicon-copyright-mark:before {
-  content: "\E194";
+  content: "\e194";
 }
 .glyphicon-registration-mark:before {
-  content: "\E195";
+  content: "\e195";
 }
 .glyphicon-cloud-download:before {
-  content: "\E197";
+  content: "\e197";
 }
 .glyphicon-cloud-upload:before {
-  content: "\E198";
+  content: "\e198";
 }
 .glyphicon-tree-conifer:before {
-  content: "\E199";
+  content: "\e199";
 }
 .glyphicon-tree-deciduous:before {
-  content: "\E200";
+  content: "\e200";
 }
 .glyphicon-cd:before {
-  content: "\E201";
+  content: "\e201";
 }
 .glyphicon-save-file:before {
-  content: "\E202";
+  content: "\e202";
 }
 .glyphicon-open-file:before {
-  content: "\E203";
+  content: "\e203";
 }
 .glyphicon-level-up:before {
-  content: "\E204";
+  content: "\e204";
 }
 .glyphicon-copy:before {
-  content: "\E205";
+  content: "\e205";
 }
 .glyphicon-paste:before {
-  content: "\E206";
+  content: "\e206";
 }
 .glyphicon-alert:before {
-  content: "\E209";
+  content: "\e209";
 }
 .glyphicon-equalizer:before {
-  content: "\E210";
+  content: "\e210";
 }
 .glyphicon-king:before {
-  content: "\E211";
+  content: "\e211";
 }
 .glyphicon-queen:before {
-  content: "\E212";
+  content: "\e212";
 }
 .glyphicon-pawn:before {
-  content: "\E213";
+  content: "\e213";
 }
 .glyphicon-bishop:before {
-  content: "\E214";
+  content: "\e214";
 }
 .glyphicon-knight:before {
-  content: "\E215";
+  content: "\e215";
 }
 .glyphicon-baby-formula:before {
-  content: "\E216";
+  content: "\e216";
 }
 .glyphicon-tent:before {
-  content: "\26FA";
+  content: "\26fa";
 }
 .glyphicon-blackboard:before {
-  content: "\E218";
+  content: "\e218";
 }
 .glyphicon-bed:before {
-  content: "\E219";
+  content: "\e219";
 }
 .glyphicon-apple:before {
-  content: "\F8FF";
+  content: "\f8ff";
 }
 .glyphicon-erase:before {
-  content: "\E221";
+  content: "\e221";
 }
 .glyphicon-hourglass:before {
-  content: "\231B";
+  content: "\231b";
 }
 .glyphicon-lamp:before {
-  content: "\E223";
+  content: "\e223";
 }
 .glyphicon-duplicate:before {
-  content: "\E224";
+  content: "\e224";
 }
 .glyphicon-piggy-bank:before {
-  content: "\E225";
+  content: "\e225";
 }
 .glyphicon-scissors:before {
-  content: "\E226";
+  content: "\e226";
 }
 .glyphicon-bitcoin:before {
-  content: "\E227";
+  content: "\e227";
 }
 .glyphicon-yen:before {
-  content: "\A5";
+  content: "\00a5";
 }
 .glyphicon-ruble:before {
-  content: "\20BD";
+  content: "\20bd";
 }
 .glyphicon-scale:before {
-  content: "\E230";
+  content: "\e230";
 }
 .glyphicon-ice-lolly:before {
-  content: "\E231";
+  content: "\e231";
 }
 .glyphicon-ice-lolly-tasted:before {
-  content: "\E232";
+  content: "\e232";
 }
 .glyphicon-education:before {
-  content: "\E233";
+  content: "\e233";
 }
 .glyphicon-option-horizontal:before {
-  content: "\E234";
+  content: "\e234";
 }
 .glyphicon-option-vertical:before {
-  content: "\E235";
+  content: "\e235";
 }
 .glyphicon-menu-hamburger:before {
-  content: "\E236";
+  content: "\e236";
 }
 .glyphicon-modal-window:before {
-  content: "\E237";
+  content: "\e237";
 }
 .glyphicon-oil:before {
-  content: "\E238";
+  content: "\e238";
 }
 .glyphicon-grain:before {
-  content: "\E239";
+  content: "\e239";
 }
 .glyphicon-sunglasses:before {
-  content: "\E240";
+  content: "\e240";
 }
 .glyphicon-text-size:before {
-  content: "\E241";
+  content: "\e241";
 }
 .glyphicon-text-color:before {
-  content: "\E242";
+  content: "\e242";
 }
 .glyphicon-text-background:before {
-  content: "\E243";
+  content: "\e243";
 }
 .glyphicon-object-align-top:before {
-  content: "\E244";
+  content: "\e244";
 }
 .glyphicon-object-align-bottom:before {
-  content: "\E245";
+  content: "\e245";
 }
 .glyphicon-object-align-horizontal:before {
-  content: "\E246";
+  content: "\e246";
 }
 .glyphicon-object-align-left:before {
-  content: "\E247";
+  content: "\e247";
 }
 .glyphicon-object-align-vertical:before {
-  content: "\E248";
+  content: "\e248";
 }
 .glyphicon-object-align-right:before {
-  content: "\E249";
+  content: "\e249";
 }
 .glyphicon-triangle-right:before {
-  content: "\E250";
+  content: "\e250";
 }
 .glyphicon-triangle-left:before {
-  content: "\E251";
+  content: "\e251";
 }
 .glyphicon-triangle-bottom:before {
-  content: "\E252";
+  content: "\e252";
 }
 .glyphicon-triangle-top:before {
-  content: "\E253";
+  content: "\e253";
 }
 .glyphicon-console:before {
-  content: "\E254";
+  content: "\e254";
 }
 .glyphicon-superscript:before {
-  content: "\E255";
+  content: "\e255";
 }
 .glyphicon-subscript:before {
-  content: "\E256";
+  content: "\e256";
 }
 .glyphicon-menu-left:before {
-  content: "\E257";
+  content: "\e257";
 }
 .glyphicon-menu-right:before {
-  content: "\E258";
+  content: "\e258";
 }
 .glyphicon-menu-down:before {
-  content: "\E259";
+  content: "\e259";
 }
 .glyphicon-menu-up:before {
-  content: "\E260";
+  content: "\e260";
 }
 * {
   box-sizing: border-box;
@@ -1454,7 +1454,7 @@ blockquote .small {
 blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
-  content: '\2014   \A0';
+  content: '\2014 \00A0';
 }
 .blockquote-reverse,
 blockquote.pull-right {
@@ -1478,7 +1478,7 @@ blockquote.pull-right footer:after,
 blockquote.pull-right small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right .small:after {
-  content: '\A0   \2014';
+  content: '\00A0 \2014';
 }
 address {
   margin-bottom: 20px;
@@ -4536,7 +4536,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: inline-block;
 }
 .breadcrumb > li + li:before {
-  content: "/\A0";
+  content: "/\00a0";
   padding: 0 5px;
   color: #ccc;
 }
@@ -6111,7 +6111,7 @@ button.close {
   content: '\2039';
 }
 .carousel-control .icon-next:before {
-  content: '\203A';
+  content: '\203a';
 }
 .carousel-indicators {
   position: absolute;
