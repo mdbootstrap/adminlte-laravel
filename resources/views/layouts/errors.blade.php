@@ -10,5 +10,8 @@
             @yield('main-content')
         </section>
     </div>
+    @section('scripts')
+        @include('adminlte::layouts.partials.scripts')
+    @show
 </body>
 </html>
