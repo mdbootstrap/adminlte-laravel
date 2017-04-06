@@ -3,7 +3,7 @@
 
 @include('adminlte::layouts.partials.htmlheader')
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->

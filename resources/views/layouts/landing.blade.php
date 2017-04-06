@@ -35,7 +35,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
 <body data-spy="scroll" data-target="#navigation" data-offset="50">
 
-<div id="app">
+<div id="app" v-cloak>
     <!-- Fixed navbar -->
     <div id="navigation" class="navbar navbar-default navbar-fixed-top">
         <div class="container">

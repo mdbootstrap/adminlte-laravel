@@ -6,7 +6,7 @@
 
 @section('content')
 <body class="hold-transition login-page">
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="login-box">
             <div class="login-logo">
                 <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
