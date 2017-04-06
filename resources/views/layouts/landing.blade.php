@@ -282,7 +282,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <br/>
                     AdminLTE {{ trans('adminlte_lang::message.createdby') }} Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
                     <br/>
-                    Pratt Landing Page {{ trans('adminlte_lang::message.createdby') }} <a href="http://www.blacktie.co">BLACKTIE.CO</a>
+                    Pratt Landing Page PROVA {{ trans('adminlte_lang::message.createdby') }} <a href="http://www.blacktie.co">BLACKTIE.CO</a>
                 </p>
 
             </div>
@@ -294,7 +294,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="./{{ mix('/js/app-landing.js') }}"></script>
+<script src="{{ url (mix('/js/app-landing.js')) }}"></script>
 <script>
     $('.carousel').carousel({
         interval: 3500
