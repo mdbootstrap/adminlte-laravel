@@ -1,2 +1,2 @@
 <!-- Compiled app javascript -->
-<script src="{{ asset('/js/app.js') }}"></script>
+<script src="{{ url (mix('/js/app.js')) }}"></script>
