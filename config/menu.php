@@ -21,16 +21,21 @@ Menu::macro('adminlteMenu', function () {
 Menu::macro('adminlteSeparator', function ($title) {
     return Html::raw($title)->addParentClass('header');
 });
+
+Menu::macro('adminlteDefaultMenu', function ($content) {
+    return Html::raw('<i class="fa fa-link"></i><span>' . $content . '</span>')->html();
+});
+
 Menu::macro('sidebar', function () {
     return Menu::adminlteMenu()
         ->add(Html::raw('HEADER')->addParentClass('header'))
-        ->action('HomeController@index', 'Home')
-        ->link('http://www.acacha.org', 'Another link')
+        ->action('HomeController@index', '<i class="fa fa-home"></i><span>Home</span>')
+        ->link('http://www.acacha.org', Menu::adminlteDefaultMenu('Another link'))
 //        ->url('http://www.google.com', 'Google')
         ->add(Menu::adminlteSeparator('Acacha Adminlte'))
         #adminlte_menu
         ->add(Menu::adminlteSeparator('SECONDARY MENU'))
-        ->add(Menu::new()->prepend('<a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
+        ->add(Menu::new()->prepend('<a href="#"><i class="fa fa-share"></i><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
             ->addParentClass('treeview')
             ->add(Link::to('/link1', 'Link1'))->addClass('treeview-menu')
             ->add(Link::to('/link2', 'Link2'))

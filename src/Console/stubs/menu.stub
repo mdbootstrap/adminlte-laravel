@@ -1,1 +1,1 @@
-        ->add(Link::toUrl('$MENU_LINK$', '$MENU_NAME$'))
+        ->add(Link::toUrl('$MENU_LINK$', '<i class="fa fa-link"></i><span>$MENU_NAME$</span>'))
