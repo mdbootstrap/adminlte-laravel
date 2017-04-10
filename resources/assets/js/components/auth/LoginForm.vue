@@ -1,85 +1,90 @@
 <template>
- <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
-  <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('name') }">
+ <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.name)">
 
-   <input type="text" class="form-control" :placeholder="trans('adminlte_lang_message.fullname')" name="name" value="" v-model="form.name" autofocus/>
-
-   <span class="glyphicon glyphicon-user form-control-feedback"></span>
-   <transition name="fade">
-    <span class="help-block" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
-   </transition>
-
-  </div>
-
-  <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }">
-   <input type="email" class="form-control" :placeholder="trans('adminlte_lang_message.email')" name="email" value="" v-model="form.email"/>
-   <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }" v-if="type === 'email'">
+   <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.username" @change="adddomain" autofocus/>
+   <span class="glyphicon form-control-feedback" :class="[icon]"></span>
    <transition name="fade">
     <span class="help-block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
    </transition>
   </div>
+
+  <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('username') }" v-else>
+   <input type="text" class="form-control" :placeholder="placeholder" :name="name" v-model="form.username" @change="adddomain" autofocus/>
+   <span class="glyphicon form-control-feedback" :class="[icon]"></span>
+   <transition name="fade">
+    <span class="help-block" v-if="form.errors.has('username')" v-text="form.errors.get('username')"></span>
+   </transition>
+  </div>
+
+
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('password') }">
    <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.password')" name="password" v-model="form.password"/>
    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
    <transition name="fade">
-     <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
-   </transition>
-  </div>
-  <div class="form-group has-feedback">
-   <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.retypepassword')" name="password_confirmation" v-model="form.password_confirmation"/>
-   <transition name="fade">
-   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
    </transition>
   </div>
   <div class="row">
-   <div class="col-xs-7">
-    <label>
-     <div class="checkbox_register icheck">
-      <label data-toggle="modal" data-target="#termsModal">
-       <input type="checkbox" name="terms" v-model="form.terms" class="has-error">
-       <a href="#" :class="{ 'text-danger': form.errors.has('terms') }">Terms and conditions</a>
-      </label>
-     </div>
-    </label>
+   <div class="col-xs-8">
+    <div class="checkbox icheck">
+     <label>
+      <input style="display:none;" type="checkbox" name="remember" v-model="form.remember"> {{ trans('adminlte_lang_message.remember') }}
+     </label>
+    </div>
    </div>
-   <div class="col-xs-4 col-xs-push-1">
-    <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i> Register</button>
+   <div class="col-xs-4">
+    <button type="submit" class="btn btn-primary btn-block btn-flat" v-text="trans('adminlte_lang_message.buttonsign')" :disabled="form.errors.any()"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i></button>
    </div>
-  </div>
-  <div v-if="form.errors.has('terms')" class="form-group has-feedback" :class="{ 'has-error': form.errors.has('terms') }">
-   <span class="help-block" v-if="form.errors.has('terms')" v-text="form.errors.get('terms')"></span>
   </div>
  </form>
-
 </template>
 
-<style>
-
-.fade-enter-active, .fade-leave-active {
- transition: opacity 1s ease;
-}
-
-.fade-enter, .fade-leave-to {
- opacity: 0;
-}
-
-</style>
+<style src="./fade.css"></style>
 
 <script>
 
 import Form from 'acacha-forms'
+import initialitzeIcheck from './InitializeIcheck'
+import redirect from './redirect'
 
 export default {
-  mounted () {
-    this.initialitzeICheck()
-  },
+  mixins: [initialitzeIcheck, redirect],
   data: function () {
+    let form = new Form({ username: '', password: '', remember: '' })
+    if (this.name === 'email') {
+      form = new Form({ email: '', password: '', remember: '' })
+    }
     return {
-      form: new Form({ name: '', email: '', password: '', password_confirmation: '', terms: '' })
+      form: form
+    }
+  },
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    domain: {
+      type: String,
+      required: false
+    }
+  },
+  computed: {
+    placeholder: function () {
+      if (this.name === 'email') return this.trans('adminlte_lang_message.email')
+      return this.trans('adminlte_lang_message.username')
+    },
+    type: function () {
+      if (this.name === 'email') return 'email'
+      return 'text'
+    },
+    icon: function () {
+      if (this.name === 'email') return 'glyphicon-envelope'
+      return 'glyphicon-user'
     }
   },
   watch: {
-    'form.terms': function (value) {
+    'form.remember': function (value) {
       if (value) {
         $('input').iCheck('check')
       } else {
@@ -88,34 +93,21 @@ export default {
     }
   },
   methods: {
-    initialitzeICheck () {
-      var component = this
-      $('input').iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass: 'iradio_square-blue',
-        increaseArea: '20%'
-      }).on('ifChecked', function (event) {
-        component.form.set('terms', true)
-        component.form.errors.clear('terms')
-      }).on('ifUnchecked', function (event) {
-        component.form.set('terms', '')
-      })
-    },
     submit () {
-      this.form.post('/register')
+      this.form.post('/login')
        .then(response => {
          this.redirect(response)
        })
        .catch(error => {
-         console.log(trans('adminlte_lang_message.registererror') + error)
+         console.log(this.trans('adminlte_lang_message.loginerror') + ':' + error)
        })
     },
-    redirect (response) {
-      window.location.reload()
-    },
-    clearErrors (name) {
-      if (name === 'password_confirmation') name = 'password'
-      this.form.errors.clear(name)
+    adddomain: function () {
+      if (this.type === 'email') return
+      if (this.domain === '') return
+      if (this.form.username.endsWith(this.domain)) return
+      if (this.form.username.includes('@')) return
+      this.form.username = this.form.username + '@' + this.domain
     }
   }
 }

@@ -49,26 +49,16 @@
 
 </template>
 
-<style>
-
-.fade-enter-active, .fade-leave-active {
- transition: opacity 1s ease;
-}
-
-.fade-enter, .fade-leave-to {
- opacity: 0;
-}
-
-</style>
+<style src="./fade.css"></style>
 
 <script>
 
 import Form from 'acacha-forms'
+import initialitzeIcheck from './InitializeIcheck'
+import redirect from './redirect'
 
 export default {
-  mounted () {
-    this.initialitzeICheck()
-  },
+  mixins: [initialitzeIcheck, redirect],
   data: function () {
     return {
       form: new Form({ name: '', email: '', password: '', password_confirmation: '', terms: '' })
@@ -84,30 +74,14 @@ export default {
     }
   },
   methods: {
-    initialitzeICheck () {
-      var component = this
-      $('input').iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass: 'iradio_square-blue',
-        increaseArea: '20%'
-      }).on('ifChecked', function (event) {
-        component.form.set('terms', true)
-        component.form.errors.clear('terms')
-      }).on('ifUnchecked', function (event) {
-        component.form.set('terms', '')
-      })
-    },
     submit () {
       this.form.post('/register')
        .then(response => {
          this.redirect(response)
        })
        .catch(error => {
-         console.log(trans('adminlte_lang_message.registererror') + error)
+         console.log(this.trans('adminlte_lang_message.registererror') + ':' + error)
        })
-    },
-    redirect (response) {
-      window.location.reload()
     },
     clearErrors (name) {
       if (name === 'password_confirmation') name = 'password'

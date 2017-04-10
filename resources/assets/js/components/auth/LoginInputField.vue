@@ -1,5 +1,5 @@
 <template>
-    <div class="form-group has-feedback">
+    <div class="form-group has-feedback" >
         <input v-model="credential" v-if="type === 'email'" type="email" class="form-control" :placeholder="placeholder" :name="name" @change="adddomain" autofocus/>
         <input v-model="credential" v-else type="text" class="form-control" :placeholder="placeholder" :name="name" @change="adddomain" autofocus/>
         <span class="glyphicon form-control-feedback" :class="[icon]"></span>

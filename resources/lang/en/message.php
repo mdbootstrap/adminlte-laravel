@@ -129,4 +129,5 @@ return [
     'retypepassword'          => 'Retype password',
     'fullname'                => 'Full Name',
     'registererror'           => 'Error registering!',
+    'loginerror'              => 'Error loging!',
 ];

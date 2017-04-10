@@ -127,4 +127,5 @@ return [
     'retypepassword'          => 'Vuelva a escribir la contraseña',
     'fullname'                => 'Nombre completo',
     'registererror'           => 'Error registering!',
+    'loginerror'              => 'Error loging!',
 ];

@@ -43,8 +43,8 @@ Vue.prototype.trans = (key) => {
 }
 
 // Laravel AdminLTE vue components
-Vue.component('login-input-field', require('./components/auth/LoginInputField.vue'))
 Vue.component('register-form', require('./components/auth/RegisterForm.vue'))
+Vue.component('login-form', require('./components/auth/LoginForm.vue'))
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
