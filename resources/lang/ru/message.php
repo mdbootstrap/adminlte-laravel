@@ -125,6 +125,6 @@ return [
     'submit'                  => 'SUBMIT',
     'email'                   => 'Email',
     'password'                => 'Password',
-    'retrypepassword'         => 'Retype password',
+    'retypepassword'          => 'Retype password',
     'fullname'                => 'Full Name',
 ];

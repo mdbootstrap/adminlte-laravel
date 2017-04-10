@@ -125,6 +125,6 @@ return [
     'submit'                  => 'ENVIAR',
     'email'                   => 'Email',
     'password'                => 'Senha',
-    'retrypepassword'         => 'Repetir senha',
+    'retypepassword'         => 'Repetir senha',
     'fullname'                => 'Nome completo',
 ];
