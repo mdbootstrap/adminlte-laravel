@@ -1,12 +1,16 @@
 <template>
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('name') }">
+
    <input type="text" class="form-control" :placeholder="trans('adminlte_lang_message.fullname')" name="name" value="" v-model="form.name" autofocus/>
+
    <span class="glyphicon glyphicon-user form-control-feedback"></span>
    <transition name="fade">
     <span class="help-block" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
    </transition>
+
   </div>
+
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }">
    <input type="email" class="form-control" :placeholder="trans('adminlte_lang_message.email')" name="email" value="" v-model="form.email"/>
    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
