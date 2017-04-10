@@ -33,13 +33,13 @@
      <div class="checkbox_register icheck">
       <label data-toggle="modal" data-target="#termsModal">
        <input type="checkbox" name="terms" v-model="form.terms" class="has-error">
-       <a href="#" :class="{ 'text-danger': form.errors.has('terms') }">Terms and conditions</a>
+       <a href="#" :class="{ 'text-danger': form.errors.has('terms') }" v-text="trans('adminlte_lang_message.conditions')"></a>
       </label>
      </div>
     </label>
    </div>
    <div class="col-xs-4 col-xs-push-1">
-    <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i> Register</button>
+    <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()" v-text="trans('adminlte_lang_message.register')"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i></button>
    </div>
   </div>
   <div v-if="form.errors.has('terms')" class="form-group has-feedback" :class="{ 'has-error': form.errors.has('terms') }">
