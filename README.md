@@ -172,7 +172,7 @@ By default Laravel 5.1 does not include default auth routes. Versions > 1.0 < 2.
 
 See  [old README file](OLD-README.md) file for notes of which routes are registered.
 
-###Installation
+### Installation
 
 First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
 
@@ -209,7 +209,7 @@ Note: use the following for Laravel <5.1 versions:
  'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
 </pre>
 
-##Laravel Routes
+## Laravel Routes
 
 This package installs Laravel routes that you will not find them at routes.php file. The routes installed by package would be find at file:
 
@@ -250,7 +250,7 @@ custom commands will not be available).
 
 See issue https://github.com/acacha/adminlte-laravel/issues/69 for more info
 
-##First steps, database creation, migrations and login
+## First steps, database creation, migrations and login
 
 Once package installed you have to follow the usual steps of any laravel project to Login to the admin interface:
 
@@ -259,7 +259,7 @@ Once package installed you have to follow the usual steps of any laravel project
 - Run migrations with command $ php artisan migrate
 - Registera a first user and Login with it
 
-##AdminLTE
+## AdminLTE
 
 AdminLTE is a Free Premium Admin control Panel Theme That Is Based On Bootstrap 3.x created by Abdullah Almsaeed. See:
 
