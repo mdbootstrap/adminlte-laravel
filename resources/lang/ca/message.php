@@ -124,6 +124,7 @@ return [
     'email'                   => 'Correu electrònic',
     'username'                => 'Nom d\'usuari',
     'password'                => 'Contrasenya',
-    'retypepassword'         => 'Reescriu la contrasenya',
+    'retypepassword'          => 'Reescriu la contrasenya',
     'fullname'                => 'Nom complet',
+    'registererror'           => 'Error registering!',
 ];

@@ -2,7 +2,7 @@
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('name') }">
 
-   <input type="text" class="form-control" placeholder="Your name here" name="name" value="" v-model="form.name" autofocus/>
+   <input type="text" class="form-control" :placeholder="trans('adminlte_lang_message.fullname')" name="name" value="" v-model="form.name" autofocus/>
 
    <span class="glyphicon glyphicon-user form-control-feedback"></span>
    <transition name="fade">
@@ -12,21 +12,21 @@
   </div>
 
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }">
-   <input type="email" class="form-control" placeholder="Your email here" name="email" value="" v-model="form.email"/>
+   <input type="email" class="form-control" :placeholder="trans('adminlte_lang_message.email')" name="email" value="" v-model="form.email"/>
    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
    <transition name="fade">
     <span class="help-block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
    </transition>
   </div>
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('password') }">
-   <input type="password" class="form-control" placeholder="Password here" name="password" v-model="form.password"/>
+   <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.password')" name="password" v-model="form.password"/>
    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
    <transition name="fade">
      <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
    </transition>
   </div>
   <div class="form-group has-feedback">
-   <input type="password" class="form-control" placeholder="Password here" name="password_confirmation" v-model="form.password_confirmation"/>
+   <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.retypepassword')" name="password_confirmation" v-model="form.password_confirmation"/>
    <transition name="fade">
    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
    </transition>
@@ -70,18 +70,17 @@
 import Form from 'acacha-forms'
 
 export default {
-  mounted() {
-    let form =  new FormData(document.querySelector("form"))
+  mounted () {
     this.initialitzeICheck()
   },
   data: function () {
     return {
-      form: new Form( { name: '', email: '', password: '', password_confirmation: '', terms: ''  } )
+      form: new Form({ name: '', email: '', password: '', password_confirmation: '', terms: '' })
     }
   },
   watch: {
     'form.terms': function (value) {
-      if(value) {
+      if (value) {
         $('input').iCheck('check')
       } else {
         $('input').iCheck('uncheck')
@@ -89,38 +88,36 @@ export default {
     }
   },
   methods: {
-    initialitzeICheck() {
+    initialitzeICheck () {
       var component = this
       $('input').iCheck({
         checkboxClass: 'icheckbox_square-blue',
         radioClass: 'iradio_square-blue',
         increaseArea: '20%'
-      }).on('ifChecked', function(event){
-        component.form.set('terms',true)
+      }).on('ifChecked', function (event) {
+        component.form.set('terms', true)
         component.form.errors.clear('terms')
-      }).on('ifUnchecked', function(event){
-        component.form.set('terms','')
-      });
+      }).on('ifUnchecked', function (event) {
+        component.form.set('terms', '')
+      })
     },
-    submit() {
+    submit () {
       this.form.post('/register')
-       .then( response => {
+       .then(response => {
          this.redirect(response)
        })
-       .catch( error => {
-        console.log('error registering! ' + error)
+       .catch(error => {
+         console.log(trans('adminlte_lang_message.registererror') + error)
        })
     },
-    redirect(response) {
+    redirect (response) {
       window.location.reload()
     },
-    clearErrors(name) {
-      if(name === 'password_confirmation') name = 'password'
+    clearErrors (name) {
+      if (name === 'password_confirmation') name = 'password'
       this.form.errors.clear(name)
     }
   }
 }
 
 </script>
-
-
