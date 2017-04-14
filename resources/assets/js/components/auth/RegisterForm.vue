@@ -23,9 +23,6 @@
   </div>
   <div class="form-group has-feedback">
    <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.retypepassword')" name="password_confirmation" v-model="form.password_confirmation"/>
-   <transition name="fade">
-   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-   </transition>
   </div>
   <div class="row">
    <div class="col-xs-7">
@@ -39,7 +36,7 @@
     </label>
    </div>
    <div class="col-xs-4 col-xs-push-1">
-    <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()" v-text="trans('adminlte_lang_message.register')"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i></button>
+    <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()" v-text="trans('adminlte_lang_message.register')"><i v-if="form.submitting" class="fa fa-refresh fa-spin"></i> </button>
    </div>
   </div>
   <div v-if="form.errors.has('terms')" class="form-group has-feedback" :class="{ 'has-error': form.errors.has('terms') }">

@@ -110,10 +110,7 @@ export default {
       this.form.username = this.form.username + '@' + this.domain
     },
     clearErrors (name) {
-      if (name === 'password') {
-        name = this.name
-        this.form.errors.clear('password')
-      }
+      if (name === 'password') name = this.name
       this.form.errors.clear(name)
     }
   }
