@@ -62,7 +62,8 @@ This packages use (no need to install):
 * [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
 * [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
 * [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
-* [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
+* [acacha/forms](https://github.com/acacha/forms) : Javascript Form objects implementation.
+* [acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
 ```bash
