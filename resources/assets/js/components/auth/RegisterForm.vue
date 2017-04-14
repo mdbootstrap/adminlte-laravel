@@ -84,7 +84,10 @@ export default {
        })
     },
     clearErrors (name) {
-      if (name === 'password_confirmation') name = 'password'
+      if (name === 'password_confirmation') {
+        name = 'password'
+        this.form.errors.clear('password_confirmation')
+      }
       this.form.errors.clear(name)
     }
   }

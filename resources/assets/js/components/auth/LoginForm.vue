@@ -1,5 +1,5 @@
 <template>
- <form method="post" @submit.prevent="submit" @keydown="form.errors.clear($event.target.name)">
+ <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
 
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }" v-if="type === 'email'">
    <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.username" @change="adddomain" autofocus/>
@@ -108,6 +108,13 @@ export default {
       if (this.form.username.endsWith(this.domain)) return
       if (this.form.username.includes('@')) return
       this.form.username = this.form.username + '@' + this.domain
+    },
+    clearErrors (name) {
+      if (name === 'password') {
+        name = this.name
+        this.form.errors.clear('password')
+      }
+      this.form.errors.clear(name)
     }
   }
 }
