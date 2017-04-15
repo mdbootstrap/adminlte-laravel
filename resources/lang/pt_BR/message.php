@@ -129,4 +129,7 @@ return [
     'fullname'                => 'Nome completo',
     'registererror'           => 'Error registering!',
     'loginerror'              => 'Error loging!',
+    'loggedin'                => 'Login correcte!',
+    'entering'                => 'Entrant...',
+    'registered'              => 'User Registered!',
 ];
