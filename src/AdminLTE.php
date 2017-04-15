@@ -292,7 +292,7 @@ class AdminLTE
     public function appServiceProviderClass()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php.stub' => app_path('Providers\AppServiceProvider.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php.stub' => app_path('Providers/AppServiceProvider.php'),
         ];
     }
 }
