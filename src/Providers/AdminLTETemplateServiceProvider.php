@@ -102,6 +102,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishWebRoutes();
         $this->publishApiRoutes();
         $this->publishDusk();
+        $this->publishDatabaseConfig();
 
         $this->enableSpatieMenu();
     }
@@ -259,6 +260,14 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishAppServiceProvider()
     {
         $this->publishes(AdminLTE::appServiceProviderClass(), 'adminlte');
+    }
+
+    /**
+     * Publish database config files.
+     */
+    private function publishDatabaseConfig()
+    {
+        $this->publishes(AdminLTE::databaseConfig(), 'adminlte');
     }
 
     /**

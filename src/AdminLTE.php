@@ -308,4 +308,16 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/.env.dusk.testing'      => base_path('.env.dusk.testing'),
         ];
     }
+
+    /**
+     * Database config copy path.
+     *
+     * @return array
+     */
+    public function databaseConfig()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/config/database.php'    => config_path('database.php'),
+        ];
+    }
 }

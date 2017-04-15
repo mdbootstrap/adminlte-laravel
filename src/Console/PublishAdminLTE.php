@@ -72,6 +72,7 @@ class PublishAdminLTE extends Command
         $this->publishWebRoutes();
         $this->publishApiRoutes();
         $this->publishDusk();
+        $this->publishDatabaseConfig();
     }
 
     /**
@@ -209,6 +210,14 @@ class PublishAdminLTE extends Command
     private function publishAppServiceProvider()
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::appServiceProviderClass());
+    }
+
+    /**
+     * Publish config/database.php file.
+     */
+    private function publishDatabaseConfig()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::databaseConfig());
     }
 
     /**
