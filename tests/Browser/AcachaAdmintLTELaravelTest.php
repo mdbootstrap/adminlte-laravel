@@ -24,11 +24,23 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLandingPage()
     {
+        dump('testLandingPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Acacha')
                 ->assertSee('adminlte-laravel')
                 ->assertSee('Pratt');
+        });
+    }
+
+    /**
+     * Logout.
+     */
+    private function logout() {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/home')
+                ->click('#user_menu')
+                ->click('#logout');
         });
     }
 
@@ -39,6 +51,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLandingPageWithUserLogged()
     {
+        dump('testLandingPageWithUserLogged');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             $browser->loginAs($user)
@@ -48,6 +61,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->assertSee('Pratt')
                 ->assertSee($user->name);
         });
+
+        $this->logout();
     }
 
     /**
@@ -58,6 +73,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginPage()
     {
+        dump('testLoginPage');
+
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->assertSee('Sign in to start your session');
@@ -71,17 +88,21 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLogin()
     {
+        dump('testLogin');
+
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
             $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'passw0RD')
+                ->type('email', $user->email )
+                ->type('password','passw0RD' )
                 ->press('Sign In')
                 ->waitFor('#result')
                 ->pause(5000)
                 ->assertPathIs('/home')
                 ->assertSee($user->name);
         });
+
+        $this->logout();
     }
 
     /**
@@ -91,10 +112,11 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginRequiredFields()
     {
+        dump('testLoginRequiredFields');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                ->type('email', '')
-                ->type('password', '')
+                ->type('email', '' )
+                ->type('password','' )
                 ->press('Sign In')
                 ->pause(1000)
                 ->assertSee('The email field is required')
@@ -109,6 +131,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testRegisterPage()
     {
+        dump('testRegisterPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->assertSee('Register a new membership');
@@ -122,6 +145,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testPasswordResetPage()
     {
+        dump('testPasswordResetPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/password/reset')
                 ->assertSee('Reset Password');
@@ -131,14 +155,17 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     /**
      * Test home page is only for authorized Users.
      *
+     * @group failing
      * @return void
      */
     public function testHomePageForUnauthenticatedUsers()
     {
+        dump('testHomePageForUnauthenticatedUsers');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
             $browser->visit('/home')
+                ->pause(2000)
                 ->assertPathIs('/login');
         });
     }
@@ -150,6 +177,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testHomePageForAuthenticatedUsers()
     {
+        dump('testHomePageForAuthenticatedUsers');
+
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
@@ -157,23 +186,29 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->visit('/home')
                 ->assertSee($user->name);
         });
+
+        $this->logout();
     }
 
     /**
      * Test log out.
-     *
+     * @group shit
      * @return void
      */
     public function testLogout()
     {
+        dump('testLogout');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
             $browser->loginAs($user)
                 ->visit('/home')
                 ->click('#user_menu')
-                ->click('#logout');
+                ->pause(500)
+                ->click('#logout')
+                ->pause(500);
         });
+
     }
 
     /**
@@ -183,6 +218,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function test404Page()
     {
+        dump('test404Page');
         $this->browse(function (Browser $browser) {
             $browser->visit('/asdasdjlapmnnkadsdsa')
                 ->assertSee('404');
@@ -196,19 +232,22 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testNewUserRegistration()
     {
+        dump('testNewUserRegistration');
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
-                ->type('name', 'Sergi Tur Badenas')
-                ->type('email', 'sergiturbadenas@gmail.com')
+                ->type('name' , 'Sergi Tur Badenas')
+                ->type('email' ,'sergiturbadenas@gmail.com')
                 ->click('.icheckbox_square-blue')
-                ->type('password', 'passw0RD')
-                ->type('password_confirmation', 'passw0RD')
+                ->type('password' , 'passw0RD')
+                ->type('password_confirmation' , 'passw0RD')
                 ->press('Register')
                 ->waitFor('#result')
                 ->pause(5000)
                 ->assertPathIs('/home')
                 ->assertSee('Sergi Tur Badenas');
         });
+
+        $this->logout();
     }
 
     /**
@@ -218,6 +257,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testNewUserRegistrationRequiredFields()
     {
+        dump('testNewUserRegistrationRequiredFields');
+
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->press('Register')
@@ -231,16 +272,20 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     /**
      * Test send password reset.
      *
+     * @group failing
      * @return void
      */
     public function testSendPasswordReset()
     {
+        dump('testSendPasswordReset');
+
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             $browser->visit('password/reset')
-                ->type('email', $user->email)
+                ->type('email' , $user->email)
                 ->press('Send Password Reset Link')
                 ->waitFor('#result')
+                ->pause(1000)
                 ->assertSee('We have e-mailed your password reset link!');
         });
     }
@@ -252,9 +297,11 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordResetUserNotExists()
     {
+        dump('testSendPasswordResetUserNotExists');
+
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
-                ->type('email', 'notexistingemail@gmail.com')
+                ->type( 'email','notexistingemail@gmail.com')
                 ->press('Send Password Reset Link')
                 ->pause(1000)
                 ->assertSee('We can\'t find a user with that e-mail address.');
@@ -268,6 +315,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordResetRequiredFields()
     {
+        dump('testSendPasswordResetRequiredFields');
+
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
                 ->press('Send Password Reset Link')
@@ -275,4 +324,5 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->assertSee('The email field is required.');
         });
     }
+
 }
