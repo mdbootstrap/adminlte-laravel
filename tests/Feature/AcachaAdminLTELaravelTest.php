@@ -12,7 +12,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
  * Class AcachaAdminLTELaravelTest.
- * 
+ *
  * @package Tests\Feature
  */
 class AcachaAdminLTELaravelTest extends TestCase
