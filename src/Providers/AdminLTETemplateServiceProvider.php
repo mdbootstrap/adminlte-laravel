@@ -85,6 +85,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->defineRoutes();
+
+        //Publish
         $this->publishHomeController();
         $this->changeRegisterController();
         $this->changeLoginController();
@@ -99,6 +101,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishConfig();
         $this->publishWebRoutes();
         $this->publishApiRoutes();
+        $this->publishAppServiceProvider();
+
         $this->enableSpatieMenu();
     }
 
@@ -233,9 +237,17 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     }
 
     /**
+     * Publish app/Providers/AppServiceProvider.php file.
+     */
+    private function publishAppServiceProvider()
+    {
+        $this->publishes(AdminLTE::appServiceProviderClass(), 'adminlte');
+    }
+
+    /**
      * Enable (if active) spatie menu.
      */
-    protected function enableSpatieMenu()
+    private function enableSpatieMenu()
     {
         if ($this->app->getProvider('Spatie\Menu\Laravel\MenuServiceProvider')) {
             require config_path('menu.php');

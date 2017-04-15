@@ -5,9 +5,8 @@ php:
   - 7.0
   - 7.1
 
-# This triggers builds to run on the new TravisCI infrastructure.
-# See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
-sudo: false
+sudo: required
+dist: trusty
 
 ## Cache composer
 cache:
@@ -27,6 +26,7 @@ before_script:
   
 script:
   - cd sandbox;phpunit --coverage-text --coverage-clover=../coverage.clover;cd ..;
+  - cd sandbox;export DISPLAY=:99.0;sh -e /etc/init.d/xvfb start;./vendor/laravel/dusk/bin/chromedriver-linux &;php artisan serve &;php artisan dusk;cd ..;
   - vendor/bin/phpcs --standard=psr2 src/
 
 after_script:

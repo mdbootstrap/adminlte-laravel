@@ -283,4 +283,16 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/src/stubs/User.php.stub' => app_path('User.php'),
         ];
     }
+
+    /**
+     * AppServiceProvider class copy path.
+     *
+     * @return array
+     */
+    public function appServiceProviderClass()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php.stub' => app_path('Providers\AppServiceProvider.php'),
+        ];
+    }
 }
