@@ -308,5 +308,4 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/.env.dusk.testing'      => base_path('.env.dusk.testing'),
         ];
     }
-
 }
