@@ -36,7 +36,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     /**
      * Logout.
      */
-    private function logout() {
+    private function logout()
+    {
         $this->browse(function (Browser $browser) {
             $browser->visit('/home')
                 ->click('#user_menu')
@@ -93,8 +94,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
             $browser->visit('/login')
-                ->type('email', $user->email )
-                ->type('password','passw0RD' )
+                ->type('email', $user->email)
+                ->type('password', 'passw0RD')
                 ->press('Sign In')
                 ->waitFor('#result')
                 ->pause(5000)
@@ -115,8 +116,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
         dump('testLoginRequiredFields');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                ->type('email', '' )
-                ->type('password','' )
+                ->type('email', '')
+                ->type('password', '')
                 ->press('Sign In')
                 ->pause(1000)
                 ->assertSee('The email field is required')
@@ -208,7 +209,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->click('#logout')
                 ->pause(500);
         });
-
     }
 
     /**
@@ -235,11 +235,11 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
         dump('testNewUserRegistration');
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
-                ->type('name' , 'Sergi Tur Badenas')
-                ->type('email' ,'sergiturbadenas@gmail.com')
+                ->type('name', 'Sergi Tur Badenas')
+                ->type('email', 'sergiturbadenas@gmail.com')
                 ->click('.icheckbox_square-blue')
-                ->type('password' , 'passw0RD')
-                ->type('password_confirmation' , 'passw0RD')
+                ->type('password', 'passw0RD')
+                ->type('password_confirmation', 'passw0RD')
                 ->press('Register')
                 ->waitFor('#result')
                 ->pause(5000)
@@ -282,7 +282,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             $browser->visit('password/reset')
-                ->type('email' , $user->email)
+                ->type('email', $user->email)
                 ->press('Send Password Reset Link')
                 ->waitFor('#result')
                 ->pause(1000)
@@ -301,7 +301,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
-                ->type( 'email','notexistingemail@gmail.com')
+                ->type('email', 'notexistingemail@gmail.com')
                 ->press('Send Password Reset Link')
                 ->pause(1000)
                 ->assertSee('We can\'t find a user with that e-mail address.');
@@ -324,5 +324,4 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->assertSee('The email field is required.');
         });
     }
-
 }
