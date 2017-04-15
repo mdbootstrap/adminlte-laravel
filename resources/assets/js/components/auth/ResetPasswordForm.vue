@@ -1,6 +1,6 @@
 <template>
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
-  <div class="alert alert-success" v-show="form.succeeded" v-text="result"></div>
+  <div class="alert alert-success" v-show="form.succeeded" id="result">{{ result }}</div>
   <input type="hidden" name="token" v-model="form.token">
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }">
    <input type="email" class="form-control" :placeholder="trans('adminlte_lang_message.email')" name="email" v-model="form.email" autofocus/>

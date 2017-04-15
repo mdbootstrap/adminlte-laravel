@@ -1,6 +1,6 @@
 <template>
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
-
+  <div class="alert alert-success text-center" v-show="form.succeeded" id="result"> {{ trans('adminlte_lang_message.loggedin') }} <i class="fa fa-refresh fa-spin"></i> {{ trans('adminlte_lang_message.entering') }}</div>
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }" v-if="type === 'email'">
    <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.email" @change="adddomain" autofocus/>
    <span class="glyphicon form-control-feedback" :class="[icon]"></span>
@@ -56,7 +56,7 @@ export default {
       form = new Form({ email: '', password: '', remember: '' })
     }
     return {
-      form: form
+      form: form,
     }
   },
   props: {
@@ -96,7 +96,10 @@ export default {
     submit () {
       this.form.post('/login')
        .then(response => {
-         this.redirect(response)
+         var component = this;
+         setTimeout(function(){
+           component.redirect(response)
+         }, 2500);
        })
        .catch(error => {
          console.log(this.trans('adminlte_lang_message.loginerror') + ':' + error)
