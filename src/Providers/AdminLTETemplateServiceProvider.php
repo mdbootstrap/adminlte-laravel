@@ -101,7 +101,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishConfig();
         $this->publishWebRoutes();
         $this->publishApiRoutes();
-        $this->publishAppServiceProvider();
+        $this->publishDusk();
 
         $this->enableSpatieMenu();
     }
@@ -234,6 +234,23 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishApiRoutes()
     {
         $this->publishes(AdminLTE::apiroutes(), 'adminlte');
+    }
+
+    /**
+     * Publish dusk tests files.
+     */
+    private function publishDusk()
+    {
+        $this->publishDuskEnvironment();
+        $this->publishAppServiceProvider();
+    }
+
+    /**
+     * Publish dusk environment files.
+     */
+    private function publishDuskEnvironment()
+    {
+        $this->publishes(AdminLTE::duskEnvironment(), 'adminlte');
     }
 
     /**

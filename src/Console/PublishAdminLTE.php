@@ -71,7 +71,7 @@ class PublishAdminLTE extends Command
         $this->publishConfig();
         $this->publishWebRoutes();
         $this->publishApiRoutes();
-        $this->publishAppServiceProvider();
+        $this->publishDusk();
     }
 
     /**
@@ -184,6 +184,23 @@ class PublishAdminLTE extends Command
     private function publishApiRoutes()
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::apiroutes());
+    }
+
+    /**
+     * Publish dusk tests files.
+     */
+    private function publishDusk()
+    {
+        $this->publishDuskEnvironment();
+        $this->publishAppServiceProvider();
+    }
+
+    /**
+     * Publish dusk environment files.
+     */
+    private function publishDuskEnvironment()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::duskEnvironment());
     }
 
     /**

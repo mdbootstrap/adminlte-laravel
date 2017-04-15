@@ -295,4 +295,18 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php.stub' => app_path('Providers/AppServiceProvider.php'),
         ];
     }
+
+    /**
+     * Dusk environment files copy path.
+     *
+     * @return array
+     */
+    public function duskEnvironment()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/.env.dusk.local'        => base_path('.env.dusk.local'),
+            ADMINLTETEMPLATE_PATH.'/.env.dusk.testing'      => base_path('.env.dusk.testing'),
+        ];
+    }
+
 }
