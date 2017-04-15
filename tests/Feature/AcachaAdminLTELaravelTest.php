@@ -36,7 +36,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      *
      * @param $url
      */
-    public function urlReturns200($url) {
+    public function urlReturns200($url)
+    {
         $this->urlReturnsCode($url, 200);
     }
 
@@ -45,7 +46,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      *
      * @param $url
      */
-    public function urlReturns404($url) {
+    public function urlReturns404($url)
+    {
         $this->urlReturnsCode($url, 404);
     }
 
@@ -54,7 +56,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      *
      * @param $url
      */
-    public function urlReturns302($url) {
+    public function urlReturns302($url)
+    {
         $this->urlReturnsCode($url, 302);
     }
 
@@ -63,7 +66,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      *
      * @param $url
      */
-    public function urlReturns401($url) {
+    public function urlReturns401($url)
+    {
         $this->urlReturnsCode($url, 401);
     }
 
@@ -75,7 +79,8 @@ class AcachaAdminLTELaravelTest extends TestCase
      * @param $url
      * @param $code
      */
-    public function urlReturnsCode($url,$code) {
+    public function urlReturnsCode($url, $code)
+    {
         $response = $this->get($url);
 
         $response->assertStatus($code);
@@ -194,7 +199,6 @@ class AcachaAdminLTELaravelTest extends TestCase
             'password' => [ "The password field is required." ],
             'terms' => [ "The terms field is required." ],
         ]);
-
     }
 
     /**
@@ -212,7 +216,6 @@ class AcachaAdminLTELaravelTest extends TestCase
         ]);
 
         $response->assertStatus(302);
-
     }
 
     /**
@@ -230,7 +233,6 @@ class AcachaAdminLTELaravelTest extends TestCase
         $response->assertStatus(422)->assertJson([
             "email" => "These credentials do not match our records."
         ]);
-
     }
 
     /**
@@ -249,7 +251,6 @@ class AcachaAdminLTELaravelTest extends TestCase
             'email' => [ "The email field is required." ],
             'password' => [ "The password field is required." ],
         ]);
-
     }
 
     /**
@@ -290,7 +291,7 @@ class AcachaAdminLTELaravelTest extends TestCase
     /**
      * Test adminlte:admin command
      *
-     * @group 
+     * @group
      */
     public function testAdminlteAdminCommand()
     {
