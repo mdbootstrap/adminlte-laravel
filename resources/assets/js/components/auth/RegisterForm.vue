@@ -1,6 +1,7 @@
 <template>
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
-  <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('name') }">
+  <div class="alert alert-success text-center" v-show="form.succeeded" id="result"> {{ trans('adminlte_lang_message.registered') }} <i class="fa fa-refresh fa-spin"></i> {{ trans('adminlte_lang_message.entering') }}</div>
+  <div class="form-group has-feedback " :class="{ 'has-error': form.errors.has('name') }">
    <input type="text" class="form-control" :placeholder="trans('adminlte_lang_message.fullname')" name="name" value="" v-model="form.name" autofocus/>
    <span class="glyphicon glyphicon-user form-control-feedback"></span>
    <transition name="fade">
@@ -74,7 +75,10 @@ export default {
     submit () {
       this.form.post('/register')
        .then(response => {
-         this.redirect(response)
+         var component = this;
+         setTimeout(function(){
+           component.redirect(response)
+         }, 2500);
        })
        .catch(error => {
          console.log(this.trans('adminlte_lang_message.registererror') + ':' + error)

@@ -24816,7 +24816,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       this.form.post('/login').then(function (response) {
-        _this.redirect(response);
+        var component = _this;
+        setTimeout(function () {
+          component.redirect(response);
+        }, 2500);
       }).catch(function (error) {
         console.log(_this.trans('adminlte_lang_message.loginerror') + ':' + error);
       });
@@ -24896,6 +24899,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -24923,7 +24927,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       this.form.post('/register').then(function (response) {
-        _this.redirect(response);
+        var component = _this;
+        setTimeout(function () {
+          component.redirect(response);
+        }, 2500);
       }).catch(function (error) {
         console.log(_this.trans('adminlte_lang_message.registererror') + ':' + error);
       });
@@ -25014,7 +25021,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var component = _this;
         setTimeout(function () {
           component.redirect(response);
-        }, 3000);
+        }, 2500);
       }).catch(function (error) {
         console.log(_this.trans('adminlte_lang_message.passwordreset') + ':' + error);
       });
@@ -43387,10 +43394,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "form.succeeded"
     }],
     staticClass: "alert alert-success",
-    domProps: {
-      "textContent": _vm._s(_vm.result)
+    attrs: {
+      "id": "result"
     }
-  }), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.result)), _c('br'), _c('i', {
+    staticClass: "fa fa-refresh fa-spin"
+  }), _vm._v(" Login in...")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43557,7 +43566,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.clearErrors($event.target.name)
       }
     }
-  }, [(_vm.type === 'email') ? _c('div', {
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.form.succeeded),
+      expression: "form.succeeded"
+    }],
+    staticClass: "alert alert-success text-center",
+    attrs: {
+      "id": "result"
+    }
+  }, [_vm._v(" " + _vm._s(_vm.trans('adminlte_lang_message.loggedin')) + " "), _c('i', {
+    staticClass: "fa fa-refresh fa-spin"
+  }), _vm._v(" " + _vm._s(_vm.trans('adminlte_lang_message.entering')))]), _vm._v(" "), (_vm.type === 'email') ? _c('div', {
     staticClass: "form-group has-feedback",
     class: {
       'has-error': _vm.form.errors.has('email')
@@ -43761,7 +43783,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_c('div', {
-    staticClass: "form-group has-feedback",
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.form.succeeded),
+      expression: "form.succeeded"
+    }],
+    staticClass: "alert alert-success text-center",
+    attrs: {
+      "id": "result"
+    }
+  }, [_vm._v(" " + _vm._s(_vm.trans('adminlte_lang_message.registered')) + " "), _c('i', {
+    staticClass: "fa fa-refresh fa-spin"
+  }), _vm._v(" " + _vm._s(_vm.trans('adminlte_lang_message.entering')))]), _vm._v(" "), _c('div', {
+    staticClass: "form-group has-feedback ",
     class: {
       'has-error': _vm.form.errors.has('name')
     }
@@ -44014,6 +44049,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "form.succeeded"
     }],
     staticClass: "alert alert-success",
+    attrs: {
+      "id": "result"
+    },
     domProps: {
       "textContent": _vm._s(_vm.result)
     }
