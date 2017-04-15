@@ -9,9 +9,6 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Application Test Suite ol Laravel 5.3">
-            <directory suffix="Test.php">./tests</directory>
-        </testsuite>
         <testsuite name="Feature Tests">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
