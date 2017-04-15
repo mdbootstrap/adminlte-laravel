@@ -2,7 +2,7 @@
  <form method="post" @submit.prevent="submit" @keydown="clearErrors($event.target.name)">
 
   <div class="form-group has-feedback" :class="{ 'has-error': form.errors.has('email') }" v-if="type === 'email'">
-   <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.username" @change="adddomain" autofocus/>
+   <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.email" @change="adddomain" autofocus/>
    <span class="glyphicon form-control-feedback" :class="[icon]"></span>
    <transition name="fade">
     <span class="help-block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
