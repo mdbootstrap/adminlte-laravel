@@ -323,6 +323,5 @@ class AcachaAdminLTELaravelTest extends TestCase
             sleep(2);
             $this->callAdminlteAdminCommand();
         }
-
     }
 }
