@@ -25,8 +25,8 @@ before_script:
   - ./sandbox_setup.sh
   
 script:
-  - cd sandbox;export DISPLAY=:99.0;sh -e /etc/init.d/xvfb start;./vendor/laravel/dusk/bin/chromedriver-linux &;php artisan dusk:install;php artisan serve --env=dusk.local &;php artisan dusk;cd ..;
-  - cd sandbox;php artisan adminlte:admin;./vendor/bin/phpunit --coverage-text --coverage-clover=../coverage.clover;cd ..;
+  - cd sandbox ; export DISPLAY=:99.0 ; sh -e /etc/init.d/xvfb start ; ./vendor/laravel/dusk/bin/chromedriver-linux & ; php artisan dusk:install ; php artisan serve --env=dusk.local & ; php artisan dusk ; cd ..
+  - cd sandbox ; php artisan adminlte:admin ; ./vendor/bin/phpunit --coverage-text --coverage-clover=../coverage.clover ; cd ..
   - vendor/bin/phpcs --standard=psr2 src/
 
 after_script:
