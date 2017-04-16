@@ -477,13 +477,25 @@ http://acacha.org/mediawiki/AdminLTE#adminlte-laravel
 
 ## Tests
 
-Execute:
+There are two kind of tests Feature/Unit tests and Browser tests. To execute Feature/Unit tests execute:
 
 ```
-phpunit
+./vendor/bin/phpunit
 ```
 
-In new created laravel project with acacha-admintle.laravel installed to test package is installed correctly.
+In a new created laravel project with acacha-admintle.laravel installed to test that package is installed correctly. You can also execute Browser tests with Laravel Dusk:
+
+```
+php artisan dusk:install
+php artisan serve --env=dusk.local &
+php artisan dusk
+```
+
+You can also test this package in a sandbox without need to install. Run script:
+
+```bash
+./test.sh
+```
 
 ## Localization
 
