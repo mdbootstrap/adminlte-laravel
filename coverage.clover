@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1492335770">
-  <project timestamp="1492335770">
+<coverage generated="1492339744">
+  <project timestamp="1492339744">
     <package name="App\Console">
       <file name="/home/sergi/Code/AdminLTE/acacha/adminlte-laravel/sandbox/app/Console/Kernel.php">
         <class name="Kernel" namespace="App\Console">

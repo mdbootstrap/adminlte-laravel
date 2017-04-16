@@ -21,5 +21,7 @@ if [ -e ~/.composer/vendor/bin/adminlte-laravel ];then
 elif [ -e ~/.config/composer/vendor/bin/adminlte-laravel ];then
   ~/.config/composer/vendor/bin/adminlte-laravel --dev install
 fi
+rm database/database.sqlite
 touch database/database.sqlite
+rm database/testing.database.sqlite
 touch database/testing.database.sqlite

@@ -41,7 +41,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/home')
                 ->click('#user_menu')
-                ->click('#logout');
+                ->click('#logout')
+                ->pause(2000);
         });
     }
 
@@ -251,7 +252,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     }
 
     /**
-     * Test user registration required fields.
+     * Test new user registration required fields.
      *
      * @return void
      */
@@ -261,6 +262,9 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
+                ->type('name', '')
+                ->type('email', '')
+                ->type('password', '')
                 ->press('Register')
                 ->pause(1000)
                 ->assertSee('The name field is required')
