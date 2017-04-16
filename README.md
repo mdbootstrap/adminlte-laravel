@@ -7,6 +7,7 @@ See demo here:
 
 If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD-README.md](OLD-README.md)
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/acacha/admin-lte-template-laravel.svg?style=flat-square)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Total Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/downloads.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Monthly Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/d/monthly)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Daily Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/d/daily)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
