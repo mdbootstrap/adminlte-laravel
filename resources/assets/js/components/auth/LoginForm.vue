@@ -5,7 +5,7 @@
    <input type="email" class="form-control" :placeholder="placeholder" :name="name" value="" v-model="form.email" @change="adddomain" autofocus/>
    <span class="glyphicon form-control-feedback" :class="[icon]"></span>
    <transition name="fade">
-    <span class="help-block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
+    <span class="help-block" v-if="form.errors.has('email')" v-text="form.errors.get('email')" id="validation_error_email"></span>
    </transition>
   </div>
 
@@ -13,7 +13,7 @@
    <input type="text" class="form-control" :placeholder="placeholder" :name="name" v-model="form.username" @change="adddomain" autofocus/>
    <span class="glyphicon form-control-feedback" :class="[icon]"></span>
    <transition name="fade">
-    <span class="help-block" v-if="form.errors.has('username')" v-text="form.errors.get('username')"></span>
+    <span class="help-block" v-if="form.errors.has('username')" v-text="form.errors.get('username')" id="validation_error_username"></span>
    </transition>
   </div>
 
@@ -22,7 +22,7 @@
    <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.password')" name="password" v-model="form.password"/>
    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
    <transition name="fade">
-    <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
+    <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')" id="validation_error_password"></span>
    </transition>
   </div>
   <div class="row">
@@ -113,7 +113,10 @@ export default {
       this.form.username = this.form.username + '@' + this.domain
     },
     clearErrors (name) {
-      if (name === 'password') name = this.name
+      if (name === 'password') {
+        this.form.errors.clear('password')
+        name = this.name
+      }
       this.form.errors.clear(name)
     }
   }

@@ -127,6 +127,67 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     }
 
     /**
+     * Test Login required fields errors disappears onkeydown.
+     *
+     * @return void
+     */
+    public function testLoginRequiredFieldsDisapearsOnKeyDown()
+    {
+        dump('testLoginRequiredFieldsDissapearsOnKeyDown');
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/login')
+                ->type('email', '')
+                ->type('password', '')
+                ->press('Sign In')
+                ->pause(1000)
+                ->type('email', 's')
+                ->waitUntilMissing('#validation_error_email')
+                ->assertDontSee('The email field is required')
+                ->type('password', 'p')
+                ->waitUntilMissing('#validation_error_password')
+                ->assertDontSee('The password field is required');
+        });
+    }
+
+    /**
+     * Test Login credentials not match.
+     *
+     * @return void
+     */
+    public function testLoginCredentialsNotMatch()
+    {
+        dump('testLoginCredentialsNotMatch');
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/login')
+                ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
+                ->type('password', '12345678')
+                ->press('Sign In')
+                ->pause(1000)
+                ->assertSee('These credentials do not match our records');
+        });
+    }
+
+    /**
+     * Test Login credentials not match disappears on key down.
+     *
+     * @return void
+     */
+    public function testLoginCredentialsNotMatchDissapearsOnKeyDown()
+    {
+        dump('testLoginCredentialsNotMatch');
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/login')
+                ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
+                ->type('password', '12345678')
+                ->press('Sign In')
+                ->pause(1000)
+                ->type('password', '1')
+                ->pause(1000)
+                ->assertDontSee('These credentials do not match our records');
+        });
+    }
+
+    /**
      * Test register page.
      *
      * @return void
@@ -157,7 +218,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     /**
      * Test home page is only for authorized Users.
      *
-     * @group failing
      * @return void
      */
     public function testHomePageForUnauthenticatedUsers()
@@ -276,7 +336,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     /**
      * Test send password reset.
      *
-     * @group failing
      * @return void
      */
     public function testSendPasswordReset()

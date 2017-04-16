@@ -24833,7 +24833,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.form.username = this.form.username + '@' + this.domain;
     },
     clearErrors: function clearErrors(name) {
-      if (name === 'password') name = this.name;
+      if (name === 'password') {
+        this.form.errors.clear('password');
+        name = this.name;
+      }
       this.form.errors.clear(name);
     }
   }
@@ -25021,7 +25024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var component = _this;
         setTimeout(function () {
           component.redirect(response);
-        }, 2500);
+        }, 3000);
       }).catch(function (error) {
         console.log(_this.trans('adminlte_lang_message.passwordreset') + ':' + error);
       });
@@ -43397,9 +43400,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "result"
     }
-  }, [_vm._v(_vm._s(_vm.result)), _c('br'), _c('i', {
-    staticClass: "fa fa-refresh fa-spin"
-  }), _vm._v(" Login in...")]), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.result))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -43618,6 +43619,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.form.errors.has('email')) ? _c('span', {
     staticClass: "help-block",
+    attrs: {
+      "id": "validation_error_email"
+    },
     domProps: {
       "textContent": _vm._s(_vm.form.errors.get('email'))
     }
@@ -43659,6 +43663,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.form.errors.has('username')) ? _c('span', {
     staticClass: "help-block",
+    attrs: {
+      "id": "validation_error_username"
+    },
     domProps: {
       "textContent": _vm._s(_vm.form.errors.get('username'))
     }
@@ -43697,6 +43704,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.form.errors.has('password')) ? _c('span', {
     staticClass: "help-block",
+    attrs: {
+      "id": "validation_error_password"
+    },
     domProps: {
       "textContent": _vm._s(_vm.form.errors.get('password'))
     }
@@ -44049,9 +44059,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "form.succeeded"
     }],
     staticClass: "alert alert-success",
-    attrs: {
-      "id": "result"
-    },
     domProps: {
       "textContent": _vm._s(_vm.result)
     }
