@@ -172,9 +172,9 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      *
      * @return void
      */
-    public function testLoginCredentialsNotMatchDissapearsOnKeyDown()
+    public function testLoginCredentialsNotMatchDissappearsOnKeyDown()
     {
-        dump('testLoginCredentialsNotMatch');
+        dump('testLoginCredentialsNotMatchDissappearsOnKeyDown');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
@@ -339,9 +339,9 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      *
      * @return void
      */
-    public function testNewUserRegistrationRequiredFieldsDissapearsOnKeyDown()
+    public function testNewUserRegistrationRequiredFieldsDissappearsOnKeyDown()
     {
-        dump('testNewUserRegistrationRequiredFieldsDissapearsOnKeyDown');
+        dump('testNewUserRegistrationRequiredFieldsDissappearsOnKeyDown');
 
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
@@ -417,6 +417,26 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->press('Send Password Reset Link')
                 ->pause(1000)
                 ->assertSee('The email field is required.');
+        });
+    }
+
+    /**
+     * Test send password reset required fields dissapears on key down.
+     *
+     * @return void
+     */
+    public function testSendPasswordResetRequiredFieldsDisappearsOnKeyDown()
+    {
+        dump('testSendPasswordResetRequiredFieldsDisappearsOnKeyDown');
+
+        $this->browse(function (Browser $browser) {
+            $browser->visit('password/reset')
+                ->type('email', '')
+                ->press('Send Password Reset Link')
+                ->pause(1000)
+                ->type('email', 's')
+                ->pause(2000)
+                ->assertDontSee('The email field is required.');
         });
     }
 }
