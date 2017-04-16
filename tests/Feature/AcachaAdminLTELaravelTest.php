@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
+use ReflectionException;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -315,6 +316,13 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     protected function callAdminlteAdminCommand()
     {
-        Artisan::call('adminlte:admin');
+        try {
+            Artisan::call('adminlte:admin');
+        } catch (ReflectionException $re) {
+            passthru('composer dumpautoload');
+            sleep(2);
+            $this->callAdminlteAdminCommand();
+        }
+
     }
 }

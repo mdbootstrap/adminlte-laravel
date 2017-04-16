@@ -22,3 +22,4 @@ elif [ -e ~/.config/composer/vendor/bin/adminlte-laravel ];then
   ~/.config/composer/vendor/bin/adminlte-laravel --dev install
 fi
 touch database/database.sqlite
+touch database/testing.database.sqlite
