@@ -26,6 +26,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - ./sandbox_setup.sh
   - cd sandbox; ./vendor/laravel/dusk/bin/chromedriver-linux &
+  - php artisan dusk:install
   - php artisan serve --env=dusk.local &
 
 script:
