@@ -127,13 +127,13 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     }
 
     /**
-     * Test Login required fields errors disappears onkeydown.
+     * Test Login required fields errors disappears on key down.
      *
      * @return void
      */
-    public function testLoginRequiredFieldsDisapearsOnKeyDown()
+    public function testLoginRequiredFieldsDisappearsOnKeyDown()
     {
-        dump('testLoginRequiredFieldsDissapearsOnKeyDown');
+        dump('testLoginRequiredFieldsDissappearsOnKeyDown');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', '')
@@ -329,7 +329,39 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->pause(1000)
                 ->assertSee('The name field is required')
                 ->assertSee('The email field is required')
-                ->assertSee('The password field is required');
+                ->assertSee('The password field is required')
+                ->assertSee('The terms field is required');
+        });
+    }
+
+    /**
+     * Test new user registration required fields disappears on key down.
+     *
+     * @return void
+     */
+    public function testNewUserRegistrationRequiredFieldsDissapearsOnKeyDown()
+    {
+        dump('testNewUserRegistrationRequiredFieldsDissapearsOnKeyDown');
+
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/register')
+                ->type('name', '')
+                ->type('email', '')
+                ->type('password', '')
+                ->press('Register')
+                ->pause(2000)
+                ->type('name', 'S')
+                ->pause(2000)
+                ->assertDontSee('The name field is required')
+                ->type('email', 's')
+                ->pause(2000)
+                ->assertDontSee('The email field is required')
+                ->type('password', 'p')
+                ->pause(2000)
+                ->assertDontSee('The password field is required')
+                ->click('.icheckbox_square-blue')
+                ->pause(2000)
+                ->assertDontSee('The terms field is required');
         });
     }
 
