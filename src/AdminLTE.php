@@ -128,8 +128,6 @@ class AdminLTE
         return [
             ADMINLTETEMPLATE_PATH.'/resources/views/auth'              =>
                 resource_path('views/vendor/adminlte/auth'),
-            ADMINLTETEMPLATE_PATH.'/resources/views/auth/emails'       =>
-                resource_path('views/vendor/adminlte/auth/emails'),
             ADMINLTETEMPLATE_PATH.'/resources/views/errors'            =>
                 resource_path('views/vendor/adminlte/errors'),
             ADMINLTETEMPLATE_PATH.'/resources/views/layouts'           =>
