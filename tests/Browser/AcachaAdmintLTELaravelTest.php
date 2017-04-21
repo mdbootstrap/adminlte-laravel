@@ -254,7 +254,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
 
     /**
      * Test log out.
-     * @group shit
+     *
      * @return void
      */
     public function testLogout()
