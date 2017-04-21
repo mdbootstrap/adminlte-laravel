@@ -487,6 +487,7 @@ In a new created laravel project with acacha-admintle.laravel installed to test 
 
 ```
 php artisan dusk:install
+touch database/testing.database.sqlite
 php artisan serve --env=dusk.local &
 php artisan dusk
 ```
