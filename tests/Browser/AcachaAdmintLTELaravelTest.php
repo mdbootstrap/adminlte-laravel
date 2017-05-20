@@ -2,7 +2,6 @@
 
 namespace Tests\Browser;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
