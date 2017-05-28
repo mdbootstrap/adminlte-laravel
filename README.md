@@ -84,6 +84,14 @@ export PATH=${PATH}:~/.composer/vendor/bin
 
 to your ~/.bashrc file
 
+Note: in some systems the path coul be diferent for example:
+
+```bash
+export PATH=${PATH}:~/.config/composer/vendor/bin
+```
+
+Please be sure to check you environment.
+
 ## Optional requirements
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
