@@ -162,8 +162,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishes(AdminLTE::NoGuestForgotPasswordController(), 'adminlte');
     }
 
-
-
     /**
      * Change default Laravel reset password Controller.
      */
