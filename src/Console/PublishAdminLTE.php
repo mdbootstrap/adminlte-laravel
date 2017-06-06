@@ -61,6 +61,7 @@ class PublishAdminLTE extends Command
         $this->changeRegisterController();
         $this->changeLoginController();
         $this->changeForgotPasswordController();
+        $this->publishNoGuestForgotPasswordController();
         $this->changeResetPasswordController();
         $this->publishPublicAssets();
         $this->publishViews();
@@ -105,6 +106,14 @@ class PublishAdminLTE extends Command
     private function changeForgotPasswordController()
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::forgotPasswordController());
+    }
+
+    /**
+     * Publish no guest forgot password Controller.
+     */
+    private function publishNoGuestForgotPasswordController()
+    {
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::NoGuestForgotPasswordController());
     }
 
     /**

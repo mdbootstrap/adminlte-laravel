@@ -59,6 +59,19 @@ class AdminLTE
     }
 
     /**
+     * No guest Auth forgot password controller copy path.
+     *
+     * @return array
+     */
+    public function NoGuestForgotPasswordController()
+    {
+        return [
+            ADMINLTETEMPLATE_PATH.'/src/stubs/NoGuestForgotPasswordController.stub' =>
+                app_path('Http/Controllers/Auth/NoGuestForgotPasswordController.php'),
+        ];
+    }
+
+    /**
      * Auth reset password controller copy path.
      *
      * @return array
