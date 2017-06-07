@@ -113,7 +113,7 @@ class PublishAdminLTE extends Command
      */
     private function publishNoGuestForgotPasswordController()
     {
-        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::NoGuestForgotPasswordController());
+        $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::noGuestForgotPasswordController());
     }
 
     /**

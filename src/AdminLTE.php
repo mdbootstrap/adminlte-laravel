@@ -63,7 +63,7 @@ class AdminLTE
      *
      * @return array
      */
-    public function NoGuestForgotPasswordController()
+    public function noGuestForgotPasswordController()
     {
         return [
             ADMINLTETEMPLATE_PATH.'/src/stubs/NoGuestForgotPasswordController.stub' =>

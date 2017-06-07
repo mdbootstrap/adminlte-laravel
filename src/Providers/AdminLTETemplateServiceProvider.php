@@ -159,7 +159,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     private function publishNoGuestForgotPasswordController()
     {
-        $this->publishes(AdminLTE::NoGuestForgotPasswordController(), 'adminlte');
+        $this->publishes(AdminLTE::noGuestForgotPasswordController(), 'adminlte');
     }
 
     /**
