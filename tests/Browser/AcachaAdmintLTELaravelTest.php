@@ -379,7 +379,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->type('email', $user->email)
                 ->press('Send Password Reset Link')
                 ->waitFor('div.alert-success')
-                ->assertSeeIn('div.alert-success','We have e-mailed your password reset link!');
+                ->assertSeeIn('div.alert-success', 'We have e-mailed your password reset link!');
         });
     }
 
