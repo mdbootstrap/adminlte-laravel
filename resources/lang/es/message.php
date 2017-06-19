@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Términos y Condiciones',
     'register'                => 'Registro',
     'login'                   => 'Iniciar Sesión',
-    'membreship'              => 'Ya soy miembro',
+    'membership'              => 'Ya soy miembro',
     'passwordclickreset'      => 'Haga clic aquí para restablecer la contraseña:',
     'signGithub'              => 'Entra con Github',
     'signFacebook'            => 'Entra con Facebook',

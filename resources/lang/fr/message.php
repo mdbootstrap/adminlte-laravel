@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Conditions d\'utilisation du service',
     'register'                => 'S\'inscrire',
     'login'                   => 'Se connecter',
-    'membreship'              => 'Je suis déjà inscrit',
+    'membership'              => 'Je suis déjà inscrit',
     'passwordclickreset'      => 'Cliquer ici pour réinitialiser votre mot de passe:',
     'signGithub'              => 'S\'inscrire via Github',
     'signFacebook'            => 'S\'inscrire via Facebook',

@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Правила и соглашения',
     'register'                => 'Зарегистрироваться',
     'login'                   => 'Вход',
-    'membreship'              => 'Я уже зарегистрирован',
+    'membership'              => 'Я уже зарегистрирован',
     'passwordclickreset'      => 'Нажмите здесь чтобы сбросить ваш пароль:',
     'signGithub'              => 'Войти через Github',
     'signFacebook'            => 'Войти через Facebook',

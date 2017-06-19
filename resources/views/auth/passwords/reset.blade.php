@@ -37,7 +37,7 @@
             <reset-password-form token="{{ $token }}">></reset-password-form>
 
             <a href="{{ url('/login') }}">Log in</a><br>
-            <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
+            <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.membership') }}</a>
 
         </div><!-- /.login-box-body -->
 

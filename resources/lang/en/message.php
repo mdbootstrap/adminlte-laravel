@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Terms and conditions',
     'register'                => 'Register',
     'login'                   => 'Login',
-    'membreship'              => 'I already have a membership',
+    'membership'              => 'I already have a membership',
     'passwordclickreset'      => 'Click here to reset your password:',
     'signGithub'              => 'Sign in using Github',
     'signFacebook'            => 'Sign in using Facebook',

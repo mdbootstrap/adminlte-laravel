@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Regulamin',
     'register'                => 'Rejetracja',
     'login'                   => 'Logowanie',
-    'membreship'              => 'Mam już konto',
+    'membership'              => 'Mam już konto',
     'passwordclickreset'      => 'Kliknij by zresetować hasło:',
     'signGithub'              => 'Zaloguj się za pomocą Github',
     'signFacebook'            => 'Zaloguj się za pomocą Facebook',
