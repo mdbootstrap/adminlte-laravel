@@ -41,7 +41,6 @@ if (!empty($_POST)) {
 			<td><pre class="samples"><?php echo $value; ?></pre></td>
 		</tr>
 	<?php
-
     }
 }
 ?>
