@@ -139,7 +139,7 @@ To register the Service Provider edit **config/app.php** file and add to provide
 
 ```php
 /*
-* Acacha AdminLTE template provider
+ * Acacha AdminLTE template provider
  */
 Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 ```
@@ -148,8 +148,8 @@ To Register Alias edit **config/app.php** file and add to alias array:
 
 ```php
 /*
-* Acacha AdminLTE template alias
-*/
+ * Acacha AdminLTE template alias
+ */
 'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
 ```
 
@@ -333,7 +333,7 @@ php artisan make:route about --type=controller
 this adds the following:
 
 ```php
-    Route::get('about', 'AboutController@index');
+Route::get('about', 'AboutController@index');
 ```
 
 to file **routes/web.php**. You can choose the controller name and method with:
@@ -351,7 +351,7 @@ php artisan make:route about --type=resource
 this adds the following:
 
 ```php
-    Route::resource('about', 'About@index');
+Route::resource('about', 'About@index');
 ```
 
 to file **routes/web.php**.
@@ -567,11 +567,11 @@ To come back to email login remove **field** option from **config/auth.php** fil
 
 ```bash
 'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
-            'field' => 'username' // Adminlte laravel. Valid values: 'email' or 'username'
-        ],
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\User::class,
+        'field' => 'username' // Adminlte laravel. Valid values: 'email' or 'username'
+    ],
 ```
 
 NOTE: Migration required to add username field to users table requires:
@@ -586,10 +586,10 @@ Optionally you can define a default domain name for username login. Add domain o
 
 ```php
 'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
-        'domain' => 'defaultdomain.com',
-    ],
+    'guard' => 'web',
+    'passwords' => 'users',
+    'domain' => 'defaultdomain.com',
+],
 ```
 
 to file **config/auth.php**. Then if an user tries to login with no domain the default domain will be appended whe logging. 
