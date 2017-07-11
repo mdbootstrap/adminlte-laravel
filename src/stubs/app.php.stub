@@ -166,7 +166,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        
+        Laravel\Tinker\TinkerServiceProvider::class,
+        
         // AdminLTE template provider
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 
