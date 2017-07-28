@@ -11,17 +11,17 @@ http://demo.adminlte.acacha.org/
 如果你需要支持 Laravel 4 的版本，请使用 0.1.5 版：
 [OLD-README.md](OLD-README.md)
 
-[Latest Version on Packagist](https://packagist.org/packages/acacha/admin-lte-template-laravel)
-[Total Downloads](https://packagist.org/packages/acacha/admin-lte-template-laravel)
-[Monthly Downloads](https://packagist.org/packages/acacha/admin-lte-template-laravel)
-[Daily Downloads](https://packagist.org/packages/acacha/admin-lte-template-laravel)
-[Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
-[Code Coverage](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
-[Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
-[StyleCI](https://styleci.io/repos/35628567)
-[Build Status](https://travis-ci.org/acacha/adminlte-laravel)
-[Dependency Status Composer](https://www.versioneye.com/user/projects/58483fc98c5dae004be97d36)
-[Dependency Status Node.js](https://www.versioneye.com/user/projects/58483fc88c5dae0039a10ca5)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/acacha/admin-lte-template-laravel.svg?style=flat-square)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
+[![Total Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/downloads.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
+[![Monthly Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/d/monthly)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
+[![Daily Downloads](https://poser.pugx.org/acacha/admin-lte-template-laravel/d/daily)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
+[![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
+[![Build Status](https://travis-ci.org/acacha/adminlte-laravel.svg?branch=master)](https://travis-ci.org/acacha/adminlte-laravel)
+[![Dependency Status Composer](https://www.versioneye.com/user/projects/58483fc98c5dae004be97d36/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58483fc98c5dae004be97d36)
+[![Dependency Status Node.js](https://www.versioneye.com/user/projects/58483fc88c5dae0039a10ca5/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58483fc88c5dae0039a10ca5)
 
 # 安装和使用
 **最简单的安装方法！** 使用 composer 全局安装
