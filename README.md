@@ -264,7 +264,7 @@ See issue https://github.com/acacha/adminlte-laravel/issues/69 for more info
 Once package installed you have to follow the usual steps of any laravel project to Login to the admin interface:
 
 - Create a database. I recommend the use of laravel Homestead ()
-- Create/check .env file and configure database acces (database name, password, etc)
+- Create/check .env file and configure database access (database name, password, etc)
 - Run migrations with command $ php artisan migrate
 - Registera a first user and Login with it
 
