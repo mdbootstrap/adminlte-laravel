@@ -1,6 +1,8 @@
 <?php
 
 use Spatie\Menu\Laravel\Menu;
+use Spatie\Menu\Laravel\Html;
+use Spatie\Menu\Laravel\Link;
 
 //Menu::macro('fullsubmenuexample', function () {
 //    return Menu::new()->prepend('<a href="#"><span> Multilevel PROVA </span> <i class="fa fa-angle-left pull-right"></i></a>')
