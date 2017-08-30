@@ -10,10 +10,10 @@ export default {
         radioClass: 'iradio_square-blue',
         increaseArea: '20%'
       }).on('ifChecked', function (event) {
-        component.form.set('terms', true)
+        component.form.setField('terms', true)
         component.form.errors.clear('terms')
       }).on('ifUnchecked', function (event) {
-        component.form.set('terms', '')
+        component.form.setField('terms', '')
       })
     }
   }
