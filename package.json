@@ -13,11 +13,11 @@
   "devDependencies": {
     "acacha-forms": "^0.1.4",
     "admin-lte": "^2.3.11",
-    "axios": "^0.15.3",
+    "axios": "^0.16.2",
     "babel-eslint": "^7.1.1",
     "bootstrap-less": "3.3.7",
     "bootstrap-sass": "3.3.7",
-    "cross-env": "^3.2.3",
+    "cross-env": "^5.0.1",
     "eslint": "^3.14.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.6.1",
