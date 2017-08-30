@@ -200,10 +200,13 @@ class AcachaAdminLTELaravelTest extends TestCase
         ]);
 
         $response->assertStatus(422)->assertJson([
-            'name' => [ "The name field is required." ],
-            'email' => [ "The email field is required." ],
-            'password' => [ "The password field is required." ],
-            'terms' => [ "The terms field is required." ],
+            'message' => "The given data was invalid.",
+            'errors' => [
+                'name' => [ "The name field is required." ],
+                'email' => [ "The email field is required." ],
+                'password' => [ "The password field is required." ],
+                'terms' => [ "The terms field is required." ]
+            ]
         ]);
     }
 
@@ -237,7 +240,10 @@ class AcachaAdminLTELaravelTest extends TestCase
         ]);
 
         $response->assertStatus(422)->assertJson([
-            "email" => "These credentials do not match our records."
+            'message' => 'The given data was invalid.',
+            'errors' => [
+                'email' => [ 'These credentials do not match our records.' ]
+            ]
         ]);
     }
 
@@ -254,8 +260,11 @@ class AcachaAdminLTELaravelTest extends TestCase
         ]);
 
         $response->assertStatus(422)->assertJson([
-            'email' => [ "The email field is required." ],
-            'password' => [ "The password field is required." ],
+            'message' => "The given data was invalid.",
+            'errors' => [
+                'email' => [ "The email field is required." ],
+                'password' => [ "The password field is required." ]
+            ]
         ]);
     }
 
