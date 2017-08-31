@@ -29,7 +29,7 @@
    <div class="col-xs-8">
     <div class="checkbox icheck">
      <label>
-      <input style="display:none;" type="checkbox" name="remember" v-model="form.remember"> {{ trans('adminlte_lang_message.remember') }}
+      <input type="checkbox" name="remember" v-model="form.remember"> {{ trans('adminlte_lang_message.remember') }}
      </label>
     </div>
    </div>
@@ -44,82 +44,85 @@
 
 <script>
 
-import Form from 'acacha-forms'
-import initialitzeIcheck from './InitializeIcheck'
-import redirect from './redirect'
+  import Form from 'acacha-forms'
+  import initialitzeIcheck from './InitializeIcheck'
+  import redirect from './redirect'
 
-export default {
-  mixins: [initialitzeIcheck, redirect],
-  data: function () {
-    let form = new Form({ username: '', password: '', remember: '' })
-    if (this.name === 'email') {
-      form = new Form({ email: '', password: '', remember: '' })
-    }
-    return {
-      form: form,
-    }
-  },
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    domain: {
-      type: String,
-      required: false
-    }
-  },
-  computed: {
-    placeholder: function () {
-      if (this.name === 'email') return this.trans('adminlte_lang_message.email')
-      return this.trans('adminlte_lang_message.username')
-    },
-    type: function () {
-      if (this.name === 'email') return 'email'
-      return 'text'
-    },
-    icon: function () {
-      if (this.name === 'email') return 'glyphicon-envelope'
-      return 'glyphicon-user'
-    }
-  },
-  watch: {
-    'form.remember': function (value) {
-      if (value) {
-        $('input').iCheck('check')
-      } else {
-        $('input').iCheck('uncheck')
+  export default {
+    mixins: [initialitzeIcheck, redirect],
+    data: function () {
+      let form = new Form({ username: '', password: '', remember: '' })
+      if (this.name === 'email') {
+        form = new Form({ email: '', password: '', remember: '' })
       }
-    }
-  },
-  methods: {
-    submit () {
-      this.form.post('/login')
-       .then(response => {
-         var component = this;
-         setTimeout(function(){
-           component.redirect(response)
-         }, 2500);
-       })
-       .catch(error => {
-         console.log(this.trans('adminlte_lang_message.loginerror') + ':' + error)
-       })
-    },
-    adddomain: function () {
-      if (this.type === 'email') return
-      if (this.domain === '') return
-      if (this.form.username.endsWith(this.domain)) return
-      if (this.form.username.includes('@')) return
-      this.form.username = this.form.username + '@' + this.domain
-    },
-    clearErrors (name) {
-      if (name === 'password') {
-        this.form.errors.clear('password')
-        name = this.name
+      return {
+        form: form,
       }
-      this.form.errors.clear(name)
-    }
+    },
+    props: {
+      name: {
+        type: String,
+        required: true
+      },
+      domain: {
+        type: String,
+        required: false
+      }
+    },
+    computed: {
+      placeholder: function () {
+        if (this.name === 'email') return this.trans('adminlte_lang_message.email')
+        return this.trans('adminlte_lang_message.username')
+      },
+      type: function () {
+        if (this.name === 'email') return 'email'
+        return 'text'
+      },
+      icon: function () {
+        if (this.name === 'email') return 'glyphicon-envelope'
+        return 'glyphicon-user'
+      }
+    },
+    watch: {
+      'form.remember': function (value) {
+        if (value) {
+          $('input').iCheck('check')
+        } else {
+          $('input').iCheck('uncheck')
+        }
+      }
+    },
+    methods: {
+      submit () {
+        this.form.post('/login')
+          .then(response => {
+            var component = this;
+            setTimeout(function(){
+              component.redirect(response)
+            }, 2500);
+          })
+          .catch(error => {
+            console.log(this.trans('adminlte_lang_message.loginerror') + ':' + error)
+          })
+      },
+      adddomain: function () {
+        if (this.type === 'email') return
+        if (this.domain === '') return
+        if (this.form.username.endsWith(this.domain)) return
+        if (this.form.username.includes('@')) return
+        this.form.username = this.form.username + '@' + this.domain
+      },
+      clearErrors (name) {
+        if (name === 'password') {
+          this.form.errors.clear('password')
+          name = this.name
+        }
+        this.form.errors.clear(name)
+      }
+    },
+    mounted () {
+      this.initialitzeICheck('remember')
+    },
   }
-}
 
 </script>

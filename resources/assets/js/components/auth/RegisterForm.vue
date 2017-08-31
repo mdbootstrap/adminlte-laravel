@@ -19,7 +19,7 @@
    <input type="password" class="form-control" :placeholder="trans('adminlte_lang_message.password')" name="password" v-model="form.password"/>
    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
    <transition name="fade">
-     <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
+    <span class="help-block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
    </transition>
   </div>
   <div class="form-group has-feedback">
@@ -51,47 +51,50 @@
 
 <script>
 
-import Form from 'acacha-forms'
-import initialitzeIcheck from './InitializeIcheck'
-import redirect from './redirect'
+  import Form from 'acacha-forms'
+  import initialitzeIcheck from './InitializeIcheck'
+  import redirect from './redirect'
 
-export default {
-  mixins: [initialitzeIcheck, redirect],
-  data: function () {
-    return {
-      form: new Form({ name: '', email: '', password: '', password_confirmation: '', terms: '' })
-    }
-  },
-  watch: {
-    'form.terms': function (value) {
-      if (value) {
-        $('input').iCheck('check')
-      } else {
-        $('input').iCheck('uncheck')
+  export default {
+    mixins: [initialitzeIcheck, redirect],
+    data: function () {
+      return {
+        form: new Form({ name: '', email: '', password: '', password_confirmation: '', terms: '' })
       }
-    }
-  },
-  methods: {
-    submit () {
-      this.form.post('/register')
-       .then(response => {
-         var component = this;
-         setTimeout(function(){
-           component.redirect(response)
-         }, 2500);
-       })
-       .catch(error => {
-         console.log(this.trans('adminlte_lang_message.registererror') + ':' + error)
-       })
     },
-    clearErrors (name) {
-      if (name === 'password_confirmation') {
-        name = 'password'
-        this.form.errors.clear('password_confirmation')
+    watch: {
+      'form.terms': function (value) {
+        if (value) {
+          $('input').iCheck('check')
+        } else {
+          $('input').iCheck('uncheck')
+        }
       }
-      this.form.errors.clear(name)
+    },
+    methods: {
+      submit () {
+        this.form.post('/register')
+          .then(response => {
+            var component = this;
+            setTimeout(function(){
+              component.redirect(response)
+            }, 2500);
+          })
+          .catch(error => {
+            console.log(this.trans('adminlte_lang_message.registererror') + ':' + error)
+          })
+      },
+      clearErrors (name) {
+        if (name === 'password_confirmation') {
+          name = 'password'
+          this.form.errors.clear('password_confirmation')
+        }
+        this.form.errors.clear(name)
+      }
+    },
+    mounted () {
+      this.initialitzeICheck('terms')
     }
   }
-}
 
 </script>
