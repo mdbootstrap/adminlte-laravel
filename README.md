@@ -485,7 +485,17 @@ http://acacha.org/mediawiki/AdminLTE#adminlte-laravel
 
 ## Tests
 
-There are two kind of tests Feature/Unit tests and Browser tests. To execute Feature/Unit tests execute:
+###Testing this package
+
+Use phpunit on run composer script test:
+
+``` bash
+$ composer test
+```
+
+### Testing laravel project once this package is installed
+
+Once this package is installed in a Laravel project some tests are installed to test package features. There are two kind of tests Feature/Unit tests and Browser tests. To execute Feature/Unit tests execute:
 
 ```
 ./vendor/bin/phpunit
@@ -663,12 +673,6 @@ Feel free to remove/adapt this file to your needs.
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
 
 ## Contributing
 
