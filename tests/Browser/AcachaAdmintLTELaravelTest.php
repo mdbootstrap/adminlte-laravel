@@ -267,7 +267,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->click('#user_menu')
                 ->pause(500)
                 ->click('#logout')
-                ->pause(500);
+                ->pause(500)
+                ->assertGuest();
         });
     }
 
