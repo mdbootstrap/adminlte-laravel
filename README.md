@@ -485,7 +485,7 @@ http://acacha.org/mediawiki/AdminLTE#adminlte-laravel
 
 ## Tests
 
-###Testing this package
+### Testing this package
 
 Use phpunit on run composer script test:
 
