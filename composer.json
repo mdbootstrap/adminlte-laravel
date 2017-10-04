@@ -43,6 +43,14 @@
   "extra": {
     "branch-alias": {
       "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Acacha\\AdminLTETemplateLaravel\\Providers\\AdminLTETemplateServiceProvider"
+      ],
+      "aliases": {
+        "AdminLTE": "Acacha\\AdminLTETemplateLaravel\\Facades\\AdminLTE"
+      }
     }
   },
   "config": {

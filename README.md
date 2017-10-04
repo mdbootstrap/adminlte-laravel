@@ -64,6 +64,7 @@ This packages use (no need to install):
 * [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
 * [acacha/forms](https://github.com/acacha/forms) : Javascript Form objects implementation.
 * [acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
+* [thephpleague/skeleton](https://github.com/thephpleague/skeleton). This package use/has been adapted to use the phpleague skeleton.
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
 ```bash
