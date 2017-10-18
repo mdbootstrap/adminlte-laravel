@@ -2,7 +2,8 @@
 
 I live in Catalonia... please help us as much as you can:
 
-https://www.youtube.com/watch?v=wouNL14tAks
+[![Help Catalonia](https://img.youtube.com/vi/wouNL14tAks/0.jpg)](https://www.youtube.com/watch?v=wouNL14tAks)
+
 
 # AdminLTE template Laravel 5 package
 A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
