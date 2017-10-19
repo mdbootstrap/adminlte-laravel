@@ -509,7 +509,7 @@ Once this package is installed in a Laravel project some tests are installed to 
 ./vendor/bin/phpunit
 ```
 
-In a new created laravel project with acacha-admintle.laravel installed to test that package is installed correctly. You can also execute Browser tests with Laravel Dusk:
+In a new created laravel project with acacha-admintle.laravel installed to test that package is installed correctly. You can also execute Browser tests with Laravel Dusk (please install first manually Dusk package following https://laravel.com/docs/master/dusk):
 
 ```
 php artisan dusk:install
