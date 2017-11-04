@@ -459,7 +459,7 @@ It's a cinch to add (optional) Social Login/Register support to Laravel Adminlte
 adminlte-laravel social
 ```
 
-Follow the wixard to configure your social providers Oauth data and enjoy!
+Follow the wizard to configure your social providers Oauth data and enjoy!
 
 More info at https://github.com/acacha/laravel-social.
 
