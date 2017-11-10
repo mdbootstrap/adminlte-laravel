@@ -126,7 +126,7 @@ composer global require "acacha/adminlte-laravel-installer=~3.0"
 
 ## Laravel 5.4
 
-Laravel 5.4 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
+Use 4.1.23 version of this package!
 
 ### Laravel 5.4 manual installation
 
