@@ -1,3 +1,10 @@
+# Please if you like this package...
+
+I live in Catalonia... please help us as much as you can:
+
+[![Help Catalonia](https://img.youtube.com/vi/wouNL14tAks/0.jpg)](https://www.youtube.com/watch?v=wouNL14tAks)
+
+
 # AdminLTE template Laravel 5 package
 A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
@@ -119,7 +126,7 @@ composer global require "acacha/adminlte-laravel-installer=~3.0"
 
 ## Laravel 5.4
 
-Laravel 5.4 is the default Laravel version supported. See section Installation & use for more info. See below for info about how to install this package in older Laravel versions
+Use 4.1.23 version of this package!
 
 ### Laravel 5.4 manual installation
 
@@ -452,7 +459,7 @@ It's a cinch to add (optional) Social Login/Register support to Laravel Adminlte
 adminlte-laravel social
 ```
 
-Follow the wixard to configure your social providers Oauth data and enjoy!
+Follow the wizard to configure your social providers Oauth data and enjoy!
 
 More info at https://github.com/acacha/laravel-social.
 
@@ -502,7 +509,7 @@ Once this package is installed in a Laravel project some tests are installed to 
 ./vendor/bin/phpunit
 ```
 
-In a new created laravel project with acacha-admintle.laravel installed to test that package is installed correctly. You can also execute Browser tests with Laravel Dusk:
+In a new created laravel project with acacha-admintle.laravel installed to test that package is installed correctly. You can also execute Browser tests with Laravel Dusk (please install first manually Dusk package following https://laravel.com/docs/master/dusk):
 
 ```
 php artisan dusk:install
@@ -527,7 +534,7 @@ In your config/app.php file you can change locale to change language. You can in
 php artisan vendor:publish --tag=adminlte_lang --force
 ```
 
-The following languages are supported by default on this package: English, Catalan,Spanish and Brazilian Portuguese. Please feel free to submit a new pull request with another languages if you wish.
+The following languages are supported by default on this package: English, Catalan, Spanish, Dutch and Brazilian Portuguese. Please feel free to submit a new pull request with another languages if you wish.
 
 ## Troubleshooting
 
