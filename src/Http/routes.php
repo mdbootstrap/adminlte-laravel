@@ -6,7 +6,8 @@
  * RouteServiceProvider
  */
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
+	if (config('adminlte.auth_route', true))
+    	Route::auth();
 
     Route::get('/home', 'HomeController@index');
 });
