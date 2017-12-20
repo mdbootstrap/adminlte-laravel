@@ -9,6 +9,6 @@ Route::group(['middleware' => 'web'], function () {
 	if (config('adminlte.auth_route', true))
     	Route::auth();
     
-    if ((config('adminlte.use_home_route', true))
+    if ((config('adminlte.use_home_route', true)))
         Route::get('/home', 'HomeController@index');
 });
