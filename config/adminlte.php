@@ -50,6 +50,16 @@ return [
     | The name of the seeder to add admin user to database.
     */
 
-    'AdminUserSeeder' => 'AdminUserSeeder.php'
+    'AdminUserSeeder' => 'AdminUserSeeder.php',
+
+    /*
+    |--------------------------------------------------------------------------
+    | AdminLTE Auth Route Enable
+    |--------------------------------------------------------------------------
+    |
+    | To auto included in the for Auth Route
+    */
+
+    'auth_route' => true,
 
 ];
