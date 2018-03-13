@@ -29,31 +29,25 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 **So easy to install!** Install globally with composer:
 
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~3.0"
+composer global require "acacha/adminlte-laravel-installer"
 ```
 
-And convert any Laravel ~~fresh~~ (no need of fresh installation now thanks to [Acacha/llum](https://github.com/acacha/llum)) installation to AdminLTE/Pratt with:
+And convert any Laravel installation to AdminLTE/Pratt with:
 
 ```bash
 laravel new laravel-with-admin-lte
 cd laravel-with-admin-lte
 adminlte-laravel install
 ```
-Enjoy! If you wish you can use llum:
+Enjoy! If you wish you can use [llum](https://github.com/acacha/llum) to start your app:
 
 ```bash
 llum boot
 ```
 
-To start using you Laravel with AdminLTE project. Llum will configure database (sqlite),execute migrations, install devtools and serve for you.
+To start using you Laravel with AdminLTE. Llum will configure database (sqlite),execute migrations, install devtools and serve for you.
 
 More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
-
-IMPORTANT NOTE: on MAC OS you will have to replace BSD sed with GNU sed for example using brew:
-
-```bash
-brew install gnu-sed --with-default-names
-```
 
 # Requirements
 
@@ -102,25 +96,9 @@ Please be sure to check you environment.
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
 
-## Llum package
+## Laravel 5.5
 
-This package now uses [Acacha/llum](https://github.com/acacha/llum) to install packages, providers, aliases, etc in a current existing Laravel project.
-
-Thanks to llum we can install adminlte-laravel package in any Laravel project no need of fresh installation.
-
-However acacha/llum use bash scripts and commands like sed thta maybe are no compatible or not available in all platforms. No problem! You can use a backwards compatible version with:
-
- ```bash
- laravel new laravel-with-admin-lte
- cd laravel-with-admin-lte
- adminlte-laravel --no-llum install
- ```
- 
-Or you can use version 1.0 of installer with:
- 
-```bash
-composer global require "acacha/adminlte-laravel-installer=~3.0"
-```
+This package now use new Laravel 5.5 feature Package Auto Discover. 
 
 ## Laravel 5.4
 
@@ -398,7 +376,7 @@ php artisan make:route --help
 
 ## adminlte:publish | adminlte-laravel:publish
 
-This command is already executed during installation using [acacha/llum](https://github.com/acacha/llum) but you can execute manually with:
+This command is already executed during installation you can (re)execute manually with:
 
 ```bash
 php artisan adminlte:publish
@@ -537,6 +515,8 @@ The following languages are supported by default on this package: English, Catal
 ## Troubleshooting
 
 ### GNU sed on MAC OS
+
+NOTA: not needed in Laravel 5.5+
 
 Acacha llum need GNU sed to work so replace BSD sed with GNU sed using:
 
