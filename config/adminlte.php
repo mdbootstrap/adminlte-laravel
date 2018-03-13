@@ -50,6 +50,18 @@ return [
     | The name of the seeder to add admin user to database.
     */
 
-    'AdminUserSeeder' => 'AdminUserSeeder.php'
+    'AdminUserSeeder' => 'AdminUserSeeder.php',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Install routes
+    |--------------------------------------------------------------------------
+    |
+    | The package Service Providers installs some routes like authorization routes (Auth::route)
+    | and /home. You could disable this routes with this option but remember then to manage the
+    | routes in your app.
+    */
+
+    'install_routes' => true
 
 ];
