@@ -82,7 +82,7 @@ class AdminLTEMenu extends Command
      */
     protected function installSpatieMenu()
     {
-        passthru('llum package laravel-menu');
+        passthru('composer require spatie/laravel-menu');
     }
 
     /**
