@@ -55,7 +55,8 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         if (config('adminlte.guestuser', true)) {
             $this->registerGuestUserProvider();
         }
-        if (config('auth.providers.users.field', 'email') === 'username'  && config('adminlte.add_nullable_username', true)) {
+        if (config('auth.providers.users.field', 'email') === 'username'  &&
+            config('adminlte.add_nullable_username', true)) {
             $this->loadMigrationsFrom(ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
         }
     }

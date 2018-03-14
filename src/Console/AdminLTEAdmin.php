@@ -28,7 +28,7 @@ class AdminLTEAdmin extends Command
      */
     public function handle()
     {
-        $this->create_admin_user();
+        $this->createAdminUser();
         $this->info('User ' . $this->username() . '(' . $this->email() . ') ' .
             $this->passwordInfo() . ' created succesfully!');
         $this->call('make:adminUserSeeder');
@@ -38,14 +38,13 @@ class AdminLTEAdmin extends Command
     /**
      * Create admin user.
      */
-    protected function create_admin_user()
+    protected function createAdminUser()
     {
         try {
             factory(get_class(app('App\User')))->create([
                     "name" => env('ADMIN_USER', $this->username()),
                     "email" => env('ADMIN_EMAIL', $this->email()),
-                    "password" => bcrypt(env('ADMIN_PWD', '123456'))]
-            );
+                    "password" => bcrypt(env('ADMIN_PWD', '123456'))]);
         } catch (\Illuminate\Database\QueryException $exception) {
         }
     }
