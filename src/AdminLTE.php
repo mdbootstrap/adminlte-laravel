@@ -92,10 +92,8 @@ class AdminLTE
     public function publicAssets()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/public/img'                 => public_path('img'),
             ADMINLTETEMPLATE_PATH.'/public/css'                 => public_path('css'),
             ADMINLTETEMPLATE_PATH.'/public/js'                  => public_path('js'),
-            ADMINLTETEMPLATE_PATH.'/public/fonts'               => public_path('fonts'),
         ];
     }
 
