@@ -11,32 +11,21 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.webpackConfig({
-  resolve: {
-    extensions: [".webpack.js", ".web.js", ".js", ".json", ".less"]
-  }
-});
-
 mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/app-landing.js', 'public/js/app-landing.js')
-  .sourceMaps()
-  .sass('resources/assets/sass/app.scss', 'public/css')
-   .less('node_modules/bootstrap-less/bootstrap/bootstrap.less', 'public/css/bootstrap.css')
-   .less('resources/assets/less/adminlte-app.less','public/css/adminlte-app.css')
-   .less('node_modules/toastr/toastr.less','public/css/toastr.css')
+   .sourceMaps()
    .combine([
-       'public/css/app.css',
+       'resources/assets/css/bootstrap.min.css',
+       'resources/assets/css/font-awesome.min.css',
+       'resources/assets/css/ionicons.min.css',
+       'node_modules/admin-lte/dist/css/AdminLTE.min.css',
        'node_modules/admin-lte/dist/css/skins/_all-skins.css',
-       'public/css/adminlte-app.css',
-       'node_modules/icheck/skins/square/blue.css',
-       'public/css/toastr.css'
+       'node_modules/icheck/skins/square/blue.css'
    ], 'public/css/all.css')
    .combine([
-       'public/css/bootstrap.css',
-       'resources/assets/css/main.css'
+       'resources/assets/css/bootstrap.min.css',
+       'public/css/pratt_landing.css'
    ], 'public/css/all-landing.css')
-   //APP RESOURCES
-   .copy('resources/assets/img/*.*','public/img')
    //VENDOR RESOURCES
    .copy('node_modules/font-awesome/fonts/*.*','public/fonts/')
    .copy('node_modules/ionicons/dist/fonts/*.*','public/fonts/')
@@ -49,5 +38,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 if (mix.config.inProduction) {
   mix.version();
+  mix.minify();
 }
 

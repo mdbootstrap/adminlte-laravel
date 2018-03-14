@@ -8,7 +8,7 @@ window.$ = window.jQuery = require('jquery')
 
 require('./smoothscroll')
 
-require('bootstrap-less')
+require('bootstrap')
 
 window.Vue = require('vue')
 

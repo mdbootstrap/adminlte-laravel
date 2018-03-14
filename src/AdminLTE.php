@@ -95,9 +95,7 @@ class AdminLTE
             ADMINLTETEMPLATE_PATH.'/public/img'                 => public_path('img'),
             ADMINLTETEMPLATE_PATH.'/public/css'                 => public_path('css'),
             ADMINLTETEMPLATE_PATH.'/public/js'                  => public_path('js'),
-            ADMINLTETEMPLATE_PATH.'/public/plugins'             => public_path('plugins'),
             ADMINLTETEMPLATE_PATH.'/public/fonts'               => public_path('fonts'),
-            ADMINLTETEMPLATE_PATH.'/public/mix-manifest.json'   => public_path('mix-manifest.json'),
         ];
     }
 
@@ -175,8 +173,6 @@ class AdminLTE
         return [
             ADMINLTETEMPLATE_PATH.'/resources/assets/css' => resource_path('assets/css'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/img' => resource_path('assets/img'),
-            ADMINLTETEMPLATE_PATH.'/resources/assets/less' => resource_path('assets/less'),
-            ADMINLTETEMPLATE_PATH.'/resources/assets/sass' => resource_path('assets/sass'),
             ADMINLTETEMPLATE_PATH.'/resources/assets/js'   => resource_path('assets/js'),
             ADMINLTETEMPLATE_PATH.'/webpack.mix.js'        => base_path('webpack.mix.js'),
             ADMINLTETEMPLATE_PATH.'/package.json'          => base_path('package.json'),

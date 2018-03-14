@@ -1,24 +1,22 @@
 {
   "private": true,
   "scripts": {
-    "bower": "cd node_modules/admin-lte;../bower/bin/bower install -f",
     "dev": "npm run development",
-    "development": "npm run bower;cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run bower;cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run bower;npm run watch -- --watch-poll",
-    "hot": "npm run bower;cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "npm run bower;cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "./node_modules/.bin/eslint --ext .js,.vue resources/assets/js"
   },
   "devDependencies": {
     "acacha-forms": "^1.0.0",
     "admin-lte": "^2.4.2",
-    "axios": "^0.16.2",
+    "axios": "^0.8",
     "babel-eslint": "^7.1.1",
-    "bootstrap-less": "3.3.7",
-    "bootstrap-sass": "3.3.7",
-    "bower": "^1.8.2",
+    "bootstrap": "3.3.7",
+    "popper.js": "^1.12",
     "cross-env": "^5.0.1",
     "eslint": "^3.14.1",
     "eslint-friendly-formatter": "^2.0.7",
@@ -30,10 +28,9 @@
     "font-awesome": "^4.7.0",
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
-    "jquery": "^3.1.1",
-    "laravel-mix": "^1.0",
+    "jquery": "^3.2",
+    "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
-    "toastr": "^2.1.2",
-    "vue": "^2.1.10"
+    "vue": "^2.5.7"
   }
 }
