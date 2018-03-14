@@ -21,7 +21,6 @@ class AdminUserSeeder extends Seeder
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]
             );
         } catch (\Illuminate\Database\QueryException $exception) {
-
         }
     }
 }

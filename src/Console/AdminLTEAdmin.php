@@ -47,7 +47,6 @@ class AdminLTEAdmin extends Command
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]
             );
         } catch (\Illuminate\Database\QueryException $exception) {
-
         }
     }
 
