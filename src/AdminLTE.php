@@ -15,7 +15,7 @@ class AdminLTE
     public function homeController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/HomeController.stub' => app_path('Http/Controllers/HomeController.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/HomeController.php' => app_path('Http/Controllers/HomeController.php'),
         ];
     }
 
@@ -27,7 +27,7 @@ class AdminLTE
     public function registerController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/RegisterController.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/RegisterController.php' =>
                 app_path('Http/Controllers/Auth/RegisterController.php'),
         ];
     }
@@ -40,7 +40,7 @@ class AdminLTE
     public function loginController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/LoginController.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/LoginController.php' =>
                 app_path('Http/Controllers/Auth/LoginController.php'),
         ];
     }
@@ -53,7 +53,7 @@ class AdminLTE
     public function forgotPasswordController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/ForgotPasswordController.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/ForgotPasswordController.php' =>
                 app_path('Http/Controllers/Auth/ForgotPasswordController.php'),
         ];
     }
@@ -66,7 +66,7 @@ class AdminLTE
     public function noGuestForgotPasswordController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/NoGuestForgotPasswordController.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/NoGuestForgotPasswordController.php' =>
                 app_path('Http/Controllers/Auth/NoGuestForgotPasswordController.php'),
         ];
     }
@@ -79,7 +79,7 @@ class AdminLTE
     public function resetPasswordController()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/ResetPasswordController.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/ResetPasswordController.php' =>
                 app_path('Http/Controllers/Auth/ResetPasswordController.php'),
         ];
     }
@@ -279,7 +279,7 @@ class AdminLTE
     public function authConfig()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/auth.php.stub' => config_path('auth.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/auth.php' => config_path('auth.php'),
         ];
     }
 
@@ -303,7 +303,7 @@ class AdminLTE
     public function appServiceProviderClass()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php.stub' =>
+            ADMINLTETEMPLATE_PATH.'/src/stubs/AppServiceProvider.php' =>
                 app_path('Providers/AppServiceProvider.php'),
         ];
     }
