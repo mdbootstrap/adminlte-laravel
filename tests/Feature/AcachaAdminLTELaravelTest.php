@@ -5,11 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
-use ReflectionException;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
  * Class AcachaAdminLTELaravelTest.
@@ -27,14 +24,6 @@ class AcachaAdminLTELaravelTest extends TestCase
     {
         parent::setUp();
         App::setLocale('en');
-    }
-
-    /**
-     * Set up before class.
-     */
-    public static function setUpBeforeClass()
-    {
-        passthru('composer dumpautoload');
     }
 
     /**
@@ -269,8 +258,7 @@ class AcachaAdminLTELaravelTest extends TestCase
     }
 
     /**
-     * Test make:view command
-     *
+     * Test make:view command.
      */
     public function testMakeViewCommand()
     {
@@ -304,7 +292,7 @@ class AcachaAdminLTELaravelTest extends TestCase
     }
 
     /**
-     * Test adminlte:admin command
+     * Test adminlte:admin command.
      *
      * @group
      */
@@ -315,22 +303,7 @@ class AcachaAdminLTELaravelTest extends TestCase
             unlink($seed);
         } catch (\Exception $e) {
         }
-        $this->callAdminlteAdminCommand();
+        Artisan::call('adminlte:admin');
         $this->assertFileExists($seed);
-    }
-
-
-    /**
-     * Call adminlte:admin command.
-     */
-    protected function callAdminlteAdminCommand()
-    {
-        try {
-            Artisan::call('adminlte:admin');
-        } catch (ReflectionException $re) {
-            passthru('composer dumpautoload');
-            sleep(2);
-            $this->callAdminlteAdminCommand();
-        }
     }
 }

@@ -86,6 +86,6 @@ class MakeAdminUserSeeder extends Command
      */
     protected function getStubPath()
     {
-        return __DIR__ . '/stubs/AdminUserSeeder.php.stub';
+        return __DIR__ . '/stubs/AdminUserSeeder.php';
     }
 }

@@ -28,14 +28,27 @@ class AdminLTEAdmin extends Command
      */
     public function handle()
     {
-        $this->call('make:adminUserSeeder');
-        exec('composer dumpautoload 2>&1');
-        sleep(3);
-        $this->call('db:seed', [
-            '--class' => basename(config('AdminUserSeeder', 'AdminUserSeeder.php'), ".php")
-        ]);
+        $this->create_admin_user();
         $this->info('User ' . $this->username() . '(' . $this->email() . ') ' .
             $this->passwordInfo() . ' created succesfully!');
+        $this->call('make:adminUserSeeder');
+        $this->info('A database seed has been created to permanently add admin user to database.');
+    }
+
+    /**
+     * Create admin user.
+     */
+    protected function create_admin_user()
+    {
+        try {
+            factory(App\User::class)->create([
+                    "name" => env('ADMIN_USER', $this->username()),
+                    "email" => env('ADMIN_EMAIL', $this->email()),
+                    "password" => bcrypt(env('ADMIN_PWD', '123456'))]
+            );
+        } catch (\Illuminate\Database\QueryException $exception) {
+
+        }
     }
 
     /**
