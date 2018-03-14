@@ -291,7 +291,7 @@ class AdminLTE
     public function userClass()
     {
         return [
-            ADMINLTETEMPLATE_PATH.'/src/stubs/User.php.stub' => app_path('User.php'),
+            ADMINLTETEMPLATE_PATH.'/src/stubs/User.php' => app_path('User.php'),
         ];
     }
 
