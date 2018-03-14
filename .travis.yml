@@ -28,7 +28,7 @@ before_script:
 script:
   - cd sandbox ; php artisan dusk ; cd ..
   - cd sandbox ; php artisan adminlte:admin ; ./vendor/bin/phpunit --coverage-text --coverage-clover=../coverage.clover ; cd ..
-  - vendor/bin/phpcs --standard=psr2 src/
+  - vendor/bin/phpcs -p --standard=PSR2.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests
 
 after_script:
   - ./sandbox_destroy.sh
