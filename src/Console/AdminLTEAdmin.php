@@ -41,7 +41,7 @@ class AdminLTEAdmin extends Command
     protected function create_admin_user()
     {
         try {
-            factory(App\User::class)->create([
+            factory(get_class(app('App\User')))->create([
                     "name" => env('ADMIN_USER', $this->username()),
                     "email" => env('ADMIN_EMAIL', $this->email()),
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]

@@ -6,6 +6,9 @@ php:
 
 sudo: required
 
+addons:
+   chrome: stable
+
 ## Cache composer
 cache:
   directories:
