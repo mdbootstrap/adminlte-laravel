@@ -18,7 +18,7 @@ Menu::macro('adminlteSubmenu', function ($submenuName) {
 });
 Menu::macro('adminlteMenu', function () {
     return Menu::new()
-        ->addClass('sidebar-menu')->setAttribute('data-widget','tree');
+        ->addClass('sidebar-menu')->setAttribute('data-widget', 'tree');
 });
 Menu::macro('adminlteSeparator', function ($title) {
     return Html::raw($title)->addParentClass('header');
