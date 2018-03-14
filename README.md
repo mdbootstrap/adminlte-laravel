@@ -89,6 +89,10 @@ Please be sure to check you environment.
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
 
+## Laravel 5.6
+
+This package works smoothly with Laravel 5.6 with 6.0+ versions. 
+
 ## Laravel 5.5
 
 This package now use new Laravel 5.5 feature Package Auto Discover. 
