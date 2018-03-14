@@ -68,7 +68,7 @@ class MakeView extends Command
      */
     protected function getStubPath()
     {
-        return __DIR__ . '/stubs/view.stub';
+        return __DIR__ . '/stubs/view.blade.php';
     }
 
     /**
