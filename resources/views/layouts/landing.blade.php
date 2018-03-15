@@ -17,7 +17,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x600.png" />
     <meta property="og:image" content="http://demo.adminlte.acacha.org/img/AcachaAdminLTE600x314.png" />
     <meta property="og:sitename" content="demo.adminlte.acacha.org" />
-    <meta property="og:url" content="http://demo.adminlte.acacha.org" />
+    <meta property="og:url" content="https://demo.adminlte.acacha.org" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@acachawiki" />
