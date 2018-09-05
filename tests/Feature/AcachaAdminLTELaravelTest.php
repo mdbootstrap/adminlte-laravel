@@ -268,27 +268,22 @@ class AcachaAdminLTELaravelTest extends TestCase
             unlink(resource_path($view));
         } catch (\Exception $e) {
         }
-        $this->callArtisanMakeView($view);
-        $resultAsText = Artisan::output();
-        $expectedOutput = 'File ' . resource_path($viewPath) . ' created';
-        $this->assertEquals($expectedOutput, trim($resultAsText));
-        $this->assertFileExists(resource_path($viewPath));
-        $this->callArtisanMakeView($view);
-        $resultAsText = Artisan::output();
-        $this->assertEquals('File already exists', trim($resultAsText));
-        unlink(resource_path($viewPath));
-    }
 
-    /**
-     * Create view using make:view command.
-     *
-     * @param $view
-     */
-    protected function callArtisanMakeView($view)
-    {
-        Artisan::call('make:view', [
+        $this->artisan('make:view',[
             'name' => $view,
-        ]);
+        ])
+            ->expectsOutput('File ' . resource_path($viewPath) . ' created')
+            ->assertExitCode(0);
+
+        $this->assertFileExists(resource_path($viewPath));
+
+        $this->artisan('make:view',[
+            'name' => $view,
+        ])
+            ->expectsOutput('File already exists')
+            ->assertExitCode(0);
+
+        unlink(resource_path($viewPath));
     }
 
     /**
