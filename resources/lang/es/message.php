@@ -41,7 +41,7 @@ return [
     'search'                  => 'Buscar',
     'servererror'             => 'Error del Servidor',
     '500error'                => 'Página de error 500',
-    'somethingwrong'          => 'Alguna cosa ha anat malament.',
+    'somethingwrong'          => 'Alguna ha salido mal.',
     'wewillwork'              => 'Trabajaremos en la solución de esto inmediatamente.',
     'serviceunavailable'      => 'Servicio no disponible',
     '503error'                => 'Página de error 503',
