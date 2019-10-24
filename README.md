@@ -1,3 +1,5 @@
+**IMPORTANT NOTE**: This project is looking for a maintainer please email sergiturbadenas@gmail.com if you are interested.
+
 # AdminLTE template Laravel 5 package
 A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
