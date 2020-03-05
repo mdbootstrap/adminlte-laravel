@@ -14,12 +14,14 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+services:
+  - xvfb
+
 before_script:
   - travis_retry composer self-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
   - composer config --list --global
   - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
   - ./sandbox_setup.sh
   - cd sandbox; ./vendor/laravel/dusk/bin/chromedriver-linux &
   - php artisan dusk:install
