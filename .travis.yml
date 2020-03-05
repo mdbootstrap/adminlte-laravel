@@ -19,7 +19,7 @@ services:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest
   - composer config --list --global
   - export DISPLAY=:99.0
   - ./sandbox_setup.sh
