@@ -17,6 +17,8 @@ class AcachaAdminLTELaravelTest extends TestCase
 {
     use DatabaseMigrations;
 
+    public $mockConsoleOutput = false;
+
     /**
      * Set up tests.
      */
