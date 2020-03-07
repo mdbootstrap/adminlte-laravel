@@ -1,5 +1,3 @@
-**IMPORTANT NOTE**: This project is looking for a maintainer please email sergiturbadenas@gmail.com if you are interested.
-
 # AdminLTE template Laravel 5 package
 A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
@@ -66,7 +64,7 @@ brew install gnu-sed --with-default-names
 ```
 
 This package assumes that you have in path your composer bin folder:
- 
+
 ```
 /YOUR_PATH_TO_HOME/.composer/vendor/bin
 ```
@@ -90,14 +88,17 @@ Please be sure to check you environment.
 ## Optional requirements
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
+## Laravel 5.7
+
+Compatible with Laravel 5.7.
 
 ## Laravel 5.6
 
-This package works smoothly with Laravel 5.6 with 6.0+ versions. 
+This package works smoothly with Laravel 5.6 with 6.0+ versions.
 
 ## Laravel 5.5
 
-This package now use new Laravel 5.5 feature Package Auto Discover. 
+This package now use new Laravel 5.5 feature Package Auto Discover.
 
 ## Laravel 5.4
 
@@ -116,8 +117,8 @@ Add admin-lte Laravel package with:
 
 <pre>
  composer require "acacha/admin-lte-template-laravel:4.*"
-</pre> 
- 
+</pre>
+
 To register the Service Provider edit **config/app.php** file and add to providers array:
 
 ```php
@@ -140,9 +141,9 @@ Publish files with:
 
 ```php
 php artisan vendor:publish --tag=adminlte --force
-``` 
- 
-Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+```
+
+Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy!
 
 
 ## Laravel 5.3
@@ -177,12 +178,12 @@ Add admin-lte Laravel package with:
 
 <pre>
  composer require "acacha/admin-lte-template-laravel:1.*"
-</pre> 
- 
+</pre>
+
 Register ServiceProvider editing **config/app.php** file and adding to providers array:
 
 <pre>
-// AdminLTE template provider         
+// AdminLTE template provider
 Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 </pre>
 
@@ -190,9 +191,9 @@ Publish files with:
 
 <pre>
  php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider"
-</pre> 
- 
-Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy! 
+</pre>
+
+Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy!
 
 Note: use the following for Laravel <5.1 versions:
 
@@ -206,11 +207,11 @@ Note: use the following for Laravel <5.1 versions:
 This package installs Laravel routes that you will not find them at routes.php file. The routes installed by package would be find at file:
 
  https://github.com/acacha/adminlte-laravel/blob/master/src/Http/routes.php
- 
+
 A file included by AdminLTETemplateServiceProvider:
 
  https://github.com/acacha/adminlte-laravel/blob/master/src/Providers/AdminLTETemplateServiceProvider.php
- 
+
 You can override this routes by changing order of ServiceProviders in config/app.php file so if you put:
 
 ```php
@@ -226,9 +227,9 @@ Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class
 Your routes in routes.php file will override default adminlte-laravel routes.
 
 Also you can install manually the routes in routes.php file. Adminlte-laravel use same routes as Laravel make:auth command use, see:
- 
+
 https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/routes.stub
- 
+
 so you can add this lines to routes.php file:
 
 ```php
@@ -237,7 +238,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 ```
 
-And disable AdminLTETemplateServiceProvider in config/app.php file ( take into account that Adminte-laravel Facades and 
+And disable AdminLTETemplateServiceProvider in config/app.php file ( take into account that Adminte-laravel Facades and
 custom commands will not be available).
 
 See issue https://github.com/acacha/adminlte-laravel/issues/69 for more info
@@ -415,7 +416,7 @@ File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/Admin
 User Sergi Tur Badenas(sergiturbadenas@gmail.com) with the environemnt password (env var ADMIN_PWD) created succesfully!
 ```
 
-This command use (if exists) environment variables (.env file) ADMIN_USER, ADMIN_EMAIL and ADMIN_PWD. If this env variables does not exists then 
+This command use (if exists) environment variables (.env file) ADMIN_USER, ADMIN_EMAIL and ADMIN_PWD. If this env variables does not exists then
 user git config (~/.gitconfig) to obtain data and if this info does not exists use Admin (admin@example.com) and password 123456 as default.
 
 ### make:adminUserSeeder
@@ -546,7 +547,7 @@ More info at https://github.com/acacha/adminlte-laravel/issues/58
 
 ## How to use username at login instead of email
 
-Execute command: 
+Execute command:
 
 ```
 php artisan adminlte:username
@@ -554,9 +555,9 @@ php artisan adminlte:username
 
 And then you can use username instead of email for login.
 
-NOTE: when we are using login by username if login by usernames fails then 
+NOTE: when we are using login by username if login by usernames fails then
 system try to use the introduced username as an email for login. So users
-can also login using email. 
+can also login using email.
 
 To come back to email login remove **field** option from **config/auth.php** file:
 
@@ -570,7 +571,7 @@ To come back to email login remove **field** option from **config/auth.php** fil
 ```
 
 NOTE: Migration required to add username field to users table requires:
- 
+
 ```bash
 composer require doctrine/dbal
 ```
@@ -587,7 +588,7 @@ Optionally you can define a default domain name for username login. Add domain o
 ],
 ```
 
-to file **config/auth.php**. Then if an user tries to login with no domain the default domain will be appended whe logging. 
+to file **config/auth.php**. Then if an user tries to login with no domain the default domain will be appended whe logging.
 
 So with previous example you can type at login:
 
@@ -604,7 +605,7 @@ sergiturbadenas@defaultdomain.com
 # Vue
 
 Laravel adminlte package by default publish Laravel translations into Javascript/Vue.js adding to HTML header the following script:
- 
+
 ```javascript
 <script>
     //See https://laracasts.com/discuss/channels/vue/use-trans-in-vuejs
