@@ -90,15 +90,15 @@ Please be sure to check you environment.
 
 ## Laravel 5.8
 
-This package works smoothly with Laravel 5.8 with 6.2 versions.
+This package works smoothly with Laravel 5.8 with 6.2 version.
 
 ## Laravel 5.7
 
-This package works smoothly with Laravel 5.7 with 6.1 versions.
+This package works smoothly with Laravel 5.7 with 6.1 version.
 
 ## Laravel 5.6
 
-This package works smoothly with Laravel 5.6 with 6.1 versions.
+This package works smoothly with Laravel 5.6 with 6.1 version.
 
 ## Laravel 5.5
 
