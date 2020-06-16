@@ -132,3 +132,4 @@ return [
     'loggedin'                => 'Accesso effettuato!',
     'entering'                => 'Entering...',
     'registered'              => 'Utente registrato!',
+];
