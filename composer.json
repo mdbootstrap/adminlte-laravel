@@ -14,11 +14,8 @@
   ],
   "require": {
     "php": "^7.1.3",
-    "acacha/filesystem": "^0.1.2",
-    "acacha/helpers": "^0.1.4",
-    "acacha/user": "~0.2",
     "creativeorange/gravatar": "~1.0",
-    "laravel/framework": "^5.4",
+    "laravel/framework": "6.*",
     "league/flysystem": "^1.0"
   },
   "require-dev": {
