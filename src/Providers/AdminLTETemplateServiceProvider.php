@@ -3,7 +3,6 @@
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
-use Acacha\User\Providers\GuestUserServiceProvider;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Creativeorange\Gravatar\GravatarServiceProvider;
 use Illuminate\Console\DetectsApplicationNamespace;
@@ -52,21 +51,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->registerGravatarServiceProvider();
         }
 
-        if (config('adminlte.guestuser', true)) {
-            $this->registerGuestUserProvider();
-        }
         if (config('auth.providers.users.field', 'email') === 'username'  &&
             config('adminlte.add_nullable_username', true)) {
             $this->loadMigrationsFrom(ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
         }
-    }
-
-    /**
-     * Register Guest User Provider.
-     */
-    protected function registerGuestUserProvider()
-    {
-        $this->app->register(GuestUserServiceProvider::class);
     }
 
     /**
