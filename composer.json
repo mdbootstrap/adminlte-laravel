@@ -17,6 +17,7 @@
     "creativeorange/gravatar": "~1.0",
     "laravel/framework": "6.*",
     "acacha/filesystem": "^0.1.2",
+    "acacha/helpers": "^0.1.4",
     "league/flysystem": "^1.0"
   },
   "require-dev": {
