@@ -23,6 +23,12 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 composer require "acacha/admin-lte-template-laravel"
 ```
 
+Finally publish files with:
+
+```php
+php artisan vendor:publish --tag=adminlte --force
+```
+
 # Requirements
 
 This packages use (no need to install):
@@ -70,108 +76,6 @@ Please be sure to check you environment.
 ## Laravel 5.8 and older
 
 This package works smoothly with Laravel 5.x with 6.x version
-
-## Laravel 5.4
-
-Use 4.1.23 version of this package!
-
-### Laravel 5.4 manual installation
-
-Follow the typical Laravel package installation steps:
-
-<pre>
- laravel new laravel-with-admin-lte
- cd laravel-with-admin-lte
-</pre>
-
-Add admin-lte Laravel package with:
-
-<pre>
- composer require "acacha/admin-lte-template-laravel:4.*"
-</pre>
-
-To register the Service Provider edit **config/app.php** file and add to providers array:
-
-```php
-/*
- * Acacha AdminLTE template provider
- */
-Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
-```
-
-To Register Alias edit **config/app.php** file and add to alias array:
-
-```php
-/*
- * Acacha AdminLTE template alias
- */
-'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
-```
-
-Publish files with:
-
-```php
-php artisan vendor:publish --tag=adminlte --force
-```
-
-Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy!
-
-
-## Laravel 5.3
-
-Use branch 3.x for Laravel 5.3 version.
-
-## Laravel 5.2
-
-Also you can use for previous version of Laravel (5.2) :
-
-```
-composer global require "acacha/adminlte-laravel-installer=~2.0"
-laravel new --5.2 laravel-with-admin-lte
-```
-
-## Laravel 5.1 notes
-
-By default Laravel 5.1 does not include default auth routes. Versions > 1.0 < 2.0 of this package add the necessary routes for you
-
-See  [old README file](OLD-README.md) file for notes of which routes are registered.
-
-### Installation
-
-First install Laravel (http://laravel.com/docs/5.0/installation) and then Create a new Laravel project:
-
-<pre>
- laravel new laravel-with-admin-lte
- cd laravel-with-admin-lte
-</pre>
-
-Add admin-lte Laravel package with:
-
-<pre>
- composer require "acacha/admin-lte-template-laravel:1.*"
-</pre>
-
-Register ServiceProvider editing **config/app.php** file and adding to providers array:
-
-<pre>
-// AdminLTE template provider
-Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
-</pre>
-
-Publish files with:
-
-<pre>
- php artisan vendor:publish --force --provider="Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider"
-</pre>
-
-Use force to overwrite Laravel Scaffolding packages. That's all! Open the Laravel project in your browser or homestead machine and enjoy!
-
-Note: use the following for Laravel <5.1 versions:
-
-<pre>
- // AdminLTE template provider
- 'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
-</pre>
 
 ## Laravel Routes
 
