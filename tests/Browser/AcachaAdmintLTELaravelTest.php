@@ -2,10 +2,10 @@
 
 namespace Tests\Browser;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
@@ -24,7 +24,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLandingPage()
     {
-        dump('testLandingPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Acacha')
@@ -53,7 +52,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLandingPageWithUserLogged()
     {
-        dump('testLandingPageWithUserLogged');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             $browser->loginAs($user)
@@ -75,8 +73,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginPage()
     {
-        dump('testLoginPage');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->assertSee('Sign in to start your session');
@@ -90,8 +86,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLogin()
     {
-        dump('testLogin');
-
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
             $browser->visit('/login')
@@ -115,7 +109,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginRequiredFields()
     {
-        dump('testLoginRequiredFields');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', '')
@@ -134,7 +127,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginRequiredFieldsDisappearsOnKeyDown()
     {
-        dump('testLoginRequiredFieldsDissappearsOnKeyDown');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', '')
@@ -157,7 +149,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginCredentialsNotMatch()
     {
-        dump('testLoginCredentialsNotMatch');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
@@ -175,7 +166,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginCredentialsNotMatchDissappearsOnKeyDown()
     {
-        dump('testLoginCredentialsNotMatchDissappearsOnKeyDown');
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                 ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
@@ -195,8 +185,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLoginWithRememberMe()
     {
-        dump('testLoginWithRememberMe');
-
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
             $browser->visit('/login')
@@ -220,7 +208,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testRegisterPage()
     {
-        dump('testRegisterPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->assertSee('Register a new membership');
@@ -234,7 +221,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testPasswordResetPage()
     {
-        dump('testPasswordResetPage');
         $this->browse(function (Browser $browser) {
             $browser->visit('/password/reset')
                 ->assertSee('Reset Password');
@@ -248,7 +234,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testHomePageForUnauthenticatedUsers()
     {
-        dump('testHomePageForUnauthenticatedUsers');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
@@ -265,8 +250,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testHomePageForAuthenticatedUsers()
     {
-        dump('testHomePageForAuthenticatedUsers');
-
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
@@ -285,7 +268,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testLogout()
     {
-        dump('testLogout');
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             view()->share('user', $user);
@@ -306,7 +288,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function test404Page()
     {
-        dump('test404Page');
         $this->browse(function (Browser $browser) {
             $browser->visit('/asdasdjlapmnnkadsdsa')
                 ->assertSee('404');
@@ -320,7 +301,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testNewUserRegistration()
     {
-        dump('testNewUserRegistration');
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->type('name', 'Sergi Tur Badenas')
@@ -345,8 +325,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testNewUserRegistrationRequiredFields()
     {
-        dump('testNewUserRegistrationRequiredFields');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->type('name', '')
@@ -368,8 +346,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testNewUserRegistrationRequiredFieldsDissappearsOnKeyDown()
     {
-        dump('testNewUserRegistrationRequiredFieldsDissappearsOnKeyDown');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->type('name', '')
@@ -399,8 +375,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordReset()
     {
-        dump('testSendPasswordReset');
-
         $this->browse(function (Browser $browser) {
             $user = factory(\App\User::class)->create();
             $browser->visit('password/reset')
@@ -418,8 +392,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordResetUserNotExists()
     {
-        dump('testSendPasswordResetUserNotExists');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
                 ->type('email', 'notexistingemail@gmail.com')
@@ -436,8 +408,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordResetRequiredFields()
     {
-        dump('testSendPasswordResetRequiredFields');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
                 ->press('Send Password Reset Link')
@@ -453,8 +423,6 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
      */
     public function testSendPasswordResetRequiredFieldsDisappearsOnKeyDown()
     {
-        dump('testSendPasswordResetRequiredFieldsDisappearsOnKeyDown');
-
         $this->browse(function (Browser $browser) {
             $browser->visit('password/reset')
                 ->type('email', '')

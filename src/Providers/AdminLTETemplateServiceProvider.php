@@ -2,12 +2,13 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
-use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
-use Acacha\User\Providers\GuestUserServiceProvider;
-use Creativeorange\Gravatar\Facades\Gravatar;
-use Creativeorange\Gravatar\GravatarServiceProvider;
-use Illuminate\Console\DetectsApplicationNamespace;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Creativeorange\Gravatar\Facades\Gravatar;
+use Illuminate\Console\DetectsApplicationNamespace;
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
+use Creativeorange\Gravatar\GravatarServiceProvider;
+use Acacha\AdminLTETemplateLaravel\Http\Middleware\GuestUser;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -52,21 +53,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             $this->registerGravatarServiceProvider();
         }
 
-        if (config('adminlte.guestuser', true)) {
-            $this->registerGuestUserProvider();
-        }
         if (config('auth.providers.users.field', 'email') === 'username'  &&
             config('adminlte.add_nullable_username', true)) {
             $this->loadMigrationsFrom(ADMINLTETEMPLATE_PATH .'/database/migrations/username_login');
         }
-    }
-
-    /**
-     * Register Guest User Provider.
-     */
-    protected function registerGuestUserProvider()
-    {
-        $this->app->register(GuestUserServiceProvider::class);
     }
 
     /**
@@ -83,8 +73,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(Router $router)
     {
+        $router->pushMiddlewareToGroup('web', GuestUser::class);
+
         if (config('adminlte.install_routes', true)) {
             $this->defineRoutes();
         }
@@ -255,7 +247,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishDusk()
     {
         $this->publishDuskEnvironment();
-        $this->publishAppServiceProvider();
     }
 
     /**
@@ -264,14 +255,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishDuskEnvironment()
     {
         $this->publishes(AdminLTE::duskEnvironment(), 'adminlte');
-    }
-
-    /**
-     * Publish app/Providers/AppServiceProvider.php file.
-     */
-    private function publishAppServiceProvider()
-    {
-        $this->publishes(AdminLTE::appServiceProviderClass(), 'adminlte');
     }
 
     /**
