@@ -2,11 +2,17 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
+<<<<<<< Updated upstream
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
-use Creativeorange\Gravatar\Facades\Gravatar;
-use Creativeorange\Gravatar\GravatarServiceProvider;
-use Illuminate\Console\DetectsApplicationNamespace;
+=======
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Acacha\User\Http\Middleware\GuestUser;
+>>>>>>> Stashed changes
+use Creativeorange\Gravatar\Facades\Gravatar;
+use Illuminate\Console\DetectsApplicationNamespace;
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
+use Creativeorange\Gravatar\GravatarServiceProvider;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -71,8 +77,10 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(Router $router)
     {
+        $router->pushMiddlewareToGroup('web', GuestUser::class);
+
         if (config('adminlte.install_routes', true)) {
             $this->defineRoutes();
         }
