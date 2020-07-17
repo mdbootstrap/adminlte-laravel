@@ -2,17 +2,13 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
-<<<<<<< Updated upstream
-use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
-=======
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Acacha\User\Http\Middleware\GuestUser;
->>>>>>> Stashed changes
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Console\DetectsApplicationNamespace;
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Creativeorange\Gravatar\GravatarServiceProvider;
+use Acacha\AdminLTETemplateLaravel\Http\Middleware\GuestUser;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -251,7 +247,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishDusk()
     {
         $this->publishDuskEnvironment();
-        $this->publishAppServiceProvider();
     }
 
     /**
@@ -260,14 +255,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     private function publishDuskEnvironment()
     {
         $this->publishes(AdminLTE::duskEnvironment(), 'adminlte');
-    }
-
-    /**
-     * Publish app/Providers/AppServiceProvider.php file.
-     */
-    private function publishAppServiceProvider()
-    {
-        $this->publishes(AdminLTE::appServiceProviderClass(), 'adminlte');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Acacha\User\Http\Middleware;
+namespace Acacha\AdminLTETemplateLaravel\Http\Middleware;
 
 use Closure;
 
