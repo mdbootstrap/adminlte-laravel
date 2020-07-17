@@ -1,5 +1,5 @@
-# AdminLTE template Laravel 5 package
-A Laravel 5 package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
+# AdminLTE template Laravel package
+A Laravel package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
 See demo here:
 
@@ -17,30 +17,11 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
 [![Build Status](https://travis-ci.org/acacha/adminlte-laravel.svg?branch=master)](https://travis-ci.org/acacha/adminlte-laravel)
 
-# Installation & use
-
-**So easy to install!** Install globally with composer:
+# Installation
 
 ```bash
-composer global require "acacha/adminlte-laravel-installer"
+composer require "acacha/admin-lte-template-laravel"
 ```
-
-And convert any Laravel installation to AdminLTE/Pratt with:
-
-```bash
-laravel new laravel-with-admin-lte
-cd laravel-with-admin-lte
-adminlte-laravel install
-```
-Enjoy! If you wish you can use [llum](https://github.com/acacha/llum) to start your app:
-
-```bash
-llum boot
-```
-
-To start using you Laravel with AdminLTE. Llum will configure database (sqlite),execute migrations, install devtools and serve for you.
-
-More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
 
 # Requirements
 
@@ -50,12 +31,10 @@ This packages use (no need to install):
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
-* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users. This could be optional through configuration.
 * [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
 * [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
 * [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
 * [acacha/forms](https://github.com/acacha/forms) : Javascript Form objects implementation.
-* [acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 * [thephpleague/skeleton](https://github.com/thephpleague/skeleton). This package use/has been adapted to use the phpleague skeleton.
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
@@ -88,21 +67,9 @@ Please be sure to check you environment.
 ## Optional requirements
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
-## Laravel 5.8
+## Laravel 5.8 and older
 
-This package works smoothly with Laravel 5.8 with 6.2 version.
-
-## Laravel 5.7
-
-This package works smoothly with Laravel 5.7 with 6.1 version.
-
-## Laravel 5.6
-
-This package works smoothly with Laravel 5.6 with 6.1 version.
-
-## Laravel 5.5
-
-This package now use new Laravel 5.5 feature Package Auto Discover.
+This package works smoothly with Laravel 5.x with 6.x version
 
 ## Laravel 5.4
 
