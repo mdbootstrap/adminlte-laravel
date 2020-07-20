@@ -166,7 +166,7 @@ class AcachaAdminLTELaravelTest extends TestCase
             'password_confirmation' => 'passw0RD',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertSuccessful();
 
         $this->assertDatabaseHas('users', [
             'name' => 'Sergi Tur Badenas',
@@ -213,7 +213,7 @@ class AcachaAdminLTELaravelTest extends TestCase
             'password' => 'passw0RD',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertSuccessful();
     }
 
     /**
