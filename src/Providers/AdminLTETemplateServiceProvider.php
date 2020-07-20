@@ -3,9 +3,9 @@
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
 use Illuminate\Routing\Router;
+use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use Creativeorange\Gravatar\Facades\Gravatar;
-use Illuminate\Console\DetectsApplicationNamespace;
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Creativeorange\Gravatar\GravatarServiceProvider;
 use Acacha\AdminLTETemplateLaravel\Http\Middleware\GuestUser;
@@ -15,8 +15,7 @@ use Acacha\AdminLTETemplateLaravel\Http\Middleware\GuestUser;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
-    use DetectsApplicationNamespace;
-
+    
     /**
      * Register the application services.
      */
@@ -111,7 +110,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             $router = app('router');
 
-            $router->group(['namespace' => $this->getAppNamespace().'Http\Controllers'], function () {
+            $router->group(['namespace' => Container::getInstance()->getNamespace().'Http\Controllers'], function () {
                 require __DIR__.'/../Http/routes.php';
             });
         }
