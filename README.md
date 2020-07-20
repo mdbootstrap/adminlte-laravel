@@ -40,7 +40,7 @@ This packages use (no need to install):
 * [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
 * [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
 * [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
-* [acacha/forms](https://github.com/acacha/forms) : Javascript Form objects implementation.
+* [laravel/ui](https://github.com/laravel/ui) : Laravel authentication scaffolding.
 * [thephpleague/skeleton](https://github.com/thephpleague/skeleton). This package use/has been adapted to use the phpleague skeleton.
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
