@@ -380,8 +380,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
             $browser->visit('password/reset')
                 ->type('email', $user->email)
                 ->press('Send Password Reset Link')
-                ->waitFor('div.alert-success')
-                ->assertSeeIn('div.alert-success', 'We have e-mailed your password reset link!');
+                ->pause(1000)
+                ->assertDontSee('We can\'t find a user with that email address.');
         });
     }
 
@@ -397,7 +397,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->type('email', 'notexistingemail@gmail.com')
                 ->press('Send Password Reset Link')
                 ->pause(1000)
-                ->assertSee('We can\'t find a user with that e-mail address.');
+                ->assertSee('We can\'t find a user with that email address.');
         });
     }
 
