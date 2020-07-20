@@ -397,7 +397,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->type('email', 'notexistingemail@gmail.com')
                 ->press('Send Password Reset Link')
                 ->pause(1000)
-                ->assertSee('We can\'t find a user with that e-mail address.');
+                ->assertSee('We can\'t find a user with that email address.');
         });
     }
 
