@@ -3,6 +3,7 @@
 namespace Acacha\AdminLTETemplateLaravel\Http\Middleware;
 
 use Closure;
+use Illuminate\Foundation\Auth\User;
 
 /**
  * Class GuestUser
@@ -20,7 +21,7 @@ class GuestUser
     public function handle($request, Closure $next)
     {
         view()->share('signedIn', auth()->check());
-        view()->share('user', auth()->user() ?: new \Acacha\AdminLTETemplateLaravel\GuestUser);
+        view()->share('user', auth()->user() ?: new User);
         
         return $next($request);
     }
