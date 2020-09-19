@@ -7,6 +7,7 @@ use Laravel\Dusk\Browser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use App\Models\User;
 
 /**
  * Class AcachaAdmintLTELaravelTest.
@@ -53,7 +54,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testLandingPageWithUserLogged()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create();
+            $user = User::factory()->create();
+
             $browser->loginAs($user)
                 ->visit('/')
                 ->assertSee('Acacha')
@@ -87,7 +89,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testLogin()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
+            $user = User::factory()->create(['password' => Hash::make('passw0RD')]);
+
             $browser->visit('/login')
                 ->type('email', $user->email)
                 ->type('password', 'passw0RD')
@@ -168,12 +171,13 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
+                ->waitFor("[name='email']")
                 ->type('email', 'emailquesegurquenoexisteix@sadsadsa.com')
                 ->type('password', '12345678')
                 ->press('Sign In')
                 ->pause(1000)
                 ->type('password', '1')
-                ->pause(1000)
+                ->pause(2000)
                 ->assertDontSee('These credentials do not match our records');
         });
     }
@@ -186,11 +190,13 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testLoginWithRememberMe()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
+            $user = User::factory()->create(['password' => Hash::make('passw0RD')]);
+
             $browser->visit('/login')
                 ->type('email', $user->email)
                 ->type('password', 'passw0RD')
                 ->script("$('input[name=remember]').iCheck('check');");
+
             $browser->press('Sign In')
                 ->waitFor('#result')
                 ->pause(5000)
@@ -198,6 +204,7 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
                 ->assertHasCookie(Auth::getRecallerName())
                 ->assertSee($user->name);
         });
+
         $this->logout();
     }
 
@@ -235,8 +242,10 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testHomePageForUnauthenticatedUsers()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create();
+            $user = User::factory()->create();
+
             view()->share('user', $user);
+
             $browser->visit('/home')
                 ->pause(2000)
                 ->assertPathIs('/login');
@@ -251,8 +260,10 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testHomePageForAuthenticatedUsers()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create();
+            $user = User::factory()->create();
+
             view()->share('user', $user);
+
             $browser->loginAs($user)
                 ->visit('/home')
                 ->assertSee($user->name);
@@ -269,8 +280,10 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testLogout()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create();
+            $user = User::factory()->create();
+
             view()->share('user', $user);
+
             $browser->loginAs($user)
                 ->visit('/home')
                 ->click('#user_menu')
@@ -376,7 +389,8 @@ class AcachaAdmintLTELaravelTest extends DuskTestCase
     public function testSendPasswordReset()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory(\App\User::class)->create();
+            $user = User::factory()->create();
+
             $browser->visit('password/reset')
                 ->type('email', $user->email)
                 ->press('Send Password Reset Link')
