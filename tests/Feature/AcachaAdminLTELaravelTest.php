@@ -294,12 +294,12 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testAdminlteAdminCommand()
     {
-        $seed = database_path('seeders/AdminUserSeeder.php');
+        $seeder = database_path('seeders/AdminUserSeeder.php');
         try {
-            unlink($seed);
+            unlink($seeder);
         } catch (\Exception $e) {
         }
         Artisan::call('adminlte:admin');
-        $this->assertFileExists($seed);
+        $this->assertFileExists($seeder);
     }
 }
