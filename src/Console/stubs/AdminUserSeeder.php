@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 /**
  * Class AdminUserSeeder
@@ -15,7 +16,7 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         try {
-            factory(App\User::class)->create([
+            User::factory()->create([
                     "name" => env('ADMIN_USER', "$USER_NAME$"),
                     "email" => env('ADMIN_EMAIL', "$USER_EMAIL"),
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]);

@@ -64,7 +64,7 @@ class MakeAdminUserSeeder extends Command
     {
         try {
             $this->filesystem->overwrite(
-                $path = database_path('seeds/' . config('AdminUserSeeder', 'AdminUserSeeder.php')),
+                $path = database_path('seeders/' . config('AdminUserSeeder', 'AdminUserSeeder.php')),
                 $this->compiler->compile(
                     $this->filesystem->get($this->getStubPath()),
                     [
