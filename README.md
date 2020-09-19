@@ -76,8 +76,7 @@ Please be sure to check you environment.
 ## Laravel 7 and older
 
 - This package works smoothly with Laravel 7.x with 7.x version
-- This package works smoothly with Laravel 6.x with 6.x version
-- This package works smoothly with Laravel 5.x with 6.x version
+- This package works smoothly with Laravel 6.x|5.x with 6.x version
 
 ## Laravel Routes
 
