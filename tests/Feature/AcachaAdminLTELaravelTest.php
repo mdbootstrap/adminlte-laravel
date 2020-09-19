@@ -294,7 +294,7 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testAdminlteAdminCommand()
     {
-        $seed = database_path('seeds/AdminUserSeeder.php');
+        $seed = database_path('seeders/AdminUserSeeder.php');
         try {
             unlink($seed);
         } catch (\Exception $e) {
