@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use App\Models\User;
 
 /**
  * Class AcachaAdminLTELaravelTest.
@@ -206,7 +207,7 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testLogin()
     {
-        $user = factory(\App\User::class)->create(['password' => Hash::make('passw0RD')]);
+        $user = User::factory()->create(['password' => Hash::make('passw0RD')]);
 
         $response = $this->json('POST', '/login', [
             'email' => $user->email,
@@ -293,12 +294,12 @@ class AcachaAdminLTELaravelTest extends TestCase
      */
     public function testAdminlteAdminCommand()
     {
-        $seed = database_path('seeds/AdminUserSeeder.php');
+        $seeder = database_path('seeders/AdminUserSeeder.php');
         try {
-            unlink($seed);
+            unlink($seeder);
         } catch (\Exception $e) {
         }
         Artisan::call('adminlte:admin');
-        $this->assertFileExists($seed);
+        $this->assertFileExists($seeder);
     }
 }

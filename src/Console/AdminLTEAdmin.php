@@ -3,6 +3,7 @@
 namespace Acacha\AdminLTETemplateLaravel\Console;
 
 use Illuminate\Console\Command;
+use App\Models\User;
 
 /**
  * Class AdminLTEAdmin.
@@ -41,7 +42,7 @@ class AdminLTEAdmin extends Command
     protected function createAdminUser()
     {
         try {
-            factory(get_class(app('App\User')))->create([
+            User::factory()->create([
                     "name" => env('ADMIN_USER', $this->username()),
                     "email" => env('ADMIN_EMAIL', $this->email()),
                     "password" => bcrypt(env('ADMIN_PWD', '123456'))]);

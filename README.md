@@ -73,9 +73,10 @@ Please be sure to check you environment.
 ## Optional requirements
 * [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
 
-## Laravel 6 and older
+## Laravel 7 and older
 
-This package works smoothly with Laravel 6.x with 6.x version
+- This package works smoothly with Laravel 7.x with 7.x version
+- This package works smoothly with Laravel 6.x|5.x with 6.x version
 
 ## Laravel Routes
 
