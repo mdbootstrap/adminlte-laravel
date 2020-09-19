@@ -15,7 +15,7 @@ use Acacha\AdminLTETemplateLaravel\Http\Middleware\GuestUser;
  */
 class AdminLTETemplateServiceProvider extends ServiceProvider
 {
-    
+
     /**
      * Register the application services.
      */
