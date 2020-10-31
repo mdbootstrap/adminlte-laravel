@@ -3,7 +3,6 @@
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
 use Illuminate\Routing\Router;
-use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
@@ -76,10 +75,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
     {
         $router->pushMiddlewareToGroup('web', GuestUser::class);
 
-        if (config('adminlte.install_routes', true)) {
-            $this->defineRoutes();
-        }
-
         //Publish
         $this->publishHomeController();
         $this->changeRegisterController();
@@ -100,20 +95,6 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
         $this->publishDatabaseConfig();
 
         $this->enableSpatieMenu();
-    }
-
-    /**
-     * Define the AdminLTETemplate routes.
-     */
-    protected function defineRoutes()
-    {
-        if (!$this->app->routesAreCached()) {
-            $router = app('router');
-
-            $router->group(['namespace' => Container::getInstance()->getNamespace().'Http\Controllers'], function () {
-                require __DIR__.'/../Http/routes.php';
-            });
-        }
     }
 
     /**
