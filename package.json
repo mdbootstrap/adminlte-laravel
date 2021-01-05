@@ -14,7 +14,7 @@
   "devDependencies": {
     "acacha-forms": "^1.0.0",
     "admin-lte": "^2.4.2",
-    "axios": "^0.18",
+    "axios": "^0.21",
     "babel-eslint": "^7.1.1",
     "bootstrap": "3.4.1",
     "popper.js": "^1.12",
