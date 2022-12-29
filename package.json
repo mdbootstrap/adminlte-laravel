@@ -21,7 +21,7 @@
     "cross-env": "^5.0.1",
     "eslint": "^4.18.2",
     "eslint-friendly-formatter": "^2.0.7",
-    "eslint-loader": "^1.6.1",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-html": "^2.0.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
@@ -30,7 +30,7 @@
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
     "jquery": "^3.5",
-    "laravel-mix": "^2.0",
+    "laravel-mix": "^6.0",
     "lodash": "^4.17.21",
     "vue": "^2.5.7"
   }
