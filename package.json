@@ -30,7 +30,7 @@
     "icheck": "^1.0.2",
     "ionicons": "^3.0.0",
     "jquery": "^3.5",
-    "laravel-mix": "^2.0",
+    "laravel-mix": "^6.0",
     "lodash": "^4.17.21",
     "vue": "^2.5.7"
   }
