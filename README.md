@@ -1,10 +1,6 @@
 # AdminLTE template Laravel package
 A Laravel package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
-See demo here:
-
- http://demo.adminlte.acacha.org/
-
 If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD-README.md](OLD-README.md)
 
 [![Latest Version on Packagist](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.svg)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
