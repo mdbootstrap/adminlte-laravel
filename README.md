@@ -1,10 +1,6 @@
 # AdminLTE template Laravel package
 A Laravel package that switch default Laravel scaffolding / boilerplate to AdminLTE template with Bootstrap 3.0 and Pratt Landing Page
 
-See demo here:
-
- http://demo.adminlte.acacha.org/
-
 If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD-README.md](OLD-README.md)
 
 [![Latest Version on Packagist](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.svg)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
@@ -35,7 +31,7 @@ This packages use (no need to install):
 
 * [Composer](https://getcomposer.org/)
 * [Laravel](http://laravel.com/)
-* [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
+* [AdminLTE](https://github.com/almasaeed2010/AdminLTE).
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
 * [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
 * [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
